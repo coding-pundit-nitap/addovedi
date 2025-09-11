@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 
+import { Card } from "@/components/ui/card";
 import { events } from "@/data/events";
-import { Card } from "@/ui/card";
 
 export function EventsSection() {
   return (

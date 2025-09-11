@@ -1,11 +1,9 @@
-// src/components/FooterSection.tsx
-
-"use client"; // Required for Math.random() in the floating orbs
+"use client";
 
 import { motion } from "framer-motion";
 
+import { Button } from "@/components/ui/button";
 import { quickLinks, socialLinks } from "@/data/footer";
-import { Button } from "@/ui/button";
 
 export function FooterSection() {
   return (
@@ -43,7 +41,7 @@ export function FooterSection() {
               whileHover={{ scale: 1.03 }}
               className="mb-8"
             >
-              <Button className="relative px-12 py-6 text-xl font-bold rounded-full border-2 border-accent-teal bg-transparent text-accent-teal hover:bg-accent-teal hover:text-black transition-all duration-300 group overflow-hidden">
+              <Button className="relative px-12 py-6 text-xl font-bold rounded-full border-2 border-accent-teal bg-transparent text-accent-teal hover:bg-accent-teal transition-all duration-300 group overflow-hidden">
                 <span className="relative z-10">Join Us Now</span>
                 <div className="absolute inset-0 bg-accent-teal scale-0 group-hover:scale-100 transition-transform duration-300" />
                 <div className="absolute inset-0 border-2 border-accent-teal rounded-full animate-ping-slow group-hover:animate-none" />

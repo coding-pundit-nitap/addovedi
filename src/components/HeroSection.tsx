@@ -1,12 +1,10 @@
-// src/components/HeroSection.tsx
-
 "use client";
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-import { Button } from "../ui/button";
+import { Button } from "./ui/button";
 
 type Particle = {
   left: string;
