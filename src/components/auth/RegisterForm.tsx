@@ -10,6 +10,7 @@ export default function Register(){
                       Full Name
                     </label>
                     <input
+                      id="fullname"
                       type="fullname"
                       name="fullname"
                       placeholder="e.g. Tapan Boruah"
@@ -23,6 +24,7 @@ export default function Register(){
                       Email ID
                     </label>
                     <input
+                      id="email"
                       type="email"
                       name="email"
                       placeholder="xyz@gmail.com"
@@ -36,6 +38,7 @@ export default function Register(){
                       Password
                     </label>
                     <input
+                      id="password"
                       type="password"
                       name="password"
                       placeholder=".............."
@@ -49,6 +52,7 @@ export default function Register(){
                       Confirm Password
                     </label>
                     <input
+                      id="confirmpassword"
                       type="password"
                       name="password"
                       placeholder=".............."
