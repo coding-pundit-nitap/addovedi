@@ -2,7 +2,7 @@
 
 import { Box, Cylinder } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useEffect, useRef,useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 // Client-side only Particle Effects component
@@ -250,14 +250,6 @@ export default function InitialLoadingScreen({
           <pointLight position={[5, 5, 5]} intensity={12} color="#3b82f6" />
           <pointLight position={[-5, 3, -5]} intensity={10} color="#8b5cf6" />
           <pointLight position={[0, 8, 0]} intensity={15} color="#6366f1" />
-
-          {/* Racing Cars */}
-          <LoadingRCCar position={[0, 0, 0]} color="#3b82f6" />
-          <LoadingRCCar position={[2, 0.5, 1]} color="#8b5cf6" />
-          <LoadingRCCar position={[-2, 0.3, -1]} color="#6366f1" />
-
-          {/* Racing Track */}
-          <LoadingTrack />
         </Canvas>
       </div>
 
