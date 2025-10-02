@@ -14,9 +14,9 @@ import SponsorsSection from "@/components/landing/SponsorsSection";
 import TechBackground from "@/components/landing/TechBackground";
 
 export default function Home() {
-  const [isInitialLoading, setIsInitialLoading] = useState(true);
+  const [isInitialLoading, setIsInitialLoading] = useState(false);
   const [showCountdown, setShowCountdown] = useState(false);
-  const [showRacingEffects, setShowRacingEffects] = useState(false);
+  const [showRacingEffects, setShowRacingEffects] = useState(true);
 
   const handleLoadComplete = () => {
     setIsInitialLoading(false);
@@ -60,7 +60,6 @@ export default function Home() {
       </div>
 
       <Footer />
-      <RacingSounds />
     </>
   );
 }

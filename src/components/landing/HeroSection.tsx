@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <div
       id="hero-section"
-      className="h-screen flex justify-center items-center text-center px-4 relative overflow-hidden"
+      className="h-screen flex justify-center items-center text-center px-4 relative overflow-hidden z-50"
     >
       {/* Racing-themed background elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -32,7 +32,7 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10">
+      <div className="relative z-50">
         {/* Tech status lights */}
         <div className="flex justify-center mb-8 space-x-4">
           <div className="w-4 h-4 bg-blue-500 rounded-full animate-pulse shadow-lg shadow-blue-500/50" />
@@ -46,14 +46,14 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Enhanced main title with tech effects */}
-        <div className="relative">
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-wider mb-4">
-            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 animate-pulse">
+        {/* main title with tech effects */}
+        <div className="relative z-50 mt-16 sm:mt-0">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-wider mb-4 relative z-50 drop-shadow-2xl">
+            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 animate-pulse relative z-50 drop-shadow-lg">
               ADDOVEDI
             </span>
             <br />
-            <span className="text-white font-bold text-3xl sm:text-5xl md:text-6xl tracking-widest">
+            <span className="text-white font-bold text-3xl sm:text-5xl md:text-6xl tracking-widest relative z-50 drop-shadow-lg">
               TECH FEST
             </span>
           </h1>

@@ -69,7 +69,7 @@ export function TireSmoke({
 // Engine rev visualization
 export function EngineRevMeter({ intensity }: { intensity: number }) {
   return (
-    <div className="fixed bottom-8 left-8 z-20">
+    <div className="fixed bottom-8 left-8 z-20 hidden md:block">
       <div className="bg-black/70 backdrop-blur-sm rounded-lg p-4 border border-cyan-400/30">
         <div className="text-cyan-400 text-sm font-bold mb-2">ENGINE RPM</div>
         <div className="flex items-end space-x-1 h-16">
@@ -113,21 +113,21 @@ export function RacingHUD({
 }) {
   return (
     <div className="fixed inset-0 pointer-events-none z-20">
-      {/* Speed display */}
-      <div className="absolute top-8 right-8 bg-black/70 backdrop-blur-sm rounded-lg p-4 border border-red-500/30">
+      {/* Speed display - hidden on mobile, visible on desktop */}
+      <div className="absolute top-8 right-8 bg-black/70 backdrop-blur-sm rounded-lg p-4 border border-red-500/30 hidden md:block">
         <div className="text-red-400 text-sm font-bold">SPEED</div>
         <div className="text-white text-3xl font-black">{speed}</div>
         <div className="text-gray-400 text-xs">KM/H</div>
       </div>
 
-      {/* Gear display */}
-      <div className="absolute top-32 right-8 bg-black/70 backdrop-blur-sm rounded-lg p-4 border border-yellow-400/30">
+      {/* Gear display - hidden on mobile, visible on desktop */}
+      <div className="absolute top-32 right-8 bg-black/70 backdrop-blur-sm rounded-lg p-4 border border-yellow-400/30 hidden md:block">
         <div className="text-yellow-400 text-sm font-bold">GEAR</div>
         <div className="text-white text-4xl font-black text-center">{gear}</div>
       </div>
 
-      {/* Lap time */}
-      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm rounded-lg p-4 border border-green-500/30">
+      {/* Lap time - hidden on mobile, visible on desktop */}
+      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm rounded-lg p-4 border border-green-500/30 hidden md:block">
         <div className="text-green-400 text-sm font-bold text-center">
           LAP TIME
         </div>
