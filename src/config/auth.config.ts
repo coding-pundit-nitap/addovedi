@@ -31,7 +31,7 @@ export const authConfig: NextAuthConfig = {
         },
       },
 
-      authorize: async (credentials) => {
+      authorize: async (_credentials) => {
         return null;
       },
     }),
