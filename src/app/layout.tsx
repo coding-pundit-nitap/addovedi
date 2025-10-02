@@ -1,33 +1,18 @@
-// src/app/layout.tsx
-
 import "./globals.css";
 
-import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Orbitron } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "Addovedi",
-  description:
-    "Innovate. Code. Conquer. - A premier tech festival bringing together developers, innovators, and tech enthusiasts.",
-};
+const orbitron = Orbitron({ subsets: ["latin"] });
+export const metadata = { title: "Addovedi Tech Fest" };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} antialiased bg-navy text-slate-200 font-poppins`}
-      >
-        {children}
-      </body>
+      <body className={orbitron.className}>{children}</body>
     </html>
   );
 }
