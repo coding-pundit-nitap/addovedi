@@ -3,11 +3,11 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
 interface RouteParams {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export async function GET(request: Request, { params }: RouteParams) {
-  const { id: id } = params;
+  const { id: id } = await params;
 
   try {
     const userWithEvents = await prisma.user.findUnique({

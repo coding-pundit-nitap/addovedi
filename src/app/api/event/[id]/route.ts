@@ -6,7 +6,7 @@ interface routeParams {
   params: Promise<{ id: string }>;
 }
 
-export async function GET({ params }: routeParams) {
+export async function GET(request: Request, { params }: routeParams) {
   const { id } = await params;
 
   try {

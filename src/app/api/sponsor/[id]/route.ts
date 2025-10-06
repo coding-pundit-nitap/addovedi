@@ -6,7 +6,7 @@ interface sponserId {
   params: Promise<{ id: string }>;
 }
 
-export async function GET({ params }: sponserId) {
+export async function GET(request: Request, { params }: sponserId) {
   const { id } = await params;
 
   try {
