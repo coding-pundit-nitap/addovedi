@@ -27,7 +27,7 @@ export async function GET(request: Request, { params }: RouteParams) {
 
     return NextResponse.json(registeredEvents, { status: 200 });
   } catch (error) {
-    console.error(`Failed to fetch events for user ${userId}:`, error);
+    console.error(`Failed to fetch events for user ${id}:`, error);
     const errorMessage =
       error instanceof Error ? error.message : "An unknown error occurred";
     return NextResponse.json(
