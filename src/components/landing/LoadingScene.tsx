@@ -1,8 +1,8 @@
 "use client";
 
-import { Box, Cylinder, Html, Text,useProgress } from "@react-three/drei";
+import { Box, Cylinder, Html, Text, useProgress } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useEffect,useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 // RC Car Component

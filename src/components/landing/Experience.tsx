@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Cylinder, Icosahedron, Stars } from "@react-three/drei";
-import { useFrame,useThree } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Suspense, useLayoutEffect, useRef } from "react";
