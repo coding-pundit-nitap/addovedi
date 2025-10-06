@@ -86,6 +86,8 @@ export default {
       },
       fontFamily: {
         poppins: ["'Poppins'", "sans-serif"],
+        heading: ["Orbitron", "sans-serif"],
+        body: ["Rajdhani", "sans-serif"],
       },
     },
   },
