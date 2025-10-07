@@ -83,46 +83,50 @@ export default function EventsPage() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const ctx = gsap.context(() => {
-      const items = gsap.utils.toArray<HTMLElement>(".timeline-item");
+    const timer = setTimeout(() => {
+      const ctx = gsap.context(() => {
+        const items = gsap.utils.toArray<HTMLElement>(".timeline-item");
 
-      items.forEach((el) => {
-        const direction = el.dataset.side === "left" ? -80 : 80;
+        items.forEach((el) => {
+          const direction = el.dataset.side === "left" ? -80 : 80;
+          gsap.fromTo(
+            el,
+            { opacity: 0, x: direction },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.7,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 80%",
+                toggleActions: "play none none reverse",
+              },
+            },
+          );
+        });
+
         gsap.fromTo(
-          el,
-          { opacity: 0, x: direction },
+          ".timeline-progress",
+          { scaleY: 0 },
           {
-            opacity: 1,
-            x: 0,
-            duration: 0.7,
-            ease: "power3.out",
+            scaleY: 1,
+            ease: "none",
+            transformOrigin: "top center",
             scrollTrigger: {
-              trigger: el,
-              start: "top 80%",
-              toggleActions: "play none none reverse",
+              trigger: listRef.current,
+              start: "top center",
+              end: "bottom center",
+              scrub: true,
             },
           },
         );
-      });
+      }, containerRef);
 
-      gsap.fromTo(
-        ".timeline-progress",
-        { scaleY: 0 },
-        {
-          scaleY: 1,
-          ease: "none",
-          transformOrigin: "top center",
-          scrollTrigger: {
-            trigger: listRef.current,
-            start: "top center",
-            end: "bottom center",
-            scrub: true,
-          },
-        },
-      );
-    }, containerRef);
+      return () => ctx.revert();
+    }, 100); // 100ms delay is usually enough for the DOM to settle
 
-    return () => ctx.revert();
+    return () => clearTimeout(timer);
   }, [activeKey]);
 
   return (
