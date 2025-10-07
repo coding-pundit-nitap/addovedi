@@ -287,6 +287,17 @@
   }
 }
 
+/* Hide page scrollbar when the <html> element has this class (keeps scrolling functional) */
+.hide-scrollbar,
+.hide-scrollbar body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar,
+.hide-scrollbar body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
