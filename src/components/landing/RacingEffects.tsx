@@ -102,15 +102,7 @@ export function EngineRevMeter({ intensity }: { intensity: number }) {
 }
 
 // Racing HUD overlay
-export function RacingHUD({
-  speed,
-  gear,
-  lapTime,
-}: {
-  speed: number;
-  gear: number;
-  lapTime: string;
-}) {
+export function RacingHUD({ speed, gear }: { speed: number; gear: number }) {
   return (
     <div className="fixed inset-0 pointer-events-none z-20">
       {/* Speed display - hidden on mobile, visible on desktop */}
@@ -127,12 +119,13 @@ export function RacingHUD({
       </div>
 
       {/* Lap time - hidden on mobile, visible on desktop */}
+      {/*
       <div className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm rounded-lg p-4 border border-green-500/30 hidden md:block">
         <div className="text-green-400 text-sm font-bold text-center">
           LAP TIME
         </div>
         <div className="text-white text-2xl font-mono">{lapTime}</div>
-      </div>
+      </div> */}
 
       {/* Racing line indicator */}
       <div className="absolute bottom-1/4 left-1/2 transform -translate-x-1/2">
@@ -193,7 +186,7 @@ export function RacingEffects() {
   return (
     <>
       <EngineRevMeter intensity={engineIntensity} />
-      <RacingHUD speed={speed} gear={gear} lapTime={lapTime} />
+      <RacingHUD speed={speed} gear={gear} />
     </>
   );
 }

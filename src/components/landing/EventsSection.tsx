@@ -11,6 +11,7 @@ export default function EventsSection() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
+      style={{ scrollMarginTop: "64px" }}
     >
       {/* Tech grid background */}
       <div className="absolute inset-0 pointer-events-none">

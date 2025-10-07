@@ -30,7 +30,6 @@ export default function EventsPage() {
   const listRef = useRef<HTMLDivElement>(null);
   const [activeKey, setActiveKey] = useState<"nov6" | "nov7">("nov6");
   const activeDay = timelineDays.find((d) => d.key === activeKey)!;
-  const dayLabels = activeDay.items.map((e) => e.title);
   const neonTheme =
     activeKey === "nov6"
       ? { primary: "#66FFFF", secondary: "#B366FF" }

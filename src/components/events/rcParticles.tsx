@@ -5,6 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Bloom, EffectComposer, Vignette } from "@react-three/postprocessing";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { KernelSize } from "postprocessing";
 import React, { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 
@@ -205,12 +206,13 @@ export default function RCParticles({
         />
         <Pulses primary={primary} secondary={secondary} />
 
-        <EffectComposer>
+        <EffectComposer multisampling={0} resolutionScale={0.5}>
           <Bloom
             intensity={1.1}
-            luminanceThreshold={0.1}
+            luminanceThreshold={0.4}
             luminanceSmoothing={0.9}
             mipmapBlur
+            kernelSize={KernelSize.MEDIUM}
           />
           <Vignette eskil={false} offset={0.35} darkness={0.6} />
         </EffectComposer>

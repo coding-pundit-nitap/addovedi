@@ -6,7 +6,8 @@ export default function HeroSection() {
   return (
     <div
       id="hero-section"
-      className="h-screen flex justify-center items-center text-center px-4 relative overflow-hidden z-50"
+      className="min-h-screen flex justify-center items-center text-center px-4 py-20 md:py-16 relative overflow-hidden"
+      style={{ scrollMarginTop: "64px" }}
     >
       {/* Racing-themed background elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -47,7 +48,7 @@ export default function HeroSection() {
         </div>
 
         {/* main title with tech effects */}
-        <div className="relative z-50 mt-16 sm:mt-0">
+        <div className="relative z-50 mt-8 sm:mt-0">
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-wider mb-4 relative z-50 drop-shadow-2xl">
             <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 animate-pulse relative z-50 drop-shadow-lg">
               ADDOVEDI
