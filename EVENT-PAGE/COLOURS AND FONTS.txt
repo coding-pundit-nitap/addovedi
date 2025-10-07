@@ -1,0 +1,25 @@
+FONTS:-
+
+Headings: Orbitron (Bold 700)
+
+Body Text: Rajdhani (Regular 400, Medium 500)
+
+COLOURS:-
+
+Main Theme Colors
+Background: #010308 - Dark futuristic navy
+Foreground: #F5F7FA - Off-white text
+Card: #02050C - Slightly lighter dark navy
+Border: #050A18 - Subtle borders
+
+Neon Accent Colors
+Primary (Neon Purple): #B366FF
+Secondary (Neon Cyan): #66FFFF
+Accent (Neon Blue): #6699FF
+Neon Pink: #FF66FF
+
+Utility Colors
+Muted Background: #030610
+Muted Text: #708399
+Destructive/Error: #EB3D3D
+Input Background: #030610
