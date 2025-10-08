@@ -1,0 +1,41 @@
+import { NextResponse } from "next/server";
+
+import { prisma } from "@/lib/prisma";
+
+interface RouteParams {
+  params: Promise<{ id: string }>;
+}
+
+export async function GET(request: Request, { params }: RouteParams) {
+  const { id: id } = await params;
+
+  try {
+    const userWithEvents = await prisma.user.findUnique({
+      where: { id: id },
+      include: {
+        events: true,
+      },
+    });
+
+    if (!userWithEvents) {
+      return NextResponse.json({ error: "User not found." }, { status: 404 });
+    }
+
+    const registeredEvents = userWithEvents.events.map(
+      (registration) => registration,
+    );
+
+    return NextResponse.json(registeredEvents, { status: 200 });
+  } catch (error) {
+    console.error(`Failed to fetch events for user ${id}:`, error);
+    const errorMessage =
+      error instanceof Error ? error.message : "An unknown error occurred";
+    return NextResponse.json(
+      {
+        error: "An error occurred while fetching events.",
+        details: errorMessage,
+      },
+      { status: 500 },
+    );
+  }
+}

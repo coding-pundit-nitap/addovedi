@@ -1,6 +1,8 @@
 import "./globals.css";
 
-import { Orbitron, Rajdhani } from "next/font/google";
+import { Orbitron } from "next/font/google";
+
+import Navigation from "@/components/landing/Navigation";
 
 const orbitron = Orbitron({ subsets: ["latin"] });
 export const metadata = { title: "Addovedi Tech Fest" };
@@ -12,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={orbitron.className}>{children}</body>
+      <body className={orbitron.className}>
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }

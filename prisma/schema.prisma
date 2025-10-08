@@ -4,6 +4,7 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+
 generator client {
   provider = "prisma-client-js"
   output   = "../node_modules/.prisma/client"
@@ -13,4 +14,45 @@ datasource db {
   provider = "postgresql"
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id          String       @id @default(cuid())
+  name        String
+  email       String    @unique
+  phone       String
+  password    String
+  college     String
+  year        Int
+  department  String
+  events      Event[]   @relation("UserEvents") // direct link
+  createdAt   DateTime  @default(now())
+}
+
+
+model Event {
+  id          String       @id @default(cuid())
+  name        String
+  image_url   String
+  description String
+  entry_fee   Int
+  branch      String
+  schedule    String
+  students    User[] @relation("UserEvents") // back relation
+}
+
+model Sponsor {
+  id          String       @id @default(cuid())
+  name        String
+  logoUrl     String
+  description String
+  tier        SponsorTier
+}
+
+enum SponsorTier {
+  Gold
+  Silver
+  Bronze
+  Platinium
+  Premier
 }

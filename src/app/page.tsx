@@ -9,7 +9,6 @@ import HeroSection from "@/components/landing/HeroSection";
 import InitialLoadingScreen from "@/components/landing/InitialLoadingScreen";
 import RacingCountdownOverlay from "@/components/landing/RacingCountdownOverlay";
 import RacingEffectsWrapper from "@/components/landing/RacingEffectsWrapper";
-import RacingSounds from "@/components/landing/RacingSounds";
 import SponsorsSection from "@/components/landing/SponsorsSection";
 import TechBackground from "@/components/landing/TechBackground";
 
