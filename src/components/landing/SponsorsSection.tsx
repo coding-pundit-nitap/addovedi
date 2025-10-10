@@ -79,7 +79,7 @@ export default function SponsorsSection() {
         </motion.div>
 
         <motion.div
-          className="flex flex-col md:flex-row items-end justify-center gap-8 mb-12"
+          className="flex flex-col md:flex-row items-center md:items-end justify-center gap-8 mb-12"
           variants={containerVariants}
         >
           {sponsorTiers.map((sponsor) => (
@@ -94,7 +94,7 @@ export default function SponsorsSection() {
                   : sponsor.color === "purple"
                     ? "from-slate-700/30 to-slate-500/10 border-purple-400/30 hover:border-purple-400 hover:shadow-purple-400/30"
                     : "from-indigo-700/30 to-indigo-500/10 border-indigo-400/30 hover:border-indigo-400 hover:shadow-indigo-400/30"
-              } backdrop-blur-sm p-8 rounded-xl border-2 transition-all duration-300 hover:shadow-2xl`}
+              } backdrop-blur-sm p-6 md:p-8 rounded-xl border-2 transition-all duration-300 hover:shadow-2xl w-full max-w-sm mx-auto md:mx-0 text-center`}
             >
               <div
                 className={`absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-r ${

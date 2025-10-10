@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Button } from "../ui/button";
 
@@ -48,12 +49,12 @@ export default function Navigation() {
             whileTap={{ scale: 0.95 }}
           >
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A</span>
-              </div>
-              <span className="text-white font-black text-xl tracking-wider hidden sm:block">
-                ADDOVEDI
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Addovedi Tech Fest"
+                width={40}
+                height={40}
+              />
             </Link>
           </motion.div>
 
@@ -145,6 +146,7 @@ export default function Navigation() {
               <Button
                 key={item.name}
                 className="text-slate-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 hover:bg-slate-800/50"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Link href={item.href} className="mr-2">
                   {item.icon} {item.name}

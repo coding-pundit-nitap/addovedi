@@ -105,7 +105,6 @@ export function EngineRevMeter({ intensity }: { intensity: number }) {
 export function RacingHUD({ speed, gear }: { speed: number; gear: number }) {
   return (
     <div className="fixed inset-0 pointer-events-none z-20">
-      {/* Speed display - hidden on mobile, visible on desktop */}
       <div className="absolute top-8 right-8 bg-black/70 backdrop-blur-sm rounded-lg p-4 border border-red-500/30 hidden md:block">
         <div className="text-red-400 text-sm font-bold">SPEED</div>
         <div className="text-white text-3xl font-black">{speed}</div>
@@ -117,15 +116,6 @@ export function RacingHUD({ speed, gear }: { speed: number; gear: number }) {
         <div className="text-yellow-400 text-sm font-bold">GEAR</div>
         <div className="text-white text-4xl font-black text-center">{gear}</div>
       </div>
-
-      {/* Lap time - hidden on mobile, visible on desktop */}
-      {/*
-      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm rounded-lg p-4 border border-green-500/30 hidden md:block">
-        <div className="text-green-400 text-sm font-bold text-center">
-          LAP TIME
-        </div>
-        <div className="text-white text-2xl font-mono">{lapTime}</div>
-      </div> */}
 
       {/* Racing line indicator */}
       <div className="absolute bottom-1/4 left-1/2 transform -translate-x-1/2">

@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useState } from "react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -16,6 +18,15 @@ const itemVariants = {
 };
 
 export default function HeroSection() {
+  const [startCarAnimation, setStartCarAnimation] = useState(false);
+
+  const handleStartEngines = () => {
+    setStartCarAnimation(false);
+    setTimeout(() => {
+      setStartCarAnimation(true);
+    }, 10);
+  };
+
   return (
     <motion.div
       id="hero-section"
@@ -36,13 +47,13 @@ export default function HeroSection() {
       <div className="relative z-50">
         <motion.div variants={itemVariants}>
           <div className="flex justify-center mb-8 space-x-4">
-            <div className="w-4 h-4 bg-blue-500 rounded-full animate-pulse shadow-lg shadow-blue-500/50" />
+            <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse shadow-lg shadow-blue-500/50" />
             <div
-              className="w-4 h-4 bg-purple-500 rounded-full animate-pulse shadow-lg shadow-purple-500/50"
+              className="w-4 h-4 bg-yellow-500 rounded-full animate-pulse shadow-lg shadow-purple-500/50"
               style={{ animationDelay: "0.3s" }}
             />
             <div
-              className="w-4 h-4 bg-indigo-500 rounded-full animate-pulse shadow-lg shadow-indigo-500/50"
+              className="w-4 h-4 bg-green-500 rounded-full animate-pulse shadow-lg shadow-indigo-500/50"
               style={{ animationDelay: "0.6s" }}
             />
           </div>
@@ -53,9 +64,13 @@ export default function HeroSection() {
           variants={itemVariants}
         >
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-wider mb-4 relative z-50 drop-shadow-2xl">
-            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 animate-pulse relative z-50 drop-shadow-lg">
-              ADDOVEDI
-            </span>
+            <Image
+              src="/title.png"
+              alt="Addovedi Tech Fest"
+              width={1000}
+              height={10}
+              className="mx-auto"
+            />
             <br />
             <span className="text-white font-bold text-3xl sm:text-5xl md:text-6xl tracking-widest relative z-50 drop-shadow-lg">
               TECH FEST
@@ -112,7 +127,25 @@ export default function HeroSection() {
             className="group relative overflow-hidden px-12 py-6 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white font-black text-xl uppercase rounded-lg border-4 border-white hover:shadow-2xl hover:shadow-red-500/50 transition-all duration-300 transform hover:scale-105"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleStartEngines}
           >
+            {/* Car Animation Overlay - only over button */}
+            {startCarAnimation && (
+              <motion.div
+                className="absolute inset-0 z-20 pointer-events-none overflow-hidden rounded-lg"
+                initial={{ x: "100%" }}
+                animate={{ x: "-100%" }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                onAnimationComplete={() => setStartCarAnimation(false)}
+              >
+                {/* Car */}
+                <div className="absolute top-1/2 right-0 transform -translate-y-1/2 text-3xl z-30">
+                  🏎️
+                </div>
+                {/* Text clearing effect - solid overlay to hide text */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent from-10% via-gray-900 via-50% to-transparent to-90%" />
+              </motion.div>
+            )}
             <span className="relative z-10 flex items-center justify-center gap-3 font-mono tracking-wider">
               🏎️ START ENGINES 🏎️
             </span>

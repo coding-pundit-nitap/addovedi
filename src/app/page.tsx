@@ -13,7 +13,7 @@ import SponsorsSection from "@/components/landing/SponsorsSection";
 import TechBackground from "@/components/landing/TechBackground";
 
 export default function Home() {
-  const [isInitialLoading, setIsInitialLoading] = useState(true);
+  const [isInitialLoading, setIsInitialLoading] = useState(false);
   const [showCountdown, setShowCountdown] = useState(false);
   const [showRacingEffects, setShowRacingEffects] = useState(true);
 
@@ -39,7 +39,7 @@ export default function Home() {
       )}
 
       {/* Racing Animation Effects */}
-      <RacingEffectsWrapper showRacingEffects={showRacingEffects} />
+      <RacingEffectsWrapper />
 
       {/* 3D Background Scene */}
       <TechBackground />

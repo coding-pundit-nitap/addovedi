@@ -206,36 +206,6 @@ export function FloatingElements() {
   );
 }
 
-// Racing progress bar
-export function RacingProgress() {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      setProgress(scrollPercent);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <div className="fixed top-0 left-0 w-full h-2 bg-black/50 z-40">
-      <div
-        className="h-full bg-gradient-to-r from-red-500 via-yellow-400 to-green-500 transition-all duration-100 ease-out"
-        style={{ width: `${progress}%` }}
-      />
-      <div className="absolute top-0 right-4 text-white text-sm font-bold mt-4">
-        {Math.round(progress)}% 🏁
-      </div>
-    </div>
-  );
-}
-
 // Typing effect for racing text
 export function RacingTypewriter({
   text,

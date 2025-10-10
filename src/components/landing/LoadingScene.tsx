@@ -1,126 +1,9 @@
 "use client";
 
-import { Box, Cylinder, Html, Text, useProgress } from "@react-three/drei";
+import { Html, useProgress } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import * as THREE from "three";
-
-// RC Car Component
-function RCCar({ position }: { position: [number, number, number] }) {
-  const carRef = useRef<THREE.Group>(null!);
-  const wheelRefs = useRef<THREE.Mesh[]>([]);
-
-  useFrame((state, delta) => {
-    if (carRef.current) {
-      // Gentle bobbing motion using state.clock.elapsedTime instead of Date.now()
-      carRef.current.position.y =
-        position[1] + Math.sin(state.clock.elapsedTime * 3) * 0.1;
-      carRef.current.rotation.y += delta * 0.2;
-    }
-
-    // Spinning wheels
-    wheelRefs.current.forEach((wheel) => {
-      if (wheel) {
-        wheel.rotation.x += delta * 8;
-      }
-    });
-  });
-
-  return (
-    <group ref={carRef} position={position}>
-      {/* Car Body */}
-      <Box args={[2, 0.6, 1]} position={[0, 0.3, 0]}>
-        <meshStandardMaterial
-          color="#ff4444"
-          emissive="#ff1111"
-          emissiveIntensity={0.3}
-          metalness={0.8}
-          roughness={0.2}
-        />
-      </Box>
-
-      {/* Car Hood */}
-      <Box args={[0.8, 0.3, 0.9]} position={[0.6, 0.45, 0]}>
-        <meshStandardMaterial
-          color="#00f5ff"
-          emissive="#00f5ff"
-          emissiveIntensity={0.5}
-          metalness={0.9}
-          roughness={0.1}
-        />
-      </Box>
-
-      {/* Wheels */}
-      {[
-        [-0.7, -0.1, 0.6],
-        [-0.7, -0.1, -0.6],
-        [0.7, -0.1, 0.6],
-        [0.7, -0.1, -0.6],
-      ].map((wheelPos, index) => (
-        <Cylinder
-          key={index}
-          args={[0.3, 0.3, 0.2]}
-          position={wheelPos as [number, number, number]}
-          rotation={[Math.PI / 2, 0, 0]}
-        >
-          <meshStandardMaterial
-            color="#111111"
-            emissive="#333333"
-            emissiveIntensity={0.2}
-          />
-        </Cylinder>
-      ))}
-
-      {/* Racing stripes */}
-      <Box args={[1.8, 0.01, 0.2]} position={[0, 0.61, 0]}>
-        <meshStandardMaterial
-          color="#ffffff"
-          emissive="#ffffff"
-          emissiveIntensity={0.3}
-        />
-      </Box>
-    </group>
-  );
-}
-
-// Racing Track Component
-function RacingTrack() {
-  const trackRef = useRef<THREE.Mesh>(null!);
-
-  useFrame((_, delta) => {
-    if (trackRef.current) {
-      trackRef.current.rotation.y += delta * 0.1;
-    }
-  });
-
-  return (
-    <group>
-      {/* Main track ring */}
-      <mesh
-        ref={trackRef}
-        position={[0, -2, 0]}
-        rotation={[-Math.PI / 2, 0, 0]}
-      >
-        <ringGeometry args={[4, 5, 32]} />
-        <meshStandardMaterial
-          color="#333333"
-          emissive="#111111"
-          emissiveIntensity={0.1}
-        />
-      </mesh>
-
-      {/* Track lines */}
-      <mesh position={[0, -1.98, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[4.4, 4.6, 32]} />
-        <meshStandardMaterial
-          color="#ffff00"
-          emissive="#ffff00"
-          emissiveIntensity={0.5}
-        />
-      </mesh>
-    </group>
-  );
-}
 
 // Particle System for Racing Effects
 function RacingParticles() {
@@ -180,14 +63,6 @@ export default function LoadingScene() {
         castShadow
       />
 
-      {/* Racing Track */}
-      <RacingTrack />
-
-      {/* RC Cars */}
-      <RCCar position={[0, 1, 0]} />
-      <RCCar position={[3, 0.5, 2]} />
-      <RCCar position={[-3, 0.8, -2]} />
-
       {/* Racing Particles */}
       <RacingParticles />
 
@@ -213,11 +88,6 @@ export default function LoadingScene() {
           </div>
 
           {/* Progress Text */}
-          <div className="text-center">
-            <h2 className="text-4xl font-bold text-white mb-2">
-              {progress.toFixed(0)}%
-            </h2>
-          </div>
 
           {/* Racing Elements */}
           <div className="flex justify-center mt-6 space-x-4">

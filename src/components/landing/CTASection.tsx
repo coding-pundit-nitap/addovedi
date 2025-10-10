@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const racingStats = [
   {
@@ -55,6 +56,14 @@ const itemVariants = {
 };
 
 export default function CTASection() {
+  const [startCarAnimation, setStartCarAnimation] = useState(false);
+
+  const handleStartEngines = () => {
+    setStartCarAnimation(false); // Reset first
+    setTimeout(() => {
+      setStartCarAnimation(true);
+    }, 10); // Small delay to ensure re-render
+  };
   return (
     <motion.div
       id="cta-section"
@@ -98,11 +107,29 @@ export default function CTASection() {
 
         <motion.div className="space-y-6" variants={itemVariants}>
           <motion.button
-            className="group relative overflow-hidden text-2xl md:text-3xl px-12 py-6 md:px-16 md:py-8 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white font-black uppercase rounded-lg border-4 border-white hover:shadow-2xl hover:shadow-red-500/50 transition-all duration-500 transform hover:scale-110"
-            whileHover={{ scale: 1.1 }}
+            className="group relative overflow-hidden px-12 py-6 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white font-black text-xl uppercase rounded-lg border-4 border-white hover:shadow-2xl hover:shadow-red-500/50 transition-all duration-300 transform hover:scale-105"
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleStartEngines}
           >
-            <span className="relative z-10 flex items-center justify-center gap-4 font-mono tracking-wider">
+            {/* Car Animation Overlay - only over button */}
+            {startCarAnimation && (
+              <motion.div
+                className="absolute inset-0 z-20 pointer-events-none overflow-hidden rounded-lg"
+                initial={{ x: "100%" }}
+                animate={{ x: "-100%" }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                onAnimationComplete={() => setStartCarAnimation(false)}
+              >
+                {/* Car */}
+                <div className="absolute top-1/2 right-0 transform -translate-y-1/2 text-3xl z-30">
+                  🏎️
+                </div>
+                {/* Text clearing effect - solid overlay to hide text */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent from-10% via-gray-900 via-50% to-transparent to-90%" />
+              </motion.div>
+            )}
+            <span className="relative z-10 flex items-center justify-center gap-3 font-mono tracking-wider">
               🏎️ JOIN THE RACE 🏎️
             </span>
           </motion.button>
