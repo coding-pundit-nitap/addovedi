@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { Button } from "../ui/button";
+import { Button } from "./ui/button";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,6 +24,7 @@ export default function Navigation() {
     { name: "Home", href: "/", icon: "🏠" },
     { name: "Events", href: "/events", icon: "🏎️" },
     { name: "Sponsors", href: "/sponsor", icon: "🏆" },
+    { name: "Gallery", href: "/gallery", icon: "📸" },
     { name: "Merchandise", href: "/merchandise", icon: "👕" },
   ];
 

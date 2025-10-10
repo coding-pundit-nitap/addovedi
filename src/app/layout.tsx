@@ -2,7 +2,7 @@ import "./globals.css";
 
 import { Orbitron } from "next/font/google";
 
-import Navigation from "@/components/landing/Navigation";
+import Navigation from "@/components/Navigation";
 import ViewportVhSetter from "@/components/viewport-setter";
 
 const orbitron = Orbitron({ subsets: ["latin"] });
