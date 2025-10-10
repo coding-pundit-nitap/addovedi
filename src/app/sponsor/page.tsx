@@ -1,6 +1,8 @@
 "use client";
+import { motion } from "framer-motion";
 import { Orbitron, Rajdhani } from "next/font/google";
 import React from "react";
+
 const rajdhani1 = Rajdhani({
   subsets: ["latin"],
   weight: ["400"],
@@ -46,7 +48,13 @@ export default function SponsorsPage() {
   return (
     <div className="min-h-screen px-6 py-16 bg-[#0c0d11] text-[#fcfcfc] font-rajdhani">
       {/* Hero Section */}
-      <div className="text-center max-w-3xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ amount: 0.2 }}
+        className="text-center max-w-3xl mx-auto"
+      >
         <h1
           className={`${orbitron.className} font-orbitron text-4xl font-bold bg-gradient-to-r from-[#491f6d] via-[#c937d6] to-[#4facfe] bg-clip-text text-transparent animate-gradient-x`}
         >
@@ -65,8 +73,8 @@ export default function SponsorsPage() {
           <Stat2 number="5OOO+" label="Tech Enthusiasts" />
           <Stat3 number="₹1OL+" label="Prize Pool" />
         </div>
-      </div>
-      <p className="text-[#1c28ae]"></p>
+      </motion.div>
+
       {/* Sponsors Sections */}
       <SponsorSection
         title="Platinum Partners"
@@ -86,7 +94,14 @@ export default function SponsorsPage() {
       />
 
       {/* Call To Action */}
-      <div className="mt-20 max-w-6xl mx-auto rounded-2xl p-10 text-center bg-[#131315] shadow-[0_0_20px_#0ae3e7]">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ amount: 0.2 }}
+        whileHover={{ y: -8, opacity: 0.95, scale: 1.02 }}
+        className="mt-20 max-w-6xl mx-auto rounded-2xl p-10 text-center bg-[#131315] shadow-[0_0_20px_#0ae3e7]"
+      >
         <h2 className="font-orbitron text-2xl bg-gradient-to-r from-[#491f6d] via-[#c937d6] to-[#4facfe] bg-clip-text text-transparent animate-gradient-x`">
           Become a Sponsor
         </h2>
@@ -95,12 +110,14 @@ export default function SponsorsPage() {
           Partner with us to reach thousands of brilliant minds and showcase
           your brand at the premier tech event.
         </p>
-        <div className="flex flex-col">
+        <motion.div
+          whileHover={{ y: -5, opacity: 0.95, scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 200, damping: 15 }}
+          className="flex flex-col"
+        >
           <Button className="sm:max-w-96 sm:ml-28 md:ml-85 mt-6 h-13 bg-[#602ede] hover:bg-[#9430e1] text-black font-orbitron px-6 py-3 rounded-md text-lg bg-gradient-to-r from-[#05a3e6] via-[#c937d6] to-[#0318fa]">
             Explore Partnership Opportunities
           </Button>
-          {/* <p className="mt-6 text-sm text-[#9a9a9c]">Ready to partner with us?</p>
-        <p className="text-[#9430e1] font-medium">addovedi@nitap.ac.in</p> */}
           <div className="mt-8 p-4 rounded-lg bg-[#1a1a1d] inline-block ">
             <p className="text-sm text-[#9a9a9c]">Ready to partner with us?</p>
             <p className="text-[#09e6ee] font-medium">addovedi@nitap.ac.in</p>
@@ -108,35 +125,68 @@ export default function SponsorsPage() {
               Our partnership Team will respond within 24 hours
             </p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
 
-// Stats Component
+// Stats Component with motion
 function Stat1({ number, label }: { number: string; label: string }) {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -5, opacity: 0.9, scale: 1.05 }}
+      transition={{
+        duration: 0.6,
+        type: "spring",
+        stiffness: 200,
+        damping: 15,
+      }}
+      viewport={{ amount: 0.2 }}
+    >
       <p className="font-orbitron text-3xl text-[#0bf3f3]">{number}</p>
       <p className="text-[#9a9a9c]">{label}</p>
-    </div>
+    </motion.div>
   );
 }
 function Stat2({ number, label }: { number: string; label: string }) {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -5, opacity: 0.9, scale: 1.05 }}
+      transition={{
+        duration: 0.6,
+        type: "spring",
+        stiffness: 200,
+        damping: 15,
+      }}
+      viewport={{ amount: 0.2 }}
+    >
       <p className="font-orbitron text-3xl text-[#cf1cb1]">{number}</p>
       <p className="text-[#9a9a9c]">{label}</p>
-    </div>
+    </motion.div>
   );
 }
 function Stat3({ number, label }: { number: string; label: string }) {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -5, opacity: 0.9, scale: 1.05 }}
+      transition={{
+        duration: 0.6,
+        type: "spring",
+        stiffness: 200,
+        damping: 15,
+      }}
+      viewport={{ amount: 0.2 }}
+    >
       <p className="font-orbitron text-3xl text-[#102edb]">{number}</p>
       <p className="text-[#9a9a9c]">{label}</p>
-    </div>
+    </motion.div>
   );
 }
 
@@ -151,40 +201,47 @@ function SponsorSection({
   accentColor: string;
 }) {
   return (
-    <section className="mt-16">
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ amount: 0.2 }}
+      className="mt-16"
+    >
       <h2 className="font-orbitron text-2xl text-center bg-gradient-to-r from-[#9430e1] via-[#c937d6] to-[#4facfe] bg-clip-text text-transparent animate-gradient-x mb-6">
         {title}
       </h2>
       <div className="mx-auto mt-4 mb-7 h-[2px] w-24 bg-gradient-to-r from-[#03edf9] via-[#c937d6] to-[#5104ea]" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
         {list.map((s, i) => (
-          <Card
+          <motion.div
             key={i}
-            className={`border ${accentColor} bg-[#0c0d11] text-center hover:shadow-lg hover:shadow-[#491f6d] transition`}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            whileHover={{ y: -8, opacity: 0.9, scale: 1.03 }}
+            transition={{
+              duration: 0.6,
+              delay: i * 0.2,
+              type: "spring",
+              stiffness: 200,
+              damping: 12,
+            }}
+            viewport={{ amount: 0.2 }}
           >
-            <CardHeader>
-              {/* <CardTitle className="font-orbitron text-xl text-[#0bf3f3]">{s.name}</CardTitle> */}
-              <div className="w-20 h-20 bg-white mx-auto rounded-md mb-4" />
-              <p className="text-white ">{s.name}</p>
-            </CardHeader>
-            <CardContent>
-              <p className={`${s.color}`}>{s.tier}</p>
-            </CardContent>
-          </Card>
+            <Card
+              className={`border ${accentColor} bg-[#0c0d11] text-center hover:shadow-lg hover:shadow-[#491f6d] transition`}
+            >
+              <CardHeader>
+                <div className="w-20 h-20 bg-white mx-auto rounded-md mb-4" />
+                <p className="text-white ">{s.name}</p>
+              </CardHeader>
+              <CardContent>
+                <p className={`${s.color}`}>{s.tier}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
-
-// function page() {
-//   return (
-//     <>
-//     <div>SPONSOR PAGE</div>
-//     <div className={`${rajdhani.className} text-white` }>Our Proude Sponser</div>
-//     <div className='border bg-red-500'>hy</div>
-//       </>
-//   )
-// }
-
-// export default page
