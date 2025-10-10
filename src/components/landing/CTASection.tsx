@@ -129,7 +129,7 @@ export default function CTASection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent from-10% via-gray-900 via-50% to-transparent to-90%" />
               </motion.div>
             )}
-            <span className="relative z-10 flex items-center justify-center gap-3 font-mono tracking-wider">
+            <span className="z-10 flex items-center justify-center gap-3 font-mono ">
               🏎️ JOIN THE RACE 🏎️
             </span>
           </motion.button>

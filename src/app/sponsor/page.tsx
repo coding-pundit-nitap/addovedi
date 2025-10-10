@@ -46,29 +46,31 @@ const sponsors = {
 
 export default function SponsorsPage() {
   return (
-    <div className="min-h-screen px-6 py-16 bg-[#0c0d11] text-[#fcfcfc] font-rajdhani">
+    <div className="min-h-screen px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 bg-[#0c0d11] text-[#fcfcfc] font-rajdhani">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ amount: 0.2 }}
-        className="text-center max-w-3xl mx-auto"
+        className="text-center mt-16 sm:mt-20 max-w-5xl mx-auto"
       >
         <h1
-          className={`${orbitron.className} font-orbitron text-4xl font-bold bg-gradient-to-r from-[#491f6d] via-[#c937d6] to-[#4facfe] bg-clip-text text-transparent animate-gradient-x`}
+          className={`${orbitron.className} font-orbitron text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#491f6d] via-[#c937d6] to-[#4facfe] bg-clip-text text-transparent animate-gradient-x`}
         >
           Our Proud Sponsors
         </h1>
-        <p className={`${rajdhani2.className} mt-4 text-lg text-[#9a9a9c]`}>
+        <p
+          className={`${rajdhani2.className} mt-4 text-base sm:text-lg lg:text-xl text-[#9a9a9c] px-4`}
+        >
           We extend our heartfelt gratitude to these visionary organizations who
           make Addovedi Tech Fest possible. Their support drives innovation and
           empowers the next generation of tech leaders.
         </p>
 
-        <div className="mx-auto mt-4 h-[2px] w-24 bg-gradient-to-r from-[#4facfe] via-[#c937d6] to-[#5104ea]" />
+        <div className="mx-auto mt-4 h-[2px] w-16 sm:w-24 bg-gradient-to-r from-[#4facfe] via-[#c937d6] to-[#5104ea]" />
 
-        <div className="flex justify-center gap-12 mt-8">
+        <div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8 lg:gap-12 mt-8">
           <Stat1 number="5O+" label="Innovative Partners" />
           <Stat2 number="5OOO+" label="Tech Enthusiasts" />
           <Stat3 number="₹1OL+" label="Prize Pool" />
@@ -100,12 +102,12 @@ export default function SponsorsPage() {
         transition={{ duration: 0.8 }}
         viewport={{ amount: 0.2 }}
         whileHover={{ y: -8, opacity: 0.95, scale: 1.02 }}
-        className="mt-20 max-w-6xl mx-auto rounded-2xl p-10 text-center bg-[#131315] shadow-[0_0_20px_#0ae3e7]"
+        className="mt-16 sm:mt-20 max-w-4xl mx-auto rounded-2xl p-6 sm:p-8 lg:p-10 text-center bg-[#131315] shadow-[0_0_20px_#0ae3e7]"
       >
-        <h2 className="font-orbitron text-2xl bg-gradient-to-r from-[#491f6d] via-[#c937d6] to-[#4facfe] bg-clip-text text-transparent animate-gradient-x`">
+        <h2 className="font-orbitron text-xl sm:text-2xl lg:text-3xl bg-gradient-to-r from-[#491f6d] via-[#c937d6] to-[#4facfe] bg-clip-text text-transparent animate-gradient-x">
           Become a Sponsor
         </h2>
-        <p className="mt-4 text-[#9a9a9c]">
+        <p className="mt-4 text-sm sm:text-base lg:text-lg text-[#9a9a9c] px-2">
           Join these incredible companies in shaping the future of technology.
           Partner with us to reach thousands of brilliant minds and showcase
           your brand at the premier tech event.
@@ -113,15 +115,19 @@ export default function SponsorsPage() {
         <motion.div
           whileHover={{ y: -5, opacity: 0.95, scale: 1.05 }}
           transition={{ type: "spring", stiffness: 200, damping: 15 }}
-          className="flex flex-col"
+          className="flex flex-col items-center"
         >
-          <Button className="sm:max-w-96 sm:ml-28 md:ml-85 mt-6 h-13 bg-[#602ede] hover:bg-[#9430e1] text-black font-orbitron px-6 py-3 rounded-md text-lg bg-gradient-to-r from-[#05a3e6] via-[#c937d6] to-[#0318fa]">
+          <Button className="w-full sm:w-auto max-w-sm mt-6 h-12 sm:h-13 bg-[#602ede] hover:bg-[#9430e1] text-white font-orbitron px-4 sm:px-6 py-3 rounded-md text-base sm:text-lg bg-gradient-to-r from-[#05a3e6] via-[#c937d6] to-[#0318fa]">
             Explore Partnership Opportunities
           </Button>
-          <div className="mt-8 p-4 rounded-lg bg-[#1a1a1d] inline-block ">
-            <p className="text-sm text-[#9a9a9c]">Ready to partner with us?</p>
-            <p className="text-[#09e6ee] font-medium">addovedi@nitap.ac.in</p>
-            <p className="text-[#9a9a9c] font-medium">
+          <div className="mt-6 sm:mt-8 p-4 rounded-lg bg-[#1a1a1d] w-full max-w-sm">
+            <p className="text-xs sm:text-sm text-[#9a9a9c]">
+              Ready to partner with us?
+            </p>
+            <p className="text-sm sm:text-base text-[#09e6ee] font-medium break-all">
+              addovedi@nitap.ac.in
+            </p>
+            <p className="text-xs sm:text-sm text-[#9a9a9c] font-medium">
               Our partnership Team will respond within 24 hours
             </p>
           </div>
@@ -145,9 +151,12 @@ function Stat1({ number, label }: { number: string; label: string }) {
         damping: 15,
       }}
       viewport={{ amount: 0.2 }}
+      className="text-center"
     >
-      <p className="font-orbitron text-3xl text-[#0bf3f3]">{number}</p>
-      <p className="text-[#9a9a9c]">{label}</p>
+      <p className="font-orbitron text-2xl sm:text-3xl lg:text-4xl text-[#0bf3f3]">
+        {number}
+      </p>
+      <p className="text-sm sm:text-base text-[#9a9a9c] mt-1">{label}</p>
     </motion.div>
   );
 }
@@ -164,9 +173,12 @@ function Stat2({ number, label }: { number: string; label: string }) {
         damping: 15,
       }}
       viewport={{ amount: 0.2 }}
+      className="text-center"
     >
-      <p className="font-orbitron text-3xl text-[#cf1cb1]">{number}</p>
-      <p className="text-[#9a9a9c]">{label}</p>
+      <p className="font-orbitron text-2xl sm:text-3xl lg:text-4xl text-[#cf1cb1]">
+        {number}
+      </p>
+      <p className="text-sm sm:text-base text-[#9a9a9c] mt-1">{label}</p>
     </motion.div>
   );
 }
@@ -183,9 +195,12 @@ function Stat3({ number, label }: { number: string; label: string }) {
         damping: 15,
       }}
       viewport={{ amount: 0.2 }}
+      className="text-center"
     >
-      <p className="font-orbitron text-3xl text-[#102edb]">{number}</p>
-      <p className="text-[#9a9a9c]">{label}</p>
+      <p className="font-orbitron text-2xl sm:text-3xl lg:text-4xl text-[#102edb]">
+        {number}
+      </p>
+      <p className="text-sm sm:text-base text-[#9a9a9c] mt-1">{label}</p>
     </motion.div>
   );
 }
@@ -206,13 +221,13 @@ function SponsorSection({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ amount: 0.2 }}
-      className="mt-16"
+      className="mt-12 sm:mt-16 px-4"
     >
-      <h2 className="font-orbitron text-2xl text-center bg-gradient-to-r from-[#9430e1] via-[#c937d6] to-[#4facfe] bg-clip-text text-transparent animate-gradient-x mb-6">
+      <h2 className="font-orbitron text-xl sm:text-2xl lg:text-3xl text-center bg-gradient-to-r from-[#9430e1] via-[#c937d6] to-[#4facfe] bg-clip-text text-transparent animate-gradient-x mb-4 sm:mb-6">
         {title}
       </h2>
-      <div className="mx-auto mt-4 mb-7 h-[2px] w-24 bg-gradient-to-r from-[#03edf9] via-[#c937d6] to-[#5104ea]" />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div className="mx-auto mt-3 sm:mt-4 mb-6 sm:mb-7 h-[2px] w-16 sm:w-24 bg-gradient-to-r from-[#03edf9] via-[#c937d6] to-[#5104ea]" />
+      <div className="flex justify-center flex-wrap gap-4 sm:gap-6  max-w-7xl mx-auto">
         {list.map((s, i) => (
           <motion.div
             key={i}
@@ -221,7 +236,7 @@ function SponsorSection({
             whileHover={{ y: -8, opacity: 0.9, scale: 1.03 }}
             transition={{
               duration: 0.6,
-              delay: i * 0.2,
+              delay: i * 0.1,
               type: "spring",
               stiffness: 200,
               damping: 12,
@@ -229,14 +244,16 @@ function SponsorSection({
             viewport={{ amount: 0.2 }}
           >
             <Card
-              className={`border ${accentColor} bg-[#0c0d11] text-center hover:shadow-lg hover:shadow-[#491f6d] transition`}
+              className={`border ${accentColor} bg-[#0c0d11] text-center hover:shadow-lg hover:shadow-[#491f6d] md:w-md transition h-full`}
             >
-              <CardHeader>
-                <div className="w-20 h-20 bg-white mx-auto rounded-md mb-4" />
-                <p className="text-white ">{s.name}</p>
+              <CardHeader className="pb-3">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white mx-auto rounded-md mb-3 sm:mb-4" />
+                <p className="text-white text-sm sm:text-base font-medium">
+                  {s.name}
+                </p>
               </CardHeader>
-              <CardContent>
-                <p className={`${s.color}`}>{s.tier}</p>
+              <CardContent className="pt-0">
+                <p className={`${s.color} text-xs sm:text-sm`}>{s.tier}</p>
               </CardContent>
             </Card>
           </motion.div>

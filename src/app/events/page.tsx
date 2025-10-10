@@ -132,7 +132,7 @@ export default function EventsPage() {
   return (
     <main
       ref={containerRef}
-      className={`${rajdhani.className} relative min-h-screen w-full bg-[#010308] text-[#F5F7FA]`}
+      className={`${rajdhani.className} relative min-h-screen w-full overflow-x-hidden bg-[#010308] text-[#F5F7FA]`}
     >
       {/* RC-themed particles background */}
       <RCParticles
@@ -143,13 +143,13 @@ export default function EventsPage() {
 
       <div className="relative z-10">
         {/* Header */}
-        <section className="mx-auto max-w-5xl px-6 pt-20 pb-10 text-center">
+        <section className="mx-auto max-w-5xl px-4 sm:px-6 pt-16 sm:pt-20 pb-6 sm:pb-10 text-center">
           <h1
-            className={`${orbitron.className} text-3xl sm:text-5xl font-bold tracking-wide text-[#66FFFF]`}
+            className={`${orbitron.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-[#66FFFF]`}
           >
             EVENT TIMELINE
           </h1>
-          <p className="mt-3 text-[#708399]">
+          <p className="mt-2 sm:mt-3 text-sm sm:text-base text-[#708399]">
             Throttle up your curiosity — the race for innovation begins.
           </p>
         </section>
@@ -157,10 +157,10 @@ export default function EventsPage() {
         {/* Timeline container */}
         <section
           key={activeKey}
-          className="relative mx-auto max-w-5xl px-6 pb-24"
+          className="relative mx-auto max-w-5xl px-4 sm:px-6 pb-16 sm:pb-24"
         >
           {/* Day switcher */}
-          <div className="relative z-10 mx-auto mb-10 max-w-md">
+          <div className="relative z-10 mx-auto mb-6 sm:mb-10 max-w-xs sm:max-w-md">
             <div className="relative rounded-full border border-[#050A18] bg-[#030610] p-1 shadow-[0_0_20px_#0a0a2a]">
               <span
                 className="absolute left-1 top-1 bottom-1 w-[calc(50%-8px)] rounded-full bg-gradient-to-r from-[#66FFFF] to-[#B366FF] transition-transform duration-300 ease-out"
@@ -169,9 +169,9 @@ export default function EventsPage() {
                     activeKey === "nov6" ? "translateX(0)" : "translateX(100%)",
                 }}
               />
-              <div className="relative z-10 grid grid-cols-2 text-sm sm:text-base font-semibold">
+              <div className="relative z-10 grid grid-cols-2 text-xs sm:text-sm md:text-base font-semibold">
                 <button
-                  className={`py-2 rounded-full ${
+                  className={`py-2 px-2 rounded-full ${
                     activeKey === "nov6" ? "text-[#030610]" : "text-[#94a3b8]"
                   }`}
                   onClick={() => setActiveKey("nov6")}
@@ -179,7 +179,7 @@ export default function EventsPage() {
                   6 Nov
                 </button>
                 <button
-                  className={`py-2 rounded-full ${
+                  className={`py-2 px-2 rounded-full ${
                     activeKey === "nov7" ? "text-[#030610]" : "text-[#94a3b8]"
                   }`}
                   onClick={() => setActiveKey("nov7")}
@@ -193,16 +193,16 @@ export default function EventsPage() {
           {/* Active day content (wrapper for day heading + list) */}
           <div ref={timelineRef} className="relative">
             {/* Day marker */}
-            <div className="relative z-10 mb-10 flex items-center justify-center gap-3">
-              <div className="h-3 w-3 rounded-full bg-[#66FFFF] shadow-[0_0_20px_2px_#66FFFF]" />
+            <div className="relative z-10 mb-6 sm:mb-10 flex items-center justify-center gap-2 sm:gap-3">
+              <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-[#66FFFF] shadow-[0_0_20px_2px_#66FFFF]" />
               <div
-                className={`${orbitron.className} text-xl sm:text-2xl text-[#B366FF]`}
+                className={`${orbitron.className} text-lg sm:text-xl md:text-2xl text-[#B366FF]`}
               >
                 {activeDay.dateLong}
               </div>
             </div>
 
-            <div ref={listRef} className="relative space-y-12">
+            <div ref={listRef} className="relative space-y-8 sm:space-y-12">
               <div className="pointer-events-none absolute left-1/2 top-0 h-full -translate-x-1/2">
                 <div className="h-full w-[2px] bg-[#050A18]/60"></div>
                 <div className="timeline-progress absolute left-1/2 top-0 h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-[#66FFFF] via-[#B366FF] to-[#6699FF]" />
@@ -226,42 +226,46 @@ export default function EventsPage() {
                         side === "left" ? "md:order-1" : "md:order-2"
                       }`}
                     >
-                      <CardHeader className="flex flex-row items-start justify-between">
-                        <div>
+                      <CardHeader className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-2">
+                        <div className="flex-1 min-w-0">
                           <div className="text-xs uppercase tracking-widest text-[#66FFFF]">
                             {ev.tag}
                           </div>
                           <CardTitle
-                            className={`${orbitron.className} mt-1 text-lg text-[#F5F7FA]`}
+                            className={`${orbitron.className} mt-1 text-base sm:text-lg text-[#F5F7FA]`}
                           >
                             {ev.title}
                           </CardTitle>
-                          <CardDescription className="mt-2 text-[#708399]">
+                          <CardDescription className="mt-2 text-sm sm:text-base text-[#708399]">
                             {ev.description}
                           </CardDescription>
                         </div>
-                        <div className="flex items-center gap-2 rounded-md border border-[#050A18] bg-[#030610] px-2 py-1 text-xs text-[#66FFFF]">
-                          <Clock className="size-3.5" />
-                          {ev.time}
+                        <div className="flex items-center gap-1.5 sm:gap-2 rounded-md border border-[#050A18] bg-[#030610] px-2 py-1 text-xs text-[#66FFFF] shrink-0">
+                          <Clock className="size-3 sm:size-3.5" />
+                          <span className="text-xs">{ev.time}</span>
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <div className="flex flex-wrap items-center gap-4 text-sm text-[#94a3b8]">
-                          <span className="inline-flex items-center gap-2">
-                            <CalendarDays className="size-4 text-[#B366FF]" />{" "}
-                            {activeDay.dayLabel}
+                        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#94a3b8]">
+                          <span className="inline-flex items-center gap-1.5 sm:gap-2">
+                            <CalendarDays className="size-3 sm:size-4 text-[#B366FF]" />{" "}
+                            <span className="truncate">
+                              {activeDay.dayLabel}
+                            </span>
                           </span>
-                          <span className="inline-flex items-center gap-2">
-                            <MapPin className="size-4 text-[#6699FF]" />{" "}
-                            {ev.location ?? "Main Arena"}
+                          <span className="inline-flex items-center gap-1.5 sm:gap-2">
+                            <MapPin className="size-3 sm:size-4 text-[#6699FF]" />{" "}
+                            <span className="truncate">
+                              {ev.location ?? "Main Arena"}
+                            </span>
                           </span>
                         </div>
                       </CardContent>
 
-                      <CardFooter className="flex items-center justify-between">
-                        <div className="h-2 w-2 rounded-full bg-[#FF66FF] shadow-[0_0_14px_2px_#FF66FF]" />
+                      <CardFooter className="flex items-center justify-between gap-3">
+                        <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#FF66FF] shadow-[0_0_14px_2px_#FF66FF]" />
 
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
                           <Button
                             variant="outline"
                             size="sm"
@@ -270,14 +274,14 @@ export default function EventsPage() {
                               setSelectedItem(ev);
                               setDetailsOpen(true);
                             }}
-                            className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
+                            className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white text-xs sm:text-sm px-2 sm:px-3"
                           >
                             View More
                           </Button>
                           <Button
                             asChild
                             size="sm"
-                            className="racing-button bg-[#B366FF] hover:bg-[#B366FF]/90 text-white"
+                            className="racing-button bg-[#B366FF] hover:bg-[#B366FF]/90 text-white text-xs sm:text-sm px-2 sm:px-3"
                           >
                             <Link href="/register">Register Now</Link>
                           </Button>
@@ -291,25 +295,27 @@ export default function EventsPage() {
           </div>
 
           {/* CTA at bottom */}
-          <div className="mt-20 text-center">
-            <h3 className={`${orbitron.className} text-2xl text-[#66FFFF]`}>
+          <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
+            <h3
+              className={`${orbitron.className} text-lg sm:text-xl md:text-2xl text-[#66FFFF]`}
+            >
               Ready to Race?
             </h3>
-            <p className="mx-auto mt-2 max-w-xl text-sm text-[#708399]">
+            <p className="mx-auto mt-2 max-w-xl text-xs sm:text-sm md:text-base text-[#708399] px-4">
               Gear up for the ultimate RC showdown — register now and own the
               track.
             </p>
-            <div className="mt-4 inline-flex gap-3">
+            <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 px-4">
               <Button
                 asChild
-                className="bg-[#66FFFF] text-[#030610] hover:bg-[#66FFFF]/90"
+                className="bg-[#66FFFF] text-[#030610] hover:bg-[#66FFFF]/90 w-full sm:w-auto text-sm sm:text-base"
               >
                 <Link href="/register">Register for All Events</Link>
               </Button>
               <Button
                 variant="outline"
                 asChild
-                className="border-[#050A18] bg-[#030610] text-[#F5F7FA] hover:bg-[#050A18]"
+                className="border-[#050A18] bg-[#030610] text-[#F5F7FA] hover:bg-[#050A18] w-full sm:w-auto text-sm sm:text-base"
               >
                 <Link href="/">Back to Home</Link>
               </Button>

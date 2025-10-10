@@ -71,7 +71,6 @@ export default function HeroSection() {
               height={10}
               className="mx-auto"
             />
-            <br />
             <span className="text-white font-bold text-3xl sm:text-5xl md:text-6xl tracking-widest relative z-50 drop-shadow-lg">
               TECH FEST
             </span>
@@ -146,7 +145,7 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent from-10% via-gray-900 via-50% to-transparent to-90%" />
               </motion.div>
             )}
-            <span className="relative z-10 flex items-center justify-center gap-3 font-mono tracking-wider">
+            <span className="relative z-10 flex items-center justify-center gap-3 font-mono ">
               🏎️ START ENGINES 🏎️
             </span>
           </motion.button>
