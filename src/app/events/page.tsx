@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CalendarDays, Clock, MapPin } from "lucide-react";
 import { Orbitron, Rajdhani } from "next/font/google";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 import RCParticles from "@/components/events/rcParticles";
@@ -41,6 +42,7 @@ export default function EventsPage() {
   const [selectedItem, setSelectedItem] = useState<TimelineItem | null>(null);
   const selectedDetails = selectedKey ? eventDetails[selectedKey] : undefined;
   const selectedTitle = selectedKey ? selectedKey.split(":")[1] : "";
+  const router = useRouter();
 
   useEffect(() => {
     const html = document.documentElement;
@@ -213,9 +215,14 @@ export default function EventsPage() {
                   <div
                     key={`${activeKey}-${i}`}
                     data-side={side}
-                    className={`timeline-item relative grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 ${
+                    className={`timeline-item cursor-pointer relative grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 ${
                       side === "left" ? "md:[&>*:first-child]:order-2" : ""
                     }`}
+                    onClick={() => {
+                      setSelectedKey(`${activeKey}:${ev.title}`);
+                      setSelectedItem(ev);
+                      setDetailsOpen(true);
+                    }}
                   >
                     <div className="hidden md:block" />
 

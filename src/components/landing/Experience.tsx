@@ -76,7 +76,7 @@ function RacingParticles() {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial color="#00f5ff" size={0.15} transparent opacity={0.7} />
+      <pointsMaterial color="#00f5ff" size={0.15} transparent opacity={0.4} />
     </points>
   );
 }
@@ -149,7 +149,7 @@ const ScrollAnimator = () => {
       <Stars
         radius={120}
         depth={80}
-        count={8000}
+        count={4000}
         factor={6}
         saturation={0}
         fade

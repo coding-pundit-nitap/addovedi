@@ -16,11 +16,11 @@ const images = [
 export default function EventGalleryPage() {
   return (
     <div
-      className="min-h-screen  flex flex-col items-center justify-start p-6 md:p-10 bg-[#0A0A0F] text-[#FAFAFA]
+      className="min-h-screen flex flex-col items-center justify-start p-6 md:p-10 bg-[#0A0A0F] text-[#FAFAFA]
       bg-[radial-gradient(at_0%_0%,hsla(263,70%,50%,0.15)_0px,transparent_50%),radial-gradient(at_100%_100%,hsla(189,94%,43%,0.15)_0px,transparent_50%)]"
     >
       {/* Header */}
-      <header className="text-center mb-10">
+      <header className="text-center my-10">
         <h1
           className="font-orbitron text-4xl md:text-6xl font-bold tracking-wider bg-gradient-to-r from-[#7C3AED] to-[#04D9FF] bg-clip-text text-transparent relative inline-block pb-2 mb-3
           after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-full after:h-[3px] after:rounded-sm after:bg-gradient-to-r after:from-[#7C3AED] after:to-[#04D9FF]"

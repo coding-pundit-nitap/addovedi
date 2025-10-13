@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const containerVariants = {
@@ -19,12 +20,23 @@ const itemVariants = {
 
 export default function HeroSection() {
   const [startCarAnimation, setStartCarAnimation] = useState(false);
+  const router = useRouter();
 
-  const handleStartEngines = () => {
+  const custom = async () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("Data recieved");
+      }, 1400);
+    });
+  };
+
+  const handleStartEngines = async () => {
     setStartCarAnimation(false);
     setTimeout(() => {
       setStartCarAnimation(true);
     }, 10);
+    await custom();
+    router.push("/events");
   };
 
   return (
@@ -69,7 +81,7 @@ export default function HeroSection() {
               alt="Addovedi Tech Fest"
               width={1000}
               height={10}
-              className="mx-auto"
+              className="mx-auto md:w-3/4"
             />
             <span className="text-white font-bold text-3xl sm:text-5xl md:text-6xl tracking-widest relative z-50 drop-shadow-lg">
               TECH FEST
@@ -138,15 +150,14 @@ export default function HeroSection() {
                 onAnimationComplete={() => setStartCarAnimation(false)}
               >
                 {/* Car */}
-                <div className="absolute top-1/2 right-0 transform -translate-y-1/2 text-3xl z-30">
+                <div className="absolute top-1/2 right-0 transform -translate-y-1/2 text-6xl z-30">
                   🏎️
                 </div>
                 {/* Text clearing effect - solid overlay to hide text */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent from-10% via-gray-900 via-50% to-transparent to-90%" />
               </motion.div>
             )}
             <span className="relative z-10 flex items-center justify-center gap-3 font-mono ">
-              🏎️ START ENGINES 🏎️
+              START ENGINES
             </span>
           </motion.button>
         </motion.div>

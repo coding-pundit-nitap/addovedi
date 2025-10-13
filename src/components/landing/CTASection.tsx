@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const racingStats = [
@@ -57,12 +58,23 @@ const itemVariants = {
 
 export default function CTASection() {
   const [startCarAnimation, setStartCarAnimation] = useState(false);
+  const router = useRouter();
 
-  const handleStartEngines = () => {
-    setStartCarAnimation(false); // Reset first
+  const custom = async () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("Data recieved");
+      }, 1400);
+    });
+  };
+
+  const handleStartEngines = async () => {
+    setStartCarAnimation(false);
     setTimeout(() => {
       setStartCarAnimation(true);
-    }, 10); // Small delay to ensure re-render
+    }, 10);
+    await custom();
+    router.push("/events");
   };
   return (
     <motion.div
@@ -121,16 +133,13 @@ export default function CTASection() {
                 transition={{ duration: 1.5, ease: "easeInOut" }}
                 onAnimationComplete={() => setStartCarAnimation(false)}
               >
-                {/* Car */}
-                <div className="absolute top-1/2 right-0 transform -translate-y-1/2 text-3xl z-30">
+                <div className="absolute top-1/2 right-0 transform -translate-y-1/2 text-6xl z-30">
                   🏎️
                 </div>
-                {/* Text clearing effect - solid overlay to hide text */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent from-10% via-gray-900 via-50% to-transparent to-90%" />
               </motion.div>
             )}
             <span className="z-10 flex items-center justify-center gap-3 font-mono ">
-              🏎️ JOIN THE RACE 🏎️
+              JOIN THE RACE
             </span>
           </motion.button>
 
