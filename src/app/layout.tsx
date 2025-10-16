@@ -3,6 +3,7 @@ import "./globals.css";
 import { Orbitron } from "next/font/google";
 
 import Navigation from "@/components/Navigation";
+import QueryProvider from "@/components/providers/QueryProvider";
 import ViewportVhSetter from "@/components/viewport-setter";
 
 const orbitron = Orbitron({ subsets: ["latin"] });
@@ -16,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={orbitron.className}>
-        <ViewportVhSetter />
-        <Navigation />
-        {children}
+        <QueryProvider>
+          <ViewportVhSetter />
+          <Navigation />
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );

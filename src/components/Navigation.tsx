@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { Button } from "./ui/button";
+import { Route } from "next";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -68,7 +69,7 @@ export default function Navigation() {
                   className="text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 hover:bg-slate-800/50"
                   asChild
                 >
-                  <Link href={item.href} className="mr-2">
+                  <Link href={item.href as Route} className="mr-2">
                     {item.icon} {item.name}
                   </Link>
                 </Button>
@@ -86,7 +87,7 @@ export default function Navigation() {
                 transition={{ delay: 0.4 + index * 0.1 }}
               >
                 <Link
-                  href={item.href}
+                  href={item.href as Route}
                   className={`px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-200 ${
                     item.variant === "solid"
                       ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-blue-500/25"
@@ -149,7 +150,7 @@ export default function Navigation() {
                 className="text-slate-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 hover:bg-slate-800/50"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Link href={item.href} className="mr-2">
+                <Link href={item.href  as Route} className="mr-2">
                   {item.icon} {item.name}
                 </Link>
               </Button>
@@ -160,7 +161,7 @@ export default function Navigation() {
               {actionItems.map((item) => (
                 <Link
                   key={item.name}
-                  href={item.href}
+                  href={item.href  as Route}
                   className={`block px-3 py-2 rounded-md text-base font-medium text-center transition-all duration-200 ${
                     item.variant === "solid"
                       ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
