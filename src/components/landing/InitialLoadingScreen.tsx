@@ -1,9 +1,7 @@
 "use client";
 
-import { Box, Cylinder } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
-import * as THREE from "three";
+import { Canvas } from "@react-three/fiber";
+import { useEffect, useState } from "react";
 
 // Client-side only Particle Effects component
 function ParticleEffects() {

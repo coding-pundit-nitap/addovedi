@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Suspense } from "react";
 
 import ScienceExhibitionForm from "@/components/science-exhibition/RegistrationForm";
 

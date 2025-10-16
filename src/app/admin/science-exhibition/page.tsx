@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Database, TrendingUp } from "lucide-react";
-import { Suspense } from "react";
 
 import RegistrationsList from "@/components/science-exhibition/RegistrationsList";
 

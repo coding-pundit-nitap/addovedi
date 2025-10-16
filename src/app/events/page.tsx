@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CalendarDays, Clock, MapPin } from "lucide-react";
 import { Orbitron, Rajdhani } from "next/font/google";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 import RCParticles from "@/components/events/rcParticles";
@@ -42,7 +41,6 @@ export default function EventsPage() {
   const [selectedItem, setSelectedItem] = useState<TimelineItem | null>(null);
   const selectedDetails = selectedKey ? eventDetails[selectedKey] : undefined;
   const selectedTitle = selectedKey ? selectedKey.split(":")[1] : "";
-  const router = useRouter();
 
   useEffect(() => {
     const html = document.documentElement;

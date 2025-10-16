@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { Button } from "./ui/button";
-import { Route } from "next";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);

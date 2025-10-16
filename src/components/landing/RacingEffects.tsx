@@ -138,7 +138,6 @@ export function RacingEffects() {
   const [engineIntensity, setEngineIntensity] = useState(0);
   const [speed, setSpeed] = useState(0);
   const [gear, setGear] = useState(1);
-  const [lapTime, setLapTime] = useState("00:00.000");
   const [startTime] = useState(Date.now());
 
   useEffect(() => {
@@ -161,13 +160,6 @@ export function RacingEffects() {
         Math.max(1, Math.floor(currentSpeed / 30)),
       );
       setGear(currentGear);
-
-      // Update lap time
-      const minutes = Math.floor(elapsed / 60);
-      const seconds = elapsed % 60;
-      setLapTime(
-        `${minutes.toString().padStart(2, "0")}:${seconds.toFixed(3).padStart(6, "0")}`,
-      );
     }, 100);
 
     return () => clearInterval(interval);

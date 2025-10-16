@@ -13,9 +13,8 @@ import SponsorsSection from "@/components/landing/SponsorsSection";
 import TechBackground from "@/components/landing/TechBackground";
 
 export default function Home() {
-  const [isInitialLoading, setIsInitialLoading] = useState(false);
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
   const [showCountdown, setShowCountdown] = useState(false);
-  const [showRacingEffects, setShowRacingEffects] = useState(true);
 
   const handleLoadComplete = () => {
     setIsInitialLoading(false);
@@ -24,7 +23,6 @@ export default function Home() {
 
   const handleCountdownComplete = () => {
     setShowCountdown(false);
-    setShowRacingEffects(true);
   };
 
   if (isInitialLoading) {

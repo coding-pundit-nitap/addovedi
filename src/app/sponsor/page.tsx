@@ -3,11 +3,6 @@ import { motion } from "framer-motion";
 import { Orbitron, Rajdhani } from "next/font/google";
 import React from "react";
 
-const rajdhani1 = Rajdhani({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-rajdhani",
-});
 const rajdhani2 = Rajdhani({
   subsets: ["latin"],
   weight: ["500"],
