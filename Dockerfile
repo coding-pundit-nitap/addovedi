@@ -79,13 +79,13 @@ COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
 COPY --chown=nextjs:nodejs ./scripts/entrypoint.sh ./scripts/entrypoint.sh
 
-# # 1. Set a secure baseline for all files.
-# RUN chmod -R u=rwX,go=rX /app
+# 1. Set a secure baseline for all files.
+RUN chmod -R u=rwX,go=rX /app
 
-# # 2. Add execute permissions ONLY where necessary.
-# RUN chmod 555 /app/scripts/entrypoint.sh && \
-#     chmod +x /app/node_modules/.bin/* && \
-#     find /app/node_modules/.prisma/client -name "query_engine-*" -exec chmod +x {} \;
+# 2. Add execute permissions ONLY where necessary.
+RUN chmod 555 /app/scripts/entrypoint.sh && \
+    chmod +x /app/node_modules/.bin/* && \
+    find /app/node_modules/.prisma/client -name "query_engine-*" -exec chmod +x {} \;
 
 # Switch to the non-root user.
 USER nextjs

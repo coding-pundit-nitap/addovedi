@@ -85,7 +85,6 @@ Thumbs.db
 **/*.sqlite
 **/*.sqlite3
 
-**/data
 **/uploads
 **/static-data
 **/sample-data
