@@ -83,7 +83,7 @@ services:
       - CHOKIDAR_USEPOLLING=true
       - NEXT_TELEMETRY_DISABLED=1
       - TZ=UTC
-    
+
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 30s
@@ -117,7 +117,7 @@ services:
     environment:
       - NODE_ENV=development
       - TZ=UTC
-    
+
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5555"]
       interval: 30s
@@ -143,6 +143,8 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d/prod.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/conf.d/options-ssl-nginx.conf:/etc/nginx/conf.d/options-ssl-nginx.conf:ro
+      - ./nginx/conf.d/ssl-dhparams.pem:/etc/nginx/conf.d/ssl-dhparams.pem:ro
       - certbot_certs:/etc/letsencrypt
       - certbot_www:/var/www/certbot
     depends_on:
@@ -172,7 +174,7 @@ services:
       - .env.production
     environment:
       - TZ=UTC
-    
+
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 30s
@@ -220,14 +222,13 @@ services:
       - prod
     networks:
       - addovedi-net
-    
+
 networks:
   addovedi-net:
     driver: bridge
     ipam:
       config:
         - subnet: 10.11.0.0/16
-
 
 volumes:
   postgres_data:
