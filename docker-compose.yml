@@ -147,6 +147,8 @@ services:
         condition: service_healthy
     profiles:
       - prod
+    networks:
+      - addovedi-net
 
   # The main Next.js application for production
   app-prod:
@@ -176,6 +178,8 @@ services:
       start_period: 60s
     profiles:
       - prod
+    networks:
+      - addovedi-net
 
   # ----------------------------------------------------------------------------
   # Common Infrastructure Services (used by dev and prod)
@@ -190,8 +194,6 @@ services:
       - .env
     expose:
       - "5432"
-    ports:
-      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -199,8 +201,15 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - addovedi-net
     
-
+networks:
+  addovedi-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.11.0.0/16
 
 
 volumes:
