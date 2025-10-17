@@ -83,7 +83,7 @@ services:
       - CHOKIDAR_USEPOLLING=true
       - NEXT_TELEMETRY_DISABLED=1
       - TZ=UTC
-
+    
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 30s
@@ -117,7 +117,7 @@ services:
     environment:
       - NODE_ENV=development
       - TZ=UTC
-
+    
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5555"]
       interval: 30s
@@ -139,14 +139,9 @@ services:
     ports:
       - "80:80"
       - "8080:8080" # Health check
-      - "443:443"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d/prod.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./nginx/conf.d/options-ssl-nginx.conf:/etc/nginx/conf.d/options-ssl-nginx.conf:ro
-      - ./nginx/conf.d/ssl-dhparams.pem:/etc/nginx/conf.d/ssl-dhparams.pem:ro
-      - certbot_certs:/etc/letsencrypt
-      - certbot_www:/var/www/certbot
     depends_on:
       app-prod:
         condition: service_healthy
@@ -174,7 +169,7 @@ services:
       - .env.production
     environment:
       - TZ=UTC
-
+    
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 30s
@@ -208,21 +203,7 @@ services:
       retries: 5
     networks:
       - addovedi-net
-
-  certbot:
-    image: certbot/certbot
-    container_name: addovedi_certbot
-    volumes:
-      - certbot_certs:/etc/letsencrypt
-      - certbot_www:/var/www/certbot
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-    depends_on:
-      - nginx-prod
-    profiles:
-      - prod
-    networks:
-      - addovedi-net
-
+    
 networks:
   addovedi-net:
     driver: bridge
@@ -235,5 +216,3 @@ volumes:
   node_modules_volume:
   next_cache_volume:
   pnpm_store_volume:
-  certbot_certs:
-  certbot_www:
