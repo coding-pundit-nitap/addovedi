@@ -138,13 +138,27 @@ services:
     restart: always
     ports:
       - "80:80"
+      - "443:443"
       - "8080:8080" # Health check
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d/prod.conf:/etc/nginx/conf.d/default.conf:ro
+      - certbot_conf:/etc/letsencrypt
+      - certbot_www:/var/www/certbot
     depends_on:
       app-prod:
         condition: service_healthy
+    profiles:
+      - prod
+    networks:
+      - addovedi-net
+  certbot:
+    image: certbot/certbot
+    container_name: addovedi_certbot
+    volumes:
+      - certbot_conf:/etc/letsencrypt
+      - certbot_www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     profiles:
       - prod
     networks:
@@ -216,3 +230,5 @@ volumes:
   node_modules_volume:
   next_cache_volume:
   pnpm_store_volume:
+  certbot_conf:
+  certbot_www:
