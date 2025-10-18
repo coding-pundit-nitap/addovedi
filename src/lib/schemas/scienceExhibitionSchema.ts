@@ -4,6 +4,7 @@ import { z } from "zod";
 export const participantSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(100),
   class: z.string().min(1, "Class is required").max(50),
+  contact: z.string().min(1, "Must Provide the contact Information."),
 });
 
 // Schema for science exhibition registration

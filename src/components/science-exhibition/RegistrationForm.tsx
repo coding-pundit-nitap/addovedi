@@ -55,7 +55,7 @@ export default function ScienceExhibitionForm() {
       teacherCoordinator: "",
       teacherPhone: "",
       category: "",
-      participants: [{ name: "", class: "" }],
+      participants: [{ name: "", class: "", contact: "" }],
     },
   });
 
@@ -259,7 +259,7 @@ export default function ScienceExhibitionForm() {
                 </h2>
                 <Button
                   type="button"
-                  onClick={() => append({ name: "", class: "" })}
+                  onClick={() => append({ name: "", class: "", contact: "" })}
                   disabled={fields.length >= 10}
                 >
                   <Plus className="w-4 h-4 mr-2" />
@@ -319,6 +319,25 @@ export default function ScienceExhibitionForm() {
                           <FormField
                             control={form.control}
                             name={`participants.${index}.class`}
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel className="text-sm font-heading">
+                                  Class
+                                </FormLabel>
+                                <FormControl>
+                                  <Input
+                                    {...field}
+                                    placeholder="e.g., 10th A"
+                                    className=" border-neutral-800 text-white placeholder:text-neutral-500 focus:border-neutral-700 transition-all duration-300"
+                                  />
+                                </FormControl>
+                                <FormMessage className="text-red-400" />
+                              </FormItem>
+                            )}
+                          />
+                          <FormField
+                            control={form.control}
+                            name={`participants.${index}.contact`}
                             render={({ field }) => (
                               <FormItem>
                                 <FormLabel className="text-sm font-heading">

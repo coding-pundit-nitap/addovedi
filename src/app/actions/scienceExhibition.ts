@@ -40,6 +40,7 @@ export async function registerScienceExhibition(
           create: participants.map((participant) => ({
             name: participant.name,
             class: participant.class,
+            contact: participant.contact,
           })),
         },
       },
