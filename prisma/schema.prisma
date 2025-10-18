@@ -82,6 +82,7 @@ model Participant {
   id           String            @id @default(cuid())
   name         String
   class        String
+  contact      String
   exhibitionId String
   exhibition   ScienceExhibition @relation(fields: [exhibitionId], references: [id], onDelete: Cascade)
   createdAt    DateTime          @default(now())
