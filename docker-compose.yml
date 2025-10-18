@@ -231,5 +231,10 @@ volumes:
   node_modules_volume:
   next_cache_volume:
   pnpm_store_volume:
-  certbot_conf:
   certbot_www:
+  certbot_conf:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./certbot/conf
