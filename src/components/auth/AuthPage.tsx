@@ -12,7 +12,7 @@ export default function AuthPage({
 }) {
   const [activeTab, setActiveTab] = useState<"login" | "register">(defaultTab);
   return (
-    <div className="min-h-dvh bg-gray-900 font-sans flex items-center justify-center pt-4 sm:pt-6 md:pt-8 pb-6">
+    <div className="min-h-dvh bg-gray-900 font-sans flex items-start justify-center pt-20 md:pt-24 pb-12">
       <div className="w-110 animated-neon-border rounded-xl p-[2px]">
         <div className="flex flex-col bg-[#161B22] text-center p-8 rounded-xl relative z-10">
           <h1 className="font-bold text-3xl font-heading">
