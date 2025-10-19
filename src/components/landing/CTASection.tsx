@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const racingStats = [
   {
-    number: "500+",
+    number: "3000+",
     label: "Racers",
     color: "red",
   },
@@ -16,7 +16,7 @@ const racingStats = [
     color: "yellow",
   },
   {
-    number: "₹5L+",
+    number: "₹2L+",
     label: "Prize Money",
     color: "green",
   },
@@ -86,9 +86,6 @@ export default function CTASection() {
       variants={containerVariants}
     >
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-0 w-full h-2 bg-gradient-to-r from-transparent via-white to-transparent opacity-60" />
-        <div className="absolute top-1/2 -translate-y-8 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-80" />
-        <div className="absolute top-1/2 translate-y-8 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-80" />
         <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
           <div className="grid grid-cols-8 grid-rows-8 h-full">
             {Array.from({ length: 64 }).map((_, i) => (

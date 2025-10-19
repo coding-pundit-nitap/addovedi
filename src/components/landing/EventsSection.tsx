@@ -73,18 +73,18 @@ export default function EventsSection() {
             <div className="absolute top-2 right-2 text-2xl">🤖</div>
             <div className="text-blue-400 text-4xl font-bold mb-2">01</div>
             <h3 className="text-blue-400 text-xl md:text-2xl font-bold mb-4">
-              SPEED TRACK
+              HackDawn
             </h3>
             <h4 className="text-slate-100 text-lg font-semibold mb-2">
-              AI Racing League
+              24-Hour Coding Marathon
             </h4>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Push the limits of artificial intelligence in high-speed
-              competitions.
+              Unleash your creativity in a non-stop coding sprint. Build
+              solutions that push the boundaries of technology.
             </p>
             <div className="mt-4 flex justify-between items-center">
               <span className="text-blue-400 text-sm font-semibold">
-                VELOCITY
+                INNOVATION
               </span>
               <span className="text-indigo-400">⚡⚡⚡</span>
             </div>
@@ -95,52 +95,9 @@ export default function EventsSection() {
                 className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
                 onClick={() => {
                   setSelected({
-                    title: "AI Racing League",
+                    title: "24-Hour AI Coding Marathon",
                     content:
-                      "Push the limits of artificial intelligence in high-speed competitions.",
-                  });
-                  setOpen(true);
-                }}
-              >
-                View More
-              </Button>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            whileHover={{ y: -8, scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="group relative bg-gradient-to-br from-purple-900/30 to-purple-600/10 backdrop-blur-sm p-6 rounded-xl border-2 border-purple-400/30 hover:border-purple-400 transition-colors duration-300 hover:shadow-2xl hover:shadow-purple-400/30"
-          >
-            <div className="absolute top-2 right-2 text-2xl">🛡️</div>
-            <div className="text-purple-400 text-4xl font-bold mb-2">02</div>
-            <h3 className="text-purple-400 text-xl md:text-2xl font-bold mb-4">
-              DRIFT TRACK
-            </h3>
-            <h4 className="text-slate-100 text-lg font-semibold mb-2">
-              CyberSec Grand Prix
-            </h4>
-            <p className="text-slate-300 text-sm leading-relaxed">
-              Navigate through security challenges with precision. Master the
-              art of ethical hacking in our capture-the-flag tournament.
-            </p>
-            <div className="mt-4 flex justify-between items-center">
-              <span className="text-purple-400 text-sm font-semibold">
-                PRECISION
-              </span>
-              <span className="text-blue-400">🔒🔒🔒</span>
-            </div>
-            <div className="mt-4 flex justify-end">
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
-                onClick={() => {
-                  setSelected({
-                    title: "CyberSec Grand Prix",
-                    content:
-                      "Navigate through security challenges with precision. Master the art of ethical hacking in our capture-the-flag tournament.",
+                      "Unleash your creativity in a non-stop coding sprint. Build AI solutions that push the boundaries of technology.",
                   });
                   setOpen(true);
                 }}
@@ -159,18 +116,17 @@ export default function EventsSection() {
             <div className="absolute top-2 right-2 text-2xl">🌐</div>
             <div className="text-indigo-400 text-4xl font-bold mb-2">03</div>
             <h3 className="text-indigo-400 text-xl md:text-2xl font-bold mb-4">
-              TURBO TRACK
+              RC RACING
             </h3>
-            <h4 className="text-slate-100 text-lg font-semibold mb-2">
-              Web3 Velocity Cup
-            </h4>
+            <h4 className="text-slate-100 text-lg font-semibold mb-2">SPEED</h4>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Accelerate into the future of decentralized technology. Build
-              blockchain solutions and race in the metaverse arena.
+              Push the limits of artificial intelligence in high-speed
+              competitions. Push the limits of artificial intelligence in
+              high-speed competitions.
             </p>
             <div className="mt-4 flex justify-between items-center">
               <span className="text-indigo-400 text-sm font-semibold">
-                FUTURE TECH
+                VELOCITY
               </span>
               <span className="text-purple-400">⚙️⚙️⚙️</span>
             </div>
@@ -181,9 +137,9 @@ export default function EventsSection() {
                 className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
                 onClick={() => {
                   setSelected({
-                    title: "Web3 Velocity Cup",
+                    title: "RC RACING",
                     content:
-                      "Accelerate into the future of decentralized technology. Build blockchain solutions and race in the metaverse arena.",
+                      "Push the limits of artificial intelligence in high-speed competitions. Push the limits of artificial intelligence in high-speed competitions.",
                   });
                   setOpen(true);
                 }}
@@ -192,6 +148,49 @@ export default function EventsSection() {
               </Button>
             </div>
           </motion.div>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          whileHover={{ y: -8, scale: 1.03 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="group relative bg-gradient-to-br from-purple-900/30 to-purple-600/10 backdrop-blur-sm p-6 rounded-xl border-2 border-purple-400/30 hover:border-purple-400 transition-colors duration-300 hover:shadow-2xl hover:shadow-purple-400/30"
+        >
+          <div className="absolute top-2 right-2 text-2xl">🛡️</div>
+          <div className="text-purple-400 text-4xl font-bold mb-2">02</div>
+          <h3 className="text-purple-400 text-xl md:text-2xl font-bold mb-4">
+            Ideathon
+          </h3>
+          <h4 className="text-slate-100 text-lg font-semibold mb-2">
+            Innovation Pitch Challenge
+          </h4>
+          <p className="text-slate-300 text-sm leading-relaxed">
+            IdeaThon sparks practical, future-ready solutions. Think beyond
+            convention and pitch sustainable, high-impact ideas.
+          </p>
+          <div className="mt-4 flex justify-between items-center">
+            <span className="text-purple-400 text-sm font-semibold">
+              PRECISION
+            </span>
+            <span className="text-blue-400">🔒🔒🔒</span>
+          </div>
+          <div className="mt-4 flex justify-end">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
+              onClick={() => {
+                setSelected({
+                  title: "Ideathon",
+                  content:
+                    "Pitch bold, sustainable ideas that solve real problems—judged on clarity, feasibility, and impact.",
+                });
+                setOpen(true);
+              }}
+            >
+              View More
+            </Button>
+          </div>
         </motion.div>
 
         <motion.div
@@ -204,11 +203,9 @@ export default function EventsSection() {
             transition={{ type: "spring", stiffness: 300 }}
             className="bg-gradient-to-r from-slate-800/30 to-blue-900/20 backdrop-blur-sm p-4 rounded-lg border border-blue-400/30 hover:border-blue-400 transition-colors duration-300"
           >
-            <h4 className="text-blue-400 font-bold text-lg">
-              ⚡ LIGHTNING ROUND
-            </h4>
+            <h4 className="text-blue-400 font-bold text-lg">⚡ Robo War</h4>
             <p className="text-slate-300 text-sm">
-              Quick-fire coding challenges
+              Battle of autonomous robots
             </p>
             <div className="mt-4 flex justify-end">
               <Button
@@ -217,8 +214,8 @@ export default function EventsSection() {
                 className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
                 onClick={() => {
                   setSelected({
-                    title: "Lightning Round",
-                    content: "Quick-fire coding challenges.",
+                    title: "Robo War",
+                    content: "Battle of autonomous robots.",
                   });
                   setOpen(true);
                 }}
@@ -233,10 +230,10 @@ export default function EventsSection() {
             transition={{ type: "spring", stiffness: 300 }}
             className="bg-gradient-to-r from-slate-800/30 to-purple-900/20 backdrop-blur-sm p-4 rounded-lg border border-purple-400/30 hover:border-purple-400 transition-colors duration-300"
           >
-            <h4 className="text-purple-400 font-bold text-lg">
-              🏆 GRAND FINALE
-            </h4>
-            <p className="text-slate-300 text-sm">Ultimate championship race</p>
+            <h4 className="text-purple-400 font-bold text-lg">🏆 Valorant</h4>
+            <p className="text-slate-300 text-sm">
+              Unleash your skills in the ultimate tactical shooter.
+            </p>
             <div className="mt-4 flex justify-end">
               <Button
                 variant="outline"
@@ -244,8 +241,9 @@ export default function EventsSection() {
                 className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
                 onClick={() => {
                   setSelected({
-                    title: "Grand Finale",
-                    content: "Ultimate championship race.",
+                    title: "Valorant",
+                    content:
+                      "Unleash your skills in the ultimate tactical shooter.",
                   });
                   setOpen(true);
                 }}

@@ -31,7 +31,13 @@ export default function MerchandisePage() {
       basePrice: 350,
       image: "/merch/white.jpg",
     },
-    { id: 3, type: "Hoodie", name: "Neon Hoodie Alpha", basePrice: 650 },
+    {
+      id: 3,
+      type: "Hoodie",
+      name: "Neon Hoodie Alpha",
+      basePrice: 650,
+      image: "/merch/General.png",
+    },
   ];
 
   useEffect(() => {

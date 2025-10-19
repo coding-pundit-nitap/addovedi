@@ -60,7 +60,6 @@ export const teamSections: TeamSection[] = [
         image: "/team/umashankar.png",
       },
       { name: "Saloni Muskan", role: "Member", image: "/team/saloni.jpg" },
-      { name: " Margam", role: "Member", image: "/team/muskan.jpg" },
     ],
   },
   {
