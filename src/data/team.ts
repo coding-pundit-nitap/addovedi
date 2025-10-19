@@ -69,8 +69,8 @@ export const teamSections: TeamSection[] = [
     emoji: "💻",
     members: [
       { name: "Banoth Charan", role: "Member", image: "/team/cherry.jpg" },
-      { name: "Karan Kumar Shah", role: "Member", image: "/team/karan.jpg" },
       { name: "Arun Kumar", role: "Member", image: "/team/yash.jpg " },
+      { name: "Karan Kumar Sah", role: "Member", image: "/team/karan.jpg" },
     ],
   },
   {
