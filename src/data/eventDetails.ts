@@ -117,7 +117,7 @@ export const eventDetails: Record<string, EventDetails> = {
     contact: "addovedi@nitap.ac.in",
   },
 
-  "nov6:Hackathon Kick-Start": {
+  "nov6:Hackathon": {
     teamSize: "3 to 5 members (inter-college teams encouraged)",
     prizeMoney: "Prize Pool Worth up to ₹50,000",
     registrationFee: "Free (via Unstop registration)",
@@ -606,7 +606,7 @@ export const eventDetails: Record<string, EventDetails> = {
     location: "see on Unstop by Clicking on Register Now",
   },
 
-  "nov8:Code2Game": {
+  "nov8:code2game": {
     teamSize: "Individual participation (solo event)",
     prizeMoney:
       "₹6,000 total prize pool (₹3,000 + ₹2,000 + ₹1,000 for top 3 winners)",
@@ -736,7 +736,7 @@ export const eventDetails: Record<string, EventDetails> = {
     time: "3:00 PM - 4:30 PM (entire competition window)",
     location: "Online (via Unstop platform)",
   },
-  "nov8:Day 2 Spokesperson Session": {
+  "nov8:Day 2 Spokeperson": {
     teamSize: "see on Unstop by Clicking on Register Now",
     prizeMoney: "see on Unstop by Clicking on Register Now",
     registrationFee: "see on Unstop by Clicking on Register Now",
@@ -748,7 +748,7 @@ export const eventDetails: Record<string, EventDetails> = {
     time: "5:00-7:00 PM",
     location: "see on Unstop by Clicking on Register Now",
   },
-  "nov8:Music Club": {
+  "nov8:music club": {
     teamSize: "see on Unstop by Clicking on Register Now",
     prizeMoney: "see on Unstop by Clicking on Register Now",
     registrationFee: "see on Unstop by Clicking on Register Now",
