@@ -47,6 +47,7 @@ export default function ScienceExhibitionForm() {
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   const form = useForm<ScienceExhibitionFormValues>({
     resolver: zodResolver(scienceExhibitionSchema),
@@ -263,7 +264,7 @@ export default function ScienceExhibitionForm() {
                   disabled={fields.length >= 10}
                 >
                   <Plus className="w-4 h-4 mr-2" />
-                  Add Participant
+                  {!isMobile && "Add Participant"}
                 </Button>
               </div>
 
@@ -341,12 +342,12 @@ export default function ScienceExhibitionForm() {
                             render={({ field }) => (
                               <FormItem>
                                 <FormLabel className="text-sm font-heading">
-                                  Class
+                                  Contact
                                 </FormLabel>
                                 <FormControl>
                                   <Input
                                     {...field}
-                                    placeholder="e.g., 10th A"
+                                    placeholder="e.g., 9123456789 or your-email@example.com"
                                     className=" border-neutral-800 text-white placeholder:text-neutral-500 focus:border-neutral-700 transition-all duration-300"
                                   />
                                 </FormControl>
