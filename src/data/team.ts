@@ -49,16 +49,6 @@ export const teamSections: TeamSection[] = [
     ],
   },
   {
-    key: "web",
-    title: "Web Team",
-    emoji: "💻",
-    members: [
-      { name: "Banoth Charan", role: "Member", image: "/team/cherry.jpg" },
-      { name: "Karan Kumar Shah", role: "Member", image: "/team/karan.jpg" },
-      { name: "Arun Kumar", role: "Member", image: "/team/yash.jpg " },
-    ],
-  },
-  {
     key: "sponsorship",
     title: "PR & Sponsorship Team",
     emoji: "📣🏆",
@@ -71,6 +61,16 @@ export const teamSections: TeamSection[] = [
       },
       { name: "Saloni Muskan", role: "Member", image: "/team/saloni.jpg" },
       { name: " Margam", role: "Member", image: "/team/muskan.jpg" },
+    ],
+  },
+  {
+    key: "web",
+    title: "Web Team",
+    emoji: "💻",
+    members: [
+      { name: "Banoth Charan", role: "Member", image: "/team/cherry.jpg" },
+      { name: "Karan Kumar Shah", role: "Member", image: "/team/karan.jpg" },
+      { name: "Arun Kumar", role: "Member", image: "/team/yash.jpg " },
     ],
   },
   {
