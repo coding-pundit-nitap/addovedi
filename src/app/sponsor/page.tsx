@@ -104,9 +104,9 @@ export default function SponsorsPage() {
         <div className="mx-auto mt-4 h-[2px] w-16 sm:w-24 bg-gradient-to-r from-[#4facfe] via-[#c937d6] to-[#5104ea]" />
 
         <div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8 lg:gap-12 mt-8">
-          <Stat1 number="5O+" label="Innovative Partners" />
-          <Stat2 number="5OOO+" label="Tech Enthusiasts" />
-          <Stat3 number="₹1OL+" label="Prize Pool" />
+          <Stat1 number="5+" label="Innovative Partners" />
+          <Stat2 number="3OOO+" label="Tech Enthusiasts" />
+          <Stat3 number="₹4L+" label="Prize Pool" />
         </div>
       </motion.div>
 
@@ -165,9 +165,6 @@ export default function SponsorsPage() {
           transition={{ type: "spring", stiffness: 200, damping: 15 }}
           className="flex flex-col items-center"
         >
-          <Button className="w-full sm:w-auto max-w-sm mt-6 h-12 sm:h-13 bg-[#602ede] hover:bg-[#9430e1] text-white font-orbitron px-4 sm:px-6 py-3 rounded-md text-base sm:text-lg bg-gradient-to-r from-[#05a3e6] via-[#c937d6] to-[#0318fa]">
-            Explore Partnership Opportunities
-          </Button>
           <div className="mt-6 sm:mt-8 p-4 rounded-lg bg-[#1a1a1d] w-full max-w-sm">
             <p className="text-xs sm:text-sm text-[#9a9a9c]">
               Ready to partner with us?
