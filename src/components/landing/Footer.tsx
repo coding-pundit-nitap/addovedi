@@ -10,19 +10,34 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-primary border-t border-accent/20 py-12 px-8 text-center">
+    <footer className="bg-transparent backdrop-blur-sm border-t border-accent/20 py-12 px-8 text-center">
       <div className="container mx-auto">
         <p className="mb-4">
           &copy; 2025 Addovedi Tech Fest. All Rights Reserved.
         </p>
         <div className="flex justify-center gap-6 mb-8">
-          <a href="#" className="hover:text-accent transition-colors">
-            Twitter
+          <a
+            href="https://www.youtube.com/@AddovediStudentsTechnicalFest"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors"
+          >
+            Youtube
           </a>
-          <a href="#" className="hover:text-accent transition-colors">
+          <a
+            href="https://www.linkedin.com/company/addovedi-techfest-nit-arunachal-pradesh/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors"
+          >
             LinkedIn
           </a>
-          <a href="#" className="hover:text-accent transition-colors">
+          <a
+            href="https://www.instagram.com/addovedi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors"
+          >
             Instagram
           </a>
         </div>

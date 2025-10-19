@@ -1,3 +1,10 @@
+"use client";
+import AuthPage from "@/components/auth/AuthPage";
+
 export default function Register() {
-  return <div></div>;
+  return (
+    <div>
+      <AuthPage defaultTab="register" />
+    </div>
+  );
 }

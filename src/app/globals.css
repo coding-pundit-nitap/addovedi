@@ -258,6 +258,73 @@
     animation: racing-stripe 2s linear infinite;
   }
 
+  /* Animated neon border (glowing, running around) */
+  @keyframes neon-rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animated-neon-border {
+    position: relative;
+    border-radius: 0.75rem; /* match rounded-xl */
+    isolation: isolate; /* create a new stacking context */
+  }
+
+  .animated-neon-border::before,
+  .animated-neon-border::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px; /* border thickness */
+    border-radius: inherit;
+    /* Conic gradient ring ensures bright corners */
+    background: conic-gradient(from 0deg, #00f5ff, #8b5cf6, #ff0ea1, #00f5ff);
+    animation: none;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude; /* cut out the center so only the border shows */
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes hue-cycle-glow {
+    0% {
+      filter: hue-rotate(0deg) blur(12px);
+    }
+    100% {
+      filter: hue-rotate(360deg) blur(12px);
+    }
+  }
+
+  @keyframes hue-cycle-ring {
+    0% {
+      filter: hue-rotate(0deg) blur(0px);
+    }
+    100% {
+      filter: hue-rotate(360deg) blur(0px);
+    }
+  }
+
+  /* Soft outer glow */
+  .animated-neon-border::before {
+    filter: blur(12px);
+    animation: hue-cycle-glow 6s linear infinite;
+    opacity: 0.8;
+  }
+
+  /* Crisp inner ring */
+  .animated-neon-border::after {
+    filter: blur(0px);
+    animation: hue-cycle-ring 6s linear infinite;
+    opacity: 1;
+  }
+
   /* Hover effects for racing elements */
   .racing-card:hover {
     transform: translateY(-5px) scale(1.02);

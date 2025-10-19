@@ -1,6 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
+
+import { Button } from "@/components/ui/button";
+import { Modal } from "@/components/ui/modal";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -24,6 +28,11 @@ const itemVariants = {
 };
 
 export default function EventsSection() {
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState<{
+    title: string;
+    content: string;
+  } | null>(null);
   return (
     <motion.div
       id="events-section"
@@ -79,6 +88,23 @@ export default function EventsSection() {
               </span>
               <span className="text-indigo-400">⚡⚡⚡</span>
             </div>
+            <div className="mt-4 flex justify-end">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
+                onClick={() => {
+                  setSelected({
+                    title: "AI Racing League",
+                    content:
+                      "Push the limits of artificial intelligence in high-speed competitions.",
+                  });
+                  setOpen(true);
+                }}
+              >
+                View More
+              </Button>
+            </div>
           </motion.div>
 
           <motion.div
@@ -104,6 +130,23 @@ export default function EventsSection() {
                 PRECISION
               </span>
               <span className="text-blue-400">🔒🔒🔒</span>
+            </div>
+            <div className="mt-4 flex justify-end">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
+                onClick={() => {
+                  setSelected({
+                    title: "CyberSec Grand Prix",
+                    content:
+                      "Navigate through security challenges with precision. Master the art of ethical hacking in our capture-the-flag tournament.",
+                  });
+                  setOpen(true);
+                }}
+              >
+                View More
+              </Button>
             </div>
           </motion.div>
 
@@ -131,6 +174,23 @@ export default function EventsSection() {
               </span>
               <span className="text-purple-400">⚙️⚙️⚙️</span>
             </div>
+            <div className="mt-4 flex justify-end">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
+                onClick={() => {
+                  setSelected({
+                    title: "Web3 Velocity Cup",
+                    content:
+                      "Accelerate into the future of decentralized technology. Build blockchain solutions and race in the metaverse arena.",
+                  });
+                  setOpen(true);
+                }}
+              >
+                View More
+              </Button>
+            </div>
           </motion.div>
         </motion.div>
 
@@ -150,6 +210,22 @@ export default function EventsSection() {
             <p className="text-slate-300 text-sm">
               Quick-fire coding challenges
             </p>
+            <div className="mt-4 flex justify-end">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
+                onClick={() => {
+                  setSelected({
+                    title: "Lightning Round",
+                    content: "Quick-fire coding challenges.",
+                  });
+                  setOpen(true);
+                }}
+              >
+                View More
+              </Button>
+            </div>
           </motion.div>
           <motion.div
             variants={itemVariants}
@@ -161,8 +237,31 @@ export default function EventsSection() {
               🏆 GRAND FINALE
             </h4>
             <p className="text-slate-300 text-sm">Ultimate championship race</p>
+            <div className="mt-4 flex justify-end">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
+                onClick={() => {
+                  setSelected({
+                    title: "Grand Finale",
+                    content: "Ultimate championship race.",
+                  });
+                  setOpen(true);
+                }}
+              >
+                View More
+              </Button>
+            </div>
           </motion.div>
         </motion.div>
+        <Modal
+          open={open}
+          onClose={() => setOpen(false)}
+          title={selected?.title || "Event Details"}
+        >
+          <div className="text-sm text-slate-300">{selected?.content}</div>
+        </Modal>
       </div>
     </motion.div>
   );

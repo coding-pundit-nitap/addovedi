@@ -5,12 +5,16 @@ import AuthTabs from "./AuthTabs";
 import LoginIn from "./LoginForm";
 import Register from "./RegisterForm";
 
-export default function AuthPage() {
-  const [activeTab, setActiveTab] = useState<"login" | "register">("login");
+export default function AuthPage({
+  defaultTab = "login",
+}: {
+  defaultTab?: "login" | "register";
+}) {
+  const [activeTab, setActiveTab] = useState<"login" | "register">(defaultTab);
   return (
-    <div className="min-h-screen bg-gray-900 font-sans flex items-center justify-center">
-      <div className="w-110 bg-gradient-to-r from-cyan-500 to-purple-700 p-0.5 rounded-xl">
-        <div className="flex flex-col bg-[#161B22] text-center p-8 rounded-xl">
+    <div className="min-h-dvh bg-gray-900 font-sans flex items-center justify-center pt-4 sm:pt-6 md:pt-8 pb-6">
+      <div className="w-110 animated-neon-border rounded-xl p-[2px]">
+        <div className="flex flex-col bg-[#161B22] text-center p-8 rounded-xl relative z-10">
           <h1 className="font-bold text-3xl font-heading">
             {activeTab === "login" ? "Welcome Back" : "Create Your Account"}
           </h1>

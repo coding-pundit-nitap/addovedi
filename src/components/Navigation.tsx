@@ -25,8 +25,10 @@ export default function Navigation() {
     { name: "Home", href: "/", icon: "🏠" },
     { name: "Events", href: "/events", icon: "🏎️" },
     { name: "Sponsors", href: "/sponsor", icon: "🏆" },
+    { name: "Team", href: "/team", icon: "👥" },
     { name: "Gallery", href: "/gallery", icon: "📸" },
     { name: "Merchandise", href: "/merchandise", icon: "👕" },
+    { name: "About", href: "/about", icon: "ℹ️" },
   ];
 
   const actionItems = [{ name: "Login", href: "/login", variant: "solid" }];
@@ -150,7 +152,7 @@ export default function Navigation() {
                 className="text-slate-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 hover:bg-slate-800/50"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Link href={item.href  as Route} className="mr-2">
+                <Link href={item.href as Route} className="mr-2">
                   {item.icon} {item.name}
                 </Link>
               </Button>
@@ -161,7 +163,7 @@ export default function Navigation() {
               {actionItems.map((item) => (
                 <Link
                   key={item.name}
-                  href={item.href  as Route}
+                  href={item.href as Route}
                   className={`block px-3 py-2 rounded-md text-base font-medium text-center transition-all duration-200 ${
                     item.variant === "solid"
                       ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
