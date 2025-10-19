@@ -6,7 +6,7 @@ const sponsorTiers = [
   {
     position: 1,
     title: "GOLD SPONSOR",
-    name: "TechRace Industries",
+    name: "Jio Savan",
     icon: "🏆",
     color: "blue",
     height: "h-32",
@@ -15,7 +15,7 @@ const sponsorTiers = [
   {
     position: 2,
     title: "SILVER SPONSOR",
-    name: "TechCorp",
+    name: "Unstop",
     icon: "🥈",
     color: "purple",
     height: "h-20",
@@ -24,7 +24,7 @@ const sponsorTiers = [
   {
     position: 3,
     title: "BRONZE SPONSOR",
-    name: "InnovateLab",
+    name: "Coca Cola",
     icon: "🥉",
     color: "indigo",
     height: "h-20",
@@ -32,7 +32,11 @@ const sponsorTiers = [
   },
 ];
 
-const additionalSponsors = ["TechSoft", "DataForce", "CloudLab", "CodeNinja"];
+const additionalSponsors = [
+  "Urban Water Filter",
+  "Todo Hotel",
+  "Echo of arunachal",
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
