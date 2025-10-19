@@ -5,12 +5,12 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 
 const images = [
-  { src: "/1.jpg", alt: "Event Image 1" },
-  { src: "/2.jpg", alt: "Event Image 2" },
-  { src: "/3.jpg", alt: "Event Image 3" },
-  { src: "/4.jpg", alt: "Event Image 4" },
-  { src: "/5.jpg", alt: "Event Image 5" },
-  { src: "/6.jpg", alt: "Event Image 6" },
+  { src: "/gallery/1.jpg", alt: "Event Image 1" },
+  { src: "/gallery/2.jpg", alt: "Event Image 2" },
+  { src: "/gallery/3.jpg", alt: "Event Image 3" },
+  { src: "/gallery/4.jpg", alt: "Event Image 4" },
+  { src: "/gallery/5.jpg", alt: "Event Image 5" },
+  { src: "/gallery/6.jpg", alt: "Event Image 6" },
 ];
 
 export default function EventGalleryPage() {
