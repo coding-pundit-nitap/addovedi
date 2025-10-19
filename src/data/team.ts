@@ -115,7 +115,7 @@ export const teamSections: TeamSection[] = [
     title: "Management & Hospitality Team",
     emoji: "🧭",
     members: [
-      { name: "Namban Tabin", role: "Member", image: "/team/tabin.jpg" },
+      { name: "Nambam Tabin", role: "Member", image: "/team/tabin.jpg" },
       { name: "Siro Bagang", role: "Member", image: "/team/siro.jpg" },
       { name: "Nayato Mengnia", role: "Member", image: "/team/gentlemen1.jpg" },
     ],
