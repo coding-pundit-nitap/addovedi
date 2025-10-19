@@ -29,12 +29,14 @@ export default function EventsPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
-  const [activeKey, setActiveKey] = useState<"nov6" | "nov7">("nov6");
+  const [activeKey, setActiveKey] = useState<"nov6" | "nov7" | "nov8">("nov6");
   const activeDay = timelineDays.find((d) => d.key === activeKey)!;
   const neonTheme =
     activeKey === "nov6"
       ? { primary: "#66FFFF", secondary: "#B366FF" }
-      : { primary: "#6699FF", secondary: "#B366FF" };
+      : activeKey === "nov7"
+      ? { primary: "#6699FF", secondary: "#B366FF" }
+      : { primary: "#66CCFF", secondary: "#FF66FF" };
 
   // Details modal state
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -165,13 +167,17 @@ export default function EventsPage() {
           <div className="relative z-10 mx-auto mb-6 sm:mb-10 max-w-xs sm:max-w-md">
             <div className="relative rounded-full border border-[#050A18] bg-[#030610] p-1 shadow-[0_0_20px_#0a0a2a]">
               <span
-                className="absolute left-1 top-1 bottom-1 w-[calc(50%-8px)] rounded-full bg-gradient-to-r from-[#66FFFF] to-[#B366FF] transition-transform duration-300 ease-out"
+                className="absolute left-1 top-1 bottom-1 w-[calc(33.333%-8px)] rounded-full bg-gradient-to-r from-[#66FFFF] to-[#B366FF] transition-transform duration-300 ease-out"
                 style={{
                   transform:
-                    activeKey === "nov6" ? "translateX(0)" : "translateX(100%)",
+                    activeKey === "nov6"
+                      ? "translateX(0)"
+                      : activeKey === "nov7"
+                      ? "translateX(100%)"
+                      : "translateX(200%)",
                 }}
               />
-              <div className="relative z-10 grid grid-cols-2 text-xs sm:text-sm md:text-base font-semibold">
+              <div className="relative z-10 grid grid-cols-3 text-xs sm:text-sm md:text-base font-semibold">
                 <button
                   className={`py-2 px-2 rounded-full ${
                     activeKey === "nov6" ? "text-[#030610]" : "text-[#94a3b8]"
@@ -187,6 +193,14 @@ export default function EventsPage() {
                   onClick={() => setActiveKey("nov7")}
                 >
                   7 Nov
+                </button>
+                <button
+                  className={`py-2 px-2 rounded-full ${
+                    activeKey === "nov8" ? "text-[#030610]" : "text-[#94a3b8]"
+                  }`}
+                  onClick={() => setActiveKey("nov8")}
+                >
+                  8 Nov
                 </button>
               </div>
             </div>
@@ -340,15 +354,15 @@ export default function EventsPage() {
               <div className="flex flex-wrap items-center gap-3">
                 <span className="inline-flex items-center gap-2">
                   <CalendarDays className="size-4 text-[#B366FF]" />{" "}
-                  {activeDay.dayLabel}
+                  {selectedDetails?.date ?? activeDay.dayLabel}
                 </span>
                 <span className="inline-flex items-center gap-2">
                   <Clock className="size-4 text-[#6699FF]" />{" "}
-                  {selectedItem.time}
+                  {selectedDetails?.time ?? selectedItem.time}
                 </span>
                 <span className="inline-flex items-center gap-2">
                   <MapPin className="size-4 text-[#6699FF]" />{" "}
-                  {selectedItem.location ?? "Main Arena"}
+                  {selectedDetails?.location ?? selectedItem.location ?? "Main Arena"}
                 </span>
               </div>
               <p className="mt-2 text-[#cbd5e1]">{selectedItem.description}</p>

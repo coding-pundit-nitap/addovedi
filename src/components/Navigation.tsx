@@ -24,8 +24,10 @@ export default function Navigation() {
     { name: "Home", href: "/", icon: "🏠" },
     { name: "Events", href: "/events", icon: "🏎️" },
     { name: "Sponsors", href: "/sponsor", icon: "🏆" },
+    { name: "Team", href: "/team", icon: "👥" },
     { name: "Gallery", href: "/gallery", icon: "📸" },
     { name: "Merchandise", href: "/merchandise", icon: "👕" },
+    { name: "About", href: "/about", icon: "ℹ️" },
   ];
 
   const actionItems = [{ name: "Login", href: "/login", variant: "solid" }];

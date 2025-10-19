@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className={orbitron.className}>
         <ViewportVhSetter />
         <Navigation />
-        {children}
+        <main className="pt-16">{children}</main>
       </body>
     </html>
   );

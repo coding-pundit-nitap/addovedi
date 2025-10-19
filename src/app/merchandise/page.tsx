@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,12 +17,9 @@ export default function MerchandisePage() {
   });
 
   const items = [
-    { id: 1, type: "Hoodie", name: "Neon Hoodie Alpha", basePrice: 1499 },
-    { id: 2, type: "Hoodie", name: "Cyber Hoodie Pro", basePrice: 1799 },
-    { id: 3, type: "Hoodie", name: "Addovedi Classic", basePrice: 1299 },
-    { id: 4, type: "T-Shirt", name: "Neon Tee Alpha", basePrice: 799 },
-    { id: 5, type: "T-Shirt", name: "Cyber Tee Pro", basePrice: 999 },
-    { id: 6, type: "T-Shirt", name: "Addovedi Classic Tee", basePrice: 699 },
+    { id: 1, type: "T-Shirt", name: "ADDOVEDI Tee - Black", basePrice: 350, image: "/merch/black.jpg" },
+    { id: 2, type: "T-Shirt", name: "ADDOVEDI Tee - White", basePrice: 350, image: "/merch/white.jpg" },
+    { id: 3, type: "Hoodie", name: "Neon Hoodie Alpha", basePrice: 650 },
   ];
 
   useEffect(() => {
@@ -101,165 +99,175 @@ export default function MerchandisePage() {
             >
               <div className="relative aspect-square overflow-hidden rounded-lg">
                 {/* Fake product image */}
-                <div
-                  className="h-full w-full neon-animated-bg flex items-center justify-center"
-                  style={{
-                    border: "1px solid #2B2F36",
-                    backgroundSize: "200% 200%",
-                  }}
-                >
-                  <div className="text-center">
-                    {item.type === "Hoodie" ? (
-                      <svg
-                        width="80"
-                        height="80"
-                        viewBox="0 0 100 100"
-                        className="mx-auto mb-2"
-                      >
-                        <defs>
-                          <linearGradient
-                            id={`hoodieGrad${item.id}`}
-                            x1="0%"
-                            y1="0%"
-                            x2="100%"
-                            y2="100%"
-                          >
-                            <stop offset="0%" stopColor="#B366FF" />
-                            <stop offset="50%" stopColor="#33FFFF" />
-                            <stop offset="100%" stopColor="#FF33FF" />
-                          </linearGradient>
-                        </defs>
-                        {/* Hoodie body */}
-                        <rect
-                          x="20"
-                          y="30"
-                          width="60"
-                          height="50"
-                          rx="8"
-                          fill={`url(#hoodieGrad${item.id})`}
-                          opacity="0.8"
-                        />
-                        {/* Hood */}
-                        <path
-                          d="M25 30 Q50 15 75 30 L75 40 L25 40 Z"
-                          fill={`url(#hoodieGrad${item.id})`}
-                          opacity="0.6"
-                        />
-                        {/* Sleeves */}
-                        <rect
-                          x="15"
-                          y="35"
-                          width="12"
-                          height="35"
-                          rx="6"
-                          fill={`url(#hoodieGrad${item.id})`}
-                          opacity="0.7"
-                        />
-                        <rect
-                          x="73"
-                          y="35"
-                          width="12"
-                          height="35"
-                          rx="6"
-                          fill={`url(#hoodieGrad${item.id})`}
-                          opacity="0.7"
-                        />
-                        {/* Addovedi text */}
-                        <text
-                          x="50"
-                          y="60"
-                          textAnchor="middle"
-                          fontSize="8"
-                          fill="#F7FAFD"
-                          fontFamily="Orbitron"
-                          fontWeight="bold"
+                {item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div
+                    className="h-full w-full neon-animated-bg flex items-center justify-center"
+                    style={{
+                      border: "1px solid #2B2F36",
+                      backgroundSize: "200% 200%",
+                    }}
+                  >
+                    <div className="text-center">
+                      {item.type === "Hoodie" ? (
+                        <svg
+                          width="80"
+                          height="80"
+                          viewBox="0 0 100 100"
+                          className="mx-auto mb-2"
                         >
-                          ADDOVEDI
-                        </text>
-                      </svg>
-                    ) : (
-                      <svg
-                        width="80"
-                        height="80"
-                        viewBox="0 0 100 100"
-                        className="mx-auto mb-2"
-                      >
-                        <defs>
-                          <linearGradient
-                            id={`teeGrad${item.id}`}
-                            x1="0%"
-                            y1="0%"
-                            x2="100%"
-                            y2="100%"
+                          <defs>
+                            <linearGradient
+                              id={`hoodieGrad${item.id}`}
+                              x1="0%"
+                              y1="0%"
+                              x2="100%"
+                              y2="100%"
+                            >
+                              <stop offset="0%" stopColor="#B366FF" />
+                              <stop offset="50%" stopColor="#33FFFF" />
+                              <stop offset="100%" stopColor="#FF33FF" />
+                            </linearGradient>
+                          </defs>
+                          {/* Hoodie body */}
+                          <rect
+                            x="20"
+                            y="30"
+                            width="60"
+                            height="50"
+                            rx="8"
+                            fill={`url(#hoodieGrad${item.id})`}
+                            opacity="0.8"
+                          />
+                          {/* Hood */}
+                          <path
+                            d="M25 30 Q50 15 75 30 L75 40 L25 40 Z"
+                            fill={`url(#hoodieGrad${item.id})`}
+                            opacity="0.6"
+                          />
+                          {/* Sleeves */}
+                          <rect
+                            x="15"
+                            y="35"
+                            width="12"
+                            height="35"
+                            rx="6"
+                            fill={`url(#hoodieGrad${item.id})`}
+                            opacity="0.7"
+                          />
+                          <rect
+                            x="73"
+                            y="35"
+                            width="12"
+                            height="35"
+                            rx="6"
+                            fill={`url(#hoodieGrad${item.id})`}
+                            opacity="0.7"
+                          />
+                          {/* Addovedi text */}
+                          <text
+                            x="50"
+                            y="60"
+                            textAnchor="middle"
+                            fontSize="8"
+                            fill="#F7FAFD"
+                            fontFamily="Orbitron"
+                            fontWeight="bold"
                           >
-                            <stop offset="0%" stopColor="#5C9FFF" />
-                            <stop offset="50%" stopColor="#B366FF" />
-                            <stop offset="100%" stopColor="#33FFFF" />
-                          </linearGradient>
-                        </defs>
-                        {/* T-shirt body */}
-                        <rect
-                          x="25"
-                          y="35"
-                          width="50"
-                          height="45"
-                          rx="6"
-                          fill={`url(#teeGrad${item.id})`}
-                          opacity="0.8"
-                        />
-                        {/* Sleeves */}
-                        <rect
-                          x="20"
-                          y="40"
-                          width="8"
-                          height="25"
-                          rx="4"
-                          fill={`url(#teeGrad${item.id})`}
-                          opacity="0.7"
-                        />
-                        <rect
-                          x="72"
-                          y="40"
-                          width="8"
-                          height="25"
-                          rx="4"
-                          fill={`url(#teeGrad${item.id})`}
-                          opacity="0.7"
-                        />
-                        {/* Neck */}
-                        <rect
-                          x="40"
-                          y="35"
-                          width="20"
-                          height="8"
-                          rx="4"
-                          fill="#151719"
-                        />
-                        {/* Addovedi text */}
-                        <text
-                          x="50"
-                          y="65"
-                          textAnchor="middle"
-                          fontSize="7"
-                          fill="#F7FAFD"
-                          fontFamily="Orbitron"
-                          fontWeight="bold"
+                            ADDOVEDI
+                          </text>
+                        </svg>
+                      ) : (
+                        <svg
+                          width="80"
+                          height="80"
+                          viewBox="0 0 100 100"
+                          className="mx-auto mb-2"
                         >
-                          ADDOVEDI
-                        </text>
-                      </svg>
-                    )}
-                    <div
-                      className="text-xs font-medium"
-                      style={{
-                        color: "#9FAFBD",
-                        fontFamily: "var(--font-rajdhani), Rajdhani, system-ui",
-                      }}
-                    >
-                      {item.type}
+                          <defs>
+                            <linearGradient
+                              id={`teeGrad${item.id}`}
+                              x1="0%"
+                              y1="0%"
+                              x2="100%"
+                              y2="100%"
+                            >
+                              <stop offset="0%" stopColor="#5C9FFF" />
+                              <stop offset="50%" stopColor="#B366FF" />
+                              <stop offset="100%" stopColor="#33FFFF" />
+                            </linearGradient>
+                          </defs>
+                          {/* T-shirt body */}
+                          <rect
+                            x="25"
+                            y="35"
+                            width="50"
+                            height="45"
+                            rx="6"
+                            fill={`url(#teeGrad${item.id})`}
+                            opacity="0.8"
+                          />
+                          {/* Sleeves */}
+                          <rect
+                            x="20"
+                            y="40"
+                            width="8"
+                            height="25"
+                            rx="4"
+                            fill={`url(#teeGrad${item.id})`}
+                            opacity="0.7"
+                          />
+                          <rect
+                            x="72"
+                            y="40"
+                            width="8"
+                            height="25"
+                            rx="4"
+                            fill={`url(#teeGrad${item.id})`}
+                            opacity="0.7"
+                          />
+                          {/* Neck */}
+                          <rect
+                            x="40"
+                            y="35"
+                            width="20"
+                            height="8"
+                            rx="4"
+                            fill="#151719"
+                          />
+                          {/* Addovedi text */}
+                          <text
+                            x="50"
+                            y="65"
+                            textAnchor="middle"
+                            fontSize="7"
+                            fill="#F7FAFD"
+                            fontFamily="Orbitron"
+                            fontWeight="bold"
+                          >
+                            ADDOVEDI
+                          </text>
+                        </svg>
+                      )}
+                      <div
+                        className="text-xs font-medium"
+                        style={{
+                          color: "#9FAFBD",
+                          fontFamily: "var(--font-rajdhani), Rajdhani, system-ui",
+                        }}
+                      >
+                        {item.type}
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
 
                 {/* Hover neon outline */}
                 <div
@@ -290,7 +298,6 @@ export default function MerchandisePage() {
                 >
                   {item.type}
                 </p>
-
                 <div className="mt-4 flex items-center justify-between">
                   <span
                     className="text-base font-medium"
@@ -302,7 +309,7 @@ export default function MerchandisePage() {
                     {inr.format(item.basePrice)}
                   </span>
                   <button
-                    onClick={() => setShowComingSoon(true)}
+                    onClick={() => (window.location.href = "https://forms.gle/rKTr4df9omXnvbtF7")}
                     className="rounded-md px-4 py-2 transition-colors duration-300 will-change-transform group-hover:translate-x-0.5 hover:brightness-110 cursor-pointer"
                     style={{
                       backgroundColor: "#B366FF",
@@ -318,7 +325,6 @@ export default function MerchandisePage() {
           ))}
         </div>
       </section>
-
       {/* Floating neon accents */}
       <div
         aria-hidden
