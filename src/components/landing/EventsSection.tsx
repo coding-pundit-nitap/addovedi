@@ -148,51 +148,49 @@ export default function EventsSection() {
               </Button>
             </div>
           </motion.div>
+          <motion.div
+            variants={itemVariants}
+            whileHover={{ y: -8, scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="group relative bg-gradient-to-br from-purple-900/30 to-purple-600/10 backdrop-blur-sm p-6 rounded-xl border-2 border-purple-400/30 hover:border-purple-400 transition-colors duration-300 hover:shadow-2xl hover:shadow-purple-400/30"
+          >
+            <div className="absolute top-2 right-2 text-2xl">🛡️</div>
+            <div className="text-purple-400 text-4xl font-bold mb-2">02</div>
+            <h3 className="text-purple-400 text-xl md:text-2xl font-bold mb-4">
+              Ideathon
+            </h3>
+            <h4 className="text-slate-100 text-lg font-semibold mb-2">
+              Innovation Pitch Challenge
+            </h4>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              IdeaThon sparks practical, future-ready solutions. Think beyond
+              convention and pitch sustainable, high-impact ideas.
+            </p>
+            <div className="mt-4 flex justify-between items-center">
+              <span className="text-purple-400 text-sm font-semibold">
+                PRECISION
+              </span>
+              <span className="text-blue-400">🔒🔒🔒</span>
+            </div>
+            <div className="mt-4 flex justify-end">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
+                onClick={() => {
+                  setSelected({
+                    title: "Ideathon",
+                    content:
+                      "Pitch bold, sustainable ideas that solve real problems—judged on clarity, feasibility, and impact.",
+                  });
+                  setOpen(true);
+                }}
+              >
+                View More
+              </Button>
+            </div>
+          </motion.div>
         </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          whileHover={{ y: -8, scale: 1.03 }}
-          transition={{ type: "spring", stiffness: 300 }}
-          className="group relative bg-gradient-to-br from-purple-900/30 to-purple-600/10 backdrop-blur-sm p-6 rounded-xl border-2 border-purple-400/30 hover:border-purple-400 transition-colors duration-300 hover:shadow-2xl hover:shadow-purple-400/30"
-        >
-          <div className="absolute top-2 right-2 text-2xl">🛡️</div>
-          <div className="text-purple-400 text-4xl font-bold mb-2">02</div>
-          <h3 className="text-purple-400 text-xl md:text-2xl font-bold mb-4">
-            Ideathon
-          </h3>
-          <h4 className="text-slate-100 text-lg font-semibold mb-2">
-            Innovation Pitch Challenge
-          </h4>
-          <p className="text-slate-300 text-sm leading-relaxed">
-            IdeaThon sparks practical, future-ready solutions. Think beyond
-            convention and pitch sustainable, high-impact ideas.
-          </p>
-          <div className="mt-4 flex justify-between items-center">
-            <span className="text-purple-400 text-sm font-semibold">
-              PRECISION
-            </span>
-            <span className="text-blue-400">🔒🔒🔒</span>
-          </div>
-          <div className="mt-4 flex justify-end">
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
-              onClick={() => {
-                setSelected({
-                  title: "Ideathon",
-                  content:
-                    "Pitch bold, sustainable ideas that solve real problems—judged on clarity, feasibility, and impact.",
-                });
-                setOpen(true);
-              }}
-            >
-              View More
-            </Button>
-          </div>
-        </motion.div>
-
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8"
           variants={containerVariants}
