@@ -39,14 +39,16 @@ export default function EventGalleryPage() {
             key={index}
             className="overflow-hidden rounded-xl cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_15px_#04D9FF,0_0_30px_#7C3AED]"
           >
-            <CardContent className="p-0">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={400}
-                height={400}
-                className="w-full h-full object-cover aspect-square"
-              />
+            <CardContent className="p-0 [&:last-child]:pb-0">
+              <div className="relative aspect-square">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover block"
+                />
+              </div>
             </CardContent>
           </Card>
         ))}
