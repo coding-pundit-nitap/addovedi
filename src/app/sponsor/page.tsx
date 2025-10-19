@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Orbitron, Rajdhani } from "next/font/google";
+import Image from "next/image";
 import React from "react";
 
 const rajdhani2 = Rajdhani({
@@ -22,20 +23,57 @@ type Sponsor = {
   name: string;
   tier: string;
   color: string;
+  logo: string;
 };
 
 const sponsors = {
-  platinum: [
-    { name: "TechCorp", tier: "Platinum Sponsor", color: "text-[#0ae3e7]" },
-    { name: "NeuralSync", tier: "Platinum Sponsor", color: "text-[#0ae3e7]" },
+  musicStreaming: [
+    {
+      name: "jio savan",
+      tier: "Official Music Streaming Partner",
+      color: "text-[#0ae3e7]",
+      logo: "/sponers-logo/JioSaavn.png",
+    },
   ],
-  gold: [
-    { name: "CloudForge", tier: "Gold Sponsor", color: "text-[#9430e1]" },
-    { name: "SecureNet", tier: "Gold Sponsor", color: "text-[#9430e1]" },
+  hackathon: [
+    {
+      name: "Unstop",
+      tier: "Hackathon Partner",
+      color: "text-[#9430e1]",
+      logo: "/sponers-logo/Unstop.png",
+    },
   ],
-  silver: [
-    { name: "QuantumPay", tier: "Silver Sponsor", color: "text-[#1c28ae]" },
-    { name: "CodeCraft", tier: "Silver Sponsor", color: "text-[#1c28ae]" },
+  beverage: [
+    {
+      name: "Coca Cola",
+      tier: "Beverage Partner",
+      color: "text-[#1c28ae]",
+      logo: "/sponers-logo/cocacola.png",
+    },
+  ],
+  waterFilter: [
+    {
+      name: "Urban Water Filter",
+      tier: "Water Filter Event Sponsor",
+      color: "text-[#03edf9]",
+      logo: "/sponers-logo/urbanwater .jpg",
+    },
+  ],
+  hospitality: [
+    {
+      name: "todo hotel",
+      tier: "Hospitality Partner",
+      color: "text-[#cf1cb1]",
+      logo: "/sponers-logo/todohotel.png",
+    },
+  ],
+  media: [
+    {
+      name: "echo of arunachal",
+      tier: "Media Partner",
+      color: "text-[#4facfe]",
+      logo: "/sponers-logo/echo.jpeg",
+    },
   ],
 };
 
@@ -74,20 +112,35 @@ export default function SponsorsPage() {
 
       {/* Sponsors Sections */}
       <SponsorSection
-        title="Platinum Partners"
-        list={sponsors.platinum}
+        title="Official Music Streaming Partner"
+        list={sponsors.musicStreaming}
         accentColor="border-[#16d6e7]"
       />
 
       <SponsorSection
-        title="Gold Collaborators"
-        list={sponsors.gold}
+        title="Hackathon Partner"
+        list={sponsors.hackathon}
         accentColor="border-[#9430e1]"
       />
       <SponsorSection
-        title="Silver Supporters"
-        list={sponsors.silver}
+        title="Beverage Partner"
+        list={sponsors.beverage}
         accentColor="border-[#1c28ae]"
+      />
+      <SponsorSection
+        title="Water Filter Event Sponsor"
+        list={sponsors.waterFilter}
+        accentColor="border-[#03edf9]"
+      />
+      <SponsorSection
+        title="Hospitality Partner"
+        list={sponsors.hospitality}
+        accentColor="border-[#cf1cb1]"
+      />
+      <SponsorSection
+        title="Media Partner"
+        list={sponsors.media}
+        accentColor="border-[#4facfe]"
       />
 
       {/* Call To Action */}
@@ -242,7 +295,13 @@ function SponsorSection({
               className={`border ${accentColor} bg-[#0c0d11] text-center hover:shadow-lg hover:shadow-[#491f6d] md:w-md transition h-full`}
             >
               <CardHeader className="pb-3">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white mx-auto rounded-md mb-3 sm:mb-4" />
+                <Image
+                  src={s.logo}
+                  alt={`${s.name} logo`}
+                  width={80}
+                  height={80}
+                  className="w-16 h-16 sm:w-20 sm:h-20 object-contain mx-auto rounded-md mb-3 sm:mb-4"
+                />
                 <p className="text-white text-sm sm:text-base font-medium">
                   {s.name}
                 </p>
