@@ -11,6 +11,7 @@ export type TeamMember = {
 
 export type TeamSection = {
   key:
+    | "faculty_coordinator"
     | "head_coordinator"
     | "management"
     | "web"
@@ -27,6 +28,44 @@ export type TeamSection = {
 };
 
 export const teamSections: TeamSection[] = [
+  {
+    key: "faculty_coordinator",
+    title: "Faculty Coordinator",
+    emoji: "🧑‍🏫",
+    members: [
+      {
+        name: "Dr. Abhik Banerjee",
+        role: "Faculty Coordinator",
+        image: "/faculty/Dr. Abhik Banerjee.jpg",
+      },
+      {
+        name: "Dr. Brajagopal Datta",
+        role: "Faculty Coordinator",
+        image: "/faculty/Dr. Brajagopal Datta.jpg",
+      },
+      {
+        name: "Dr. Jayakesh K",
+        role: "Faculty Coordinator",
+        image: "/faculty/Dr. Jayakesh K.jpg",
+      },
+      {
+        name: "Dr. Sahadev Roy",
+        role: "Faculty Coordinator",
+        image: "/faculty/Dr. Sahadev Roy.jpg",
+      },
+      {
+        name: "Dr. Subhasish Banerjee",
+        role: "Faculty Coordinator",
+        image: "/faculty/Dr. Subhasish Banerjee.jpg",
+      },
+      {
+        name: "Dr. Sandip Kumar Mandal",
+        role: "Faculty Coordinator",
+        image: "/faculty/Dr. Sandip Kumar Mandal.jpg",
+      },
+    ],
+  },
+
   {
     key: "head_coordinator",
     title: "Head Coordinator",
