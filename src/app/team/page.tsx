@@ -49,7 +49,13 @@ export default function TeamPage() {
               </div>
 
               {/* Members grid */}
-              <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,220px))] justify-center gap-6">
+              <div
+                className={
+                  section.key === "faculty_coordinator"
+                    ? "grid grid-cols-[repeat(1,minmax(220px,220px))] sm:grid-cols-[repeat(2,minmax(220px,220px))] lg:grid-cols-[repeat(3,minmax(220px,220px))] justify-center gap-6"
+                    : "grid grid-cols-[repeat(auto-fit,minmax(220px,220px))] justify-center gap-6"
+                }
+              >
                 {section.members.map((m) => (
                   <Card
                     key={`${section.key}-${m.name}`}
