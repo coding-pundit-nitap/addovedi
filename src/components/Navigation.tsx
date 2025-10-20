@@ -31,8 +31,6 @@ export default function Navigation() {
     { name: "About", href: "/about", icon: "ℹ️" },
   ];
 
-  const actionItems = [{ name: "Login", href: "/login", variant: "solid" }];
-
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -77,29 +75,6 @@ export default function Navigation() {
                 </Button>
               ))}
             </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            {actionItems.map((item, index) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 + index * 0.1 }}
-              >
-                <Link
-                  href={item.href as Route}
-                  className={`px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-200 ${
-                    item.variant === "solid"
-                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-blue-500/25"
-                      : "border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              </motion.div>
-            ))}
           </div>
 
           {/* Mobile menu button */}
@@ -157,24 +132,6 @@ export default function Navigation() {
                 </Link>
               </Button>
             ))}
-
-            {/* Mobile Action Buttons */}
-            <div className="pt-4 space-y-2">
-              {actionItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href as Route}
-                  className={`block px-3 py-2 rounded-md text-base font-medium text-center transition-all duration-200 ${
-                    item.variant === "solid"
-                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
-                      : "border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
           </div>
         </motion.div>
       </div>

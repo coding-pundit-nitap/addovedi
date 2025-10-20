@@ -38,6 +38,8 @@ services:
         condition: service_healthy
     profiles:
       - dev
+    networks:
+      - addovedi-net
 
   # Installs node_modules into a shared volume before the app starts
   installer-dev:
@@ -46,13 +48,15 @@ services:
       dockerfile: Dockerfile
       target: dev
     container_name: addovedi_installer_dev
-    command: sh -c "pnpm install --frozen-lockfile --ignore-scripts && pnpm db:generate"
+    command: pnpm install --frozen-lockfile --ignore-scripts
     volumes:
       - .:/app
       - node_modules_volume:/app/node_modules
       - pnpm_store_volume:/app/.pnpm-store
     profiles:
       - dev
+    networks:
+      - addovedi-net
 
   # The main Next.js application for development
   app-dev:
@@ -69,6 +73,8 @@ services:
         condition: service_healthy
       installer-dev:
         condition: service_completed_successfully
+    networks:
+      - addovedi-net
     volumes:
       - .:/app
       - node_modules_volume:/app/node_modules
@@ -83,7 +89,7 @@ services:
       - CHOKIDAR_USEPOLLING=true
       - NEXT_TELEMETRY_DISABLED=1
       - TZ=UTC
-    
+
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 30s
@@ -107,6 +113,8 @@ services:
         condition: service_healthy
       installer-dev:
         condition: service_completed_successfully
+    networks:
+      - addovedi-net
     volumes:
       - .:/app
       - node_modules_volume:/app/node_modules
@@ -117,7 +125,7 @@ services:
     environment:
       - NODE_ENV=development
       - TZ=UTC
-    
+
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5555"]
       interval: 30s
@@ -184,7 +192,7 @@ services:
       - .env.production
     environment:
       - TZ=UTC
-    
+
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 30s
@@ -209,6 +217,8 @@ services:
       - .env
     expose:
       - "5432"
+    ports:
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -218,7 +228,7 @@ services:
       retries: 5
     networks:
       - addovedi-net
-    
+
 networks:
   addovedi-net:
     driver: bridge
