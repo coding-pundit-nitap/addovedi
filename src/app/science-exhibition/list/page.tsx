@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: "List of all registered participants for the Science Exhibition",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function ParticipantsPage() {
   // Get initial data with parsed dates
   const data = await prisma.scienceExhibition.findMany({
