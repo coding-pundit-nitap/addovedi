@@ -45,7 +45,9 @@ COPY . .
 
 # Accept build arguments for Next.js public environment variables.
 ARG NEXT_PUBLIC_API_URL
+ARG DATABASE_URL
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+ENV DATABASE_URL=$DATABASE_URL
 
 # Build the application.
 RUN pnpm prisma generate

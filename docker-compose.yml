@@ -64,6 +64,8 @@ services:
       context: .
       dockerfile: Dockerfile
       target: dev
+      args:
+        - DATABASE_URL=postgresql://myuser:mypassword@db:5432/addovedi
     container_name: addovedi_app_dev
     restart: unless-stopped
     entrypoint: ["/app/scripts/dev-entrypoint.sh"]
@@ -181,6 +183,7 @@ services:
       target: runner
       args:
         - NEXT_PUBLIC_API_URL=/api/
+        - DATABASE_URL=postgresql://myuser:mypassword@db:5432/addovedi
     container_name: addovedi_app_prod
     restart: always
     depends_on:
