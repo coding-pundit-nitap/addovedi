@@ -125,13 +125,6 @@ export const timelineDays: TimelineDay[] = [
         location: "Central Library",
       },
       {
-        time: "5:00-8:00 PM",
-        tag: "Gaming",
-        title: "FIFA",
-        description: "Console gaming matches and finals.",
-        location: "Central Library",
-      },
-      {
         time: "6:00-8:00 PM",
         tag: "Innovation",
         title: "Ideathon Conclusion",
@@ -203,13 +196,6 @@ export const timelineDays: TimelineDay[] = [
         location: "Central Library",
       },
       {
-        time: "4:00-5:00 PM",
-        tag: "Photography",
-        title: "Photography Result",
-        description: "Result announcement and prize distribution.",
-        location: "Central Library",
-      },
-      {
         time: "5:00-7:00 PM",
         tag: "Talks",
         title: "Day 2 Spokesperson Session",
@@ -232,13 +218,6 @@ export const timelineDays: TimelineDay[] = [
       },
       {
         time: "9:00-11:00 PM",
-        tag: "CAD",
-        title: "SolidWorks",
-        description: "3D design and modeling competition.",
-        location: "Central Library",
-      },
-      {
-        time: "9:00-11:00 PM",
         tag: "Gaming",
         title: "MLBB",
         description: "Mobile Legends esports tournament.",
@@ -249,13 +228,6 @@ export const timelineDays: TimelineDay[] = [
         tag: "Electronics",
         title: "Circuit Debugging",
         description: "Debug and optimize given circuits under time pressure.",
-        location: "Central Library",
-      },
-      {
-        time: "9:00-11:00 PM",
-        tag: "Electronics",
-        title: "PCB Design",
-        description: "Printed circuit board design competition.",
         location: "Central Library",
       },
       {

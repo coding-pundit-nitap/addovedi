@@ -62,15 +62,23 @@ export const teamSections: TeamSection[] = [
 
   {
     key: "sponsorship",
-    title: "PR & Sponsorship Team",
-    emoji: "📣🏆",
+    title: "Sponsorship Team",
+    emoji: "🏆",
     members: [
-      { name: "Rishav Dev Raj", role: "Member", image: "/team/rishav.jpg" },
+      { name: "Rishav Dev Raj", role: "Member", image: "/team/rishav.png" },
       {
         name: "Umashankar Sahu",
         role: "Member",
         image: "/team/umashankar.png",
       },
+    ],
+  },
+
+  {
+    key: "pr",
+    title: "PR Team",
+    emoji: "📣",
+    members: [
       { name: "Saloni Muskan", role: "Member", image: "/team/saloni.jpg" },
     ],
   },
@@ -107,7 +115,7 @@ export const teamSections: TeamSection[] = [
     title: "Management & Hospitality Team",
     emoji: "🧭",
     members: [
-      { name: "Namban Tabin", role: "Member", image: "/team/tabin.jpg" },
+      { name: "Nambam Tabin", role: "Member", image: "/team/tabin.jpg" },
       { name: "Siro Bagang", role: "Member", image: "/team/siro.jpg" },
       { name: "Nayato Mengnia", role: "Member", image: "/team/gentlemen1.jpg" },
     ],
