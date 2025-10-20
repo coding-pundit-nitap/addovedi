@@ -1,16 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+
+import { cn } from "@/lib/utils";
 
 const sponsorTiers = [
   {
     position: 1,
     title: "GOLD SPONSOR",
-    name: "Jio Savan",
+    name: "Jio saavn",
     icon: "🏆",
     color: "blue",
     height: "h-32",
     textSize: "text-3xl sm:text-4xl",
+    logo: "/sponers-logo/JioSaavn.png",
+    className: "h-20 w-full",
   },
   {
     position: 2,
@@ -20,6 +25,8 @@ const sponsorTiers = [
     color: "purple",
     height: "h-20",
     textSize: "text-2xl sm:text-3xl",
+    logo: "/sponers-logo/Unstop.png",
+    className: "h-20 w-full",
   },
   {
     position: 3,
@@ -29,6 +36,8 @@ const sponsorTiers = [
     color: "indigo",
     height: "h-20",
     textSize: "text-2xl sm:text-3xl",
+    logo: "/sponers-logo/cocacola.png",
+    className: "h-20 w-full",
   },
 ];
 
@@ -123,18 +132,22 @@ export default function SponsorsSection() {
               >
                 {sponsor.title}
               </h3>
-              <p
-                className={`${sponsor.textSize} font-bold text-slate-${sponsor.position === 1 ? "100" : "200"} opacity-${sponsor.position === 1 ? "90" : "70"} group-hover:opacity-100 transition-opacity`}
-              >
-                {sponsor.name}
-              </p>
-              <div className={sponsor.height}></div>
+              <Image
+                src={sponsor.logo}
+                alt={`${sponsor.name} logo`}
+                width={100}
+                height={100}
+                className={cn(
+                  "object-contain mx-auto rounded-md mb-3 sm:mb-4",
+                  sponsor?.className
+                )}
+              />
             </motion.div>
           ))}
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
+          className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8"
           variants={containerVariants}
         >
           {additionalSponsors.map((sponsor, index) => (

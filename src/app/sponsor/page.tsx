@@ -15,8 +15,10 @@ const orbitron = Orbitron({
   variable: "--font-orbitron",
 });
 
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 // Sponsor Data
 type Sponsor = {
@@ -24,15 +26,17 @@ type Sponsor = {
   tier: string;
   color: string;
   logo: string;
+  className?: string;
 };
 
 const sponsors = {
   musicStreaming: [
     {
-      name: "jio savan",
+      name: "jio saavn",
       tier: "Official Music Streaming Partner",
       color: "text-[#0ae3e7]",
       logo: "/sponers-logo/JioSaavn.png",
+      className: "h-20 w-full",
     },
   ],
   hackathon: [
@@ -41,6 +45,7 @@ const sponsors = {
       tier: "Hackathon Partner",
       color: "text-[#9430e1]",
       logo: "/sponers-logo/Unstop.png",
+      className: "h-20 w-full",
     },
   ],
   beverage: [
@@ -49,6 +54,7 @@ const sponsors = {
       tier: "Beverage Partner",
       color: "text-[#1c28ae]",
       logo: "/sponers-logo/cocacola.png",
+      className: "h-20 w-full",
     },
   ],
   waterFilter: [
@@ -57,6 +63,7 @@ const sponsors = {
       tier: "Water Filter Event Sponsor",
       color: "text-[#03edf9]",
       logo: "/sponers-logo/urbanwater .jpg",
+      className: "h-20 w-full",
     },
   ],
   hospitality: [
@@ -65,6 +72,7 @@ const sponsors = {
       tier: "Hospitality Partner",
       color: "text-[#cf1cb1]",
       logo: "/sponers-logo/todohotel.png",
+      className: "h-20 w-full",
     },
   ],
   media: [
@@ -73,6 +81,7 @@ const sponsors = {
       tier: "Media Partner",
       color: "text-[#4facfe]",
       logo: "/sponers-logo/echo.jpeg",
+      className: "h-20 w-full",
     },
   ],
 };
@@ -169,9 +178,12 @@ export default function SponsorsPage() {
             <p className="text-xs sm:text-sm text-[#9a9a9c]">
               Ready to partner with us?
             </p>
-            <p className="text-sm sm:text-base text-[#09e6ee] font-medium break-all">
+            <Link
+              href={`mailto:addovedi@nitap.ac.in`}
+              className="text-sm sm:text-base text-[#09e6ee] font-medium break-all"
+            >
               addovedi@nitap.ac.in
-            </p>
+            </Link>
             <p className="text-xs sm:text-sm text-[#9a9a9c] font-medium">
               Our partnership Team will respond within 24 hours
             </p>
@@ -291,17 +303,17 @@ function SponsorSection({
             <Card
               className={`border ${accentColor} bg-[#0c0d11] text-center hover:shadow-lg hover:shadow-[#491f6d] md:w-md transition h-full`}
             >
-              <CardHeader className="pb-3">
+              <CardHeader className=" w-full">
                 <Image
                   src={s.logo}
                   alt={`${s.name} logo`}
-                  width={80}
-                  height={80}
-                  className="w-16 h-16 sm:w-20 sm:h-20 object-contain mx-auto rounded-md mb-3 sm:mb-4"
+                  width={100}
+                  height={100}
+                  className={cn(
+                    "object-contain mx-auto rounded-md",
+                    s?.className
+                  )}
                 />
-                <p className="text-white text-sm sm:text-base font-medium">
-                  {s.name}
-                </p>
               </CardHeader>
               <CardContent className="pt-0">
                 <p className={`${s.color} text-xs sm:text-sm`}>{s.tier}</p>
