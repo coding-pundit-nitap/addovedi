@@ -83,6 +83,22 @@ export const timelineDays: TimelineDay[] = [
     dateLong: "November 7, 2025",
     items: [
       {
+        time: "9:00-11:00 AM",
+        tag: "Mechanical",
+        title: "Hydraulic Arm",
+        description: "Build and control competition.",
+        location: "Central Library",
+      },
+
+      {
+        time: "9:00-11:00 AM",
+        tag: "Electronics",
+        title: "Component Identification",
+        description: "Identify and analyze electronic components.",
+        location: "Central Library",
+      },
+
+      {
         time: "9:00-12:00 PM",
         tag: "Gaming",
         title: "Mortal Combat",
@@ -138,21 +154,6 @@ export const timelineDays: TimelineDay[] = [
         description: "Final project submissions, demos, and closing remarks.",
         location: "Central Library",
       },
-      {
-        time: "9:00-11:00 AM",
-        tag: "Mechanical",
-        title: "Hydraulic Arm",
-        description: "Build and control competition.",
-        location: "Central Library",
-      },
-
-      {
-        time: "9:00-11:00 AM",
-        tag: "Electronics",
-        title: "Component Identification",
-        description: "Identify and analyze electronic components.",
-        location: "Central Library",
-      },
     ],
   },
   {
@@ -160,6 +161,38 @@ export const timelineDays: TimelineDay[] = [
     dayLabel: "8 Nov",
     dateLong: "November 8, 2025",
     items: [
+      {
+        time: "9:00-11:00 AM",
+        tag: "Civil",
+        title: "Bridge Making ",
+        description: "Team presentations and evaluations.",
+        location: "Central Library",
+      },
+
+      {
+        time: "9:00-11:00 AM",
+        tag: "Gaming",
+        title: "MLBB",
+        description: "Mobile Legends esports tournament.",
+        location: "Central Library",
+      },
+
+      {
+        time: "9:00-11:00 AM",
+        tag: "Electronics",
+        title: "Circuit Debugging",
+        description: "Debug and optimize given circuits under time pressure.",
+        location: "Central Library",
+      },
+
+      {
+        time: "9:00-11:00 AM",
+        tag: "Coding",
+        title: "Code2Game",
+        description: "Create your own game logic from scratch in real-time.",
+        location: "Central Library",
+      },
+
       {
         time: "11:00-1:00 PM",
         tag: "Robotics",
@@ -201,34 +234,6 @@ export const timelineDays: TimelineDay[] = [
         tag: "Cultural",
         title: "Music Club",
         description: "Musical performances and closing entertainment.",
-        location: "Central Library",
-      },
-      {
-        time: "9:00-11:00 AM",
-        tag: "Civil",
-        title: "Bridge Making Presentation",
-        description: "Team presentations and evaluations.",
-        location: "Central Library",
-      },
-      {
-        time: "9:00-11:00 AM",
-        tag: "Gaming",
-        title: "MLBB",
-        description: "Mobile Legends esports tournament.",
-        location: "Central Library",
-      },
-      {
-        time: "9:00-11:00 AM",
-        tag: "Electronics",
-        title: "Circuit Debugging",
-        description: "Debug and optimize given circuits under time pressure.",
-        location: "Central Library",
-      },
-      {
-        time: "9:00-11:00 AM",
-        tag: "Coding",
-        title: "Code2Game",
-        description: "Create your own game logic from scratch in real-time.",
         location: "Central Library",
       },
     ],
