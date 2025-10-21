@@ -58,7 +58,7 @@ const REGISTER_LINKS: Record<string, string> = {
     "https://unstop.com/p/ideathon-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576246?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
   "nov7:Hackathon Conclusion":
     "https://unstop.com/hackathons/hackdawn-national-institute-of-technology-arunachal-pradesh-1573112?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
-
+  "nov7:Science Exhibition": "/science-exhibition",
   "nov8:Bridge Making ":
     "https://unstop.com/p/bridge-making-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1575645?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
   "nov8:Circuit Debugging":
