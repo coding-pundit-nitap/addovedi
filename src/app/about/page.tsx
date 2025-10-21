@@ -84,7 +84,9 @@ export default function AboutPage() {
             asChild
             className="bg-[#66FFFF] text-[#030610] hover:bg-[#66FFFF]/90 w-full sm:w-auto"
           >
-            <Link href="#">Register Now</Link>
+            <Link href="https://unstop.com/college-fests/addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-405251">
+              Register Now
+            </Link>
           </Button>
           <Button
             asChild

@@ -302,7 +302,9 @@ export default function EventsPage() {
                             size="sm"
                             className="racing-button bg-[#B366FF] hover:bg-[#B366FF]/90 text-white text-xs sm:text-sm px-2 sm:px-3"
                           >
-                            <Link href="#">Register Now</Link>
+                            <Link href="https://unstop.com/college-fests/addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-405251">
+                              Register Now
+                            </Link>
                           </Button>
                         </div>
                       </CardFooter>
@@ -329,7 +331,9 @@ export default function EventsPage() {
                 asChild
                 className="bg-[#66FFFF] text-[#030610] hover:bg-[#66FFFF]/90 w-full sm:w-auto text-sm sm:text-base"
               >
-                <Link href="#">Register for All Events</Link>
+                <Link href="https://unstop.com/college-fests/addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-405251">
+                  Register for All Events
+                </Link>
               </Button>
               <Button
                 variant="outline"
@@ -397,7 +401,7 @@ export default function EventsPage() {
                       Registration Fee
                     </div>
                     <div className="mt-1 text-sm text-[#e2e8f0]">
-                      {selectedDetails.registrationFee}
+                      ₹ 51 via Unstop
                     </div>
                   </div>
                 )}
@@ -461,7 +465,9 @@ export default function EventsPage() {
                   size="sm"
                   className="racing-button bg-[#B366FF] hover:bg-[#B366FF]/90 text-white"
                 >
-                  <Link href="#">Register Now</Link>
+                  <Link href="https://unstop.com/college-fests/addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-405251">
+                    Register Now
+                  </Link>
                 </Button>
               </div>
             </div>

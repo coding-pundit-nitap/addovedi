@@ -117,7 +117,7 @@ export const eventDetails: Record<string, EventDetails> = {
     contact: "addovedi@nitap.ac.in",
   },
 
-  "nov6:Hackathon": {
+  "nov6:Hackathon Kick-Start": {
     teamSize: "3 to 5 members (inter-college teams encouraged)",
     prizeMoney: "Prize Pool Worth up to ₹50,000",
     registrationFee: "Free (via Unstop registration)",
