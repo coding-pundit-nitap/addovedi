@@ -204,14 +204,14 @@ export const timelineDays: TimelineDay[] = [
         location: "Central Library",
       },
       {
-        time: "9:00-11:00 PM",
+        time: "9:00-11:00 AM",
         tag: "Civil",
         title: "Bridge Making Presentation",
         description: "Team presentations and evaluations.",
         location: "Central Library",
       },
       {
-        time: "9:00-11:00 P=AM",
+        time: "9:00-11:00 AM",
         tag: "Gaming",
         title: "MLBB",
         description: "Mobile Legends esports tournament.",
