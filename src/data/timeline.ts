@@ -139,7 +139,7 @@ export const timelineDays: TimelineDay[] = [
         location: "Central Library",
       },
       {
-        time: "9:00-11:00 PM",
+        time: "9:00-11:00 AM",
         tag: "Mechanical",
         title: "Hydraulic Arm",
         description: "Build and control competition.",
@@ -153,7 +153,7 @@ export const timelineDays: TimelineDay[] = [
         location: "Central Library",
       },
       {
-        time: "9:00-11:00 PM",
+        time: "9:00-11:00 AM",
         tag: "Electronics",
         title: "Component Identification",
         description: "Identify and analyze electronic components.",
@@ -217,21 +217,21 @@ export const timelineDays: TimelineDay[] = [
         location: "Central Library",
       },
       {
-        time: "9:00-11:00 PM",
+        time: "9:00-11:00 P=AM",
         tag: "Gaming",
         title: "MLBB",
         description: "Mobile Legends esports tournament.",
         location: "Central Library",
       },
       {
-        time: "9:00-11:00 PM",
+        time: "9:00-11:00 AM",
         tag: "Electronics",
         title: "Circuit Debugging",
         description: "Debug and optimize given circuits under time pressure.",
         location: "Central Library",
       },
       {
-        time: "9:00-11:00 PM",
+        time: "9:00-11:00 AM",
         tag: "Coding",
         title: "Code2Game",
         description: "Create your own game logic from scratch in real-time.",
