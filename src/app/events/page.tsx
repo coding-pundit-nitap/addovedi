@@ -302,7 +302,7 @@ export default function EventsPage() {
                             size="sm"
                             className="racing-button bg-[#B366FF] hover:bg-[#B366FF]/90 text-white text-xs sm:text-sm px-2 sm:px-3"
                           >
-                            <Link href="/register">Register Now</Link>
+                            <Link href="#">Register Now</Link>
                           </Button>
                         </div>
                       </CardFooter>
@@ -329,7 +329,7 @@ export default function EventsPage() {
                 asChild
                 className="bg-[#66FFFF] text-[#030610] hover:bg-[#66FFFF]/90 w-full sm:w-auto text-sm sm:text-base"
               >
-                <Link href="/register">Register for All Events</Link>
+                <Link href="#">Register for All Events</Link>
               </Button>
               <Button
                 variant="outline"
@@ -461,7 +461,7 @@ export default function EventsPage() {
                   size="sm"
                   className="racing-button bg-[#B366FF] hover:bg-[#B366FF]/90 text-white"
                 >
-                  <Link href="/register">Register Now</Link>
+                  <Link href="#">Register Now</Link>
                 </Button>
               </div>
             </div>

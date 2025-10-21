@@ -62,6 +62,6 @@ export const authConfig: NextAuthConfig = {
     signIn: "/login", // Custom login page
     signOut: "/", // Redirect after sign out
     error: "/", // Error page for authentication errors
-    newUser: "/register", // New user registration page
+    newUser: "#", // New user registration page
   },
 };

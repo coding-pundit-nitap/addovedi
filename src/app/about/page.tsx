@@ -84,7 +84,7 @@ export default function AboutPage() {
             asChild
             className="bg-[#66FFFF] text-[#030610] hover:bg-[#66FFFF]/90 w-full sm:w-auto"
           >
-            <Link href="/register">Register Now</Link>
+            <Link href="#">Register Now</Link>
           </Button>
           <Button
             asChild
