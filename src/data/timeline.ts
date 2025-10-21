@@ -145,13 +145,7 @@ export const timelineDays: TimelineDay[] = [
         description: "Build and control competition.",
         location: "Central Library",
       },
-      {
-        time: "9:00-11:00 PM",
-        tag: "Electronics",
-        title: "Circuit Problem Solving",
-        description: "Timed electronics problem-solving challenge.",
-        location: "Central Library",
-      },
+
       {
         time: "9:00-11:00 AM",
         tag: "Electronics",
