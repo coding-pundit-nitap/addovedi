@@ -21,6 +21,66 @@ import { Modal } from "@/components/ui/modal";
 import { eventDetails } from "@/data/eventDetails";
 import { timelineDays, type TimelineItem } from "@/data/timeline";
 
+const DEFAULT_FEST_LINK =
+  "https://unstop.com/college-fests/addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-405251";
+
+const REGISTER_LINKS: Record<string, string> = {
+  "nov6:Hackathon Kick-Start":
+    "https://unstop.com/hackathons/hackdawn-national-institute-of-technology-arunachal-pradesh-1573112?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov6:Ideathon Kick-Start":
+    "https://unstop.com/p/ideathon-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576246?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov6:Verilog":
+    "https://unstop.com/o/hv9OgxD?utm_medium=Share&utm_source=WhatsApp",
+  "nov6:Rocket Aviation":
+    "https://unstop.com/p/rocket-aviation-task-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1574899?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov6:Water Filter":
+    "https://unstop.com/p/water-filter-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1574915?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov6:Minimalist Circuit Challenge":
+    "https://unstop.com/p/minimalist-circuit-challenge-addovedi2025-national-institute-of-technology-arunachal-pradesh-1574881?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov6:BGMI Day 1":
+    "https://unstop.com/p/bgmi-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576284?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+
+  "nov7:Hydraulic Arm":
+    "https://unstop.com/p/hydraulic-arm-task-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1574902?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov7:Component Identification":
+    "https://unstop.com/p/component-identification-addovedi2025-national-institute-of-technology-arunachal-pradesh-1574879?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov7:Mortal Combat":
+    "https://unstop.com/p/mortal-kombat-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576280?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov7:Maze Follower":
+    "https://unstop.com/competitions/maze-follower-robot-addovedi2025-national-institute-of-technology-arunachal-pradesh-1574892?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov7:Assembly Disassembly":
+    "https://unstop.com/p/assembly-disassembly-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1574901?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov7:Valorant":
+    "https://unstop.com/p/valorant-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576282?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov7:RC Racing":
+    "https://unstop.com/p/rc-rush-radio-controlled-car-racing-challenge-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1574895?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov7:Ideathon Conclusion":
+    "https://unstop.com/p/ideathon-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576246?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov7:Hackathon Conclusion":
+    "https://unstop.com/hackathons/hackdawn-national-institute-of-technology-arunachal-pradesh-1573112?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+
+  "nov8:Bridge Making ":
+    "https://unstop.com/p/bridge-making-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1575645?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov8:Circuit Debugging":
+    "https://unstop.com/p/circuit-debugging-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1574877?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov8:Code2Game":
+    "https://unstop.com/p/code2game-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576274?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov8:Robo War":
+    "https://unstop.com/p/robo-war-addovedi2025-national-institute-of-technology-arunachal-pradesh-1574893?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov8:BGMI Day 2":
+    "https://unstop.com/p/bgmi-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576284?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov8:Line Follower":
+    "https://unstop.com/p/line-follower-challenge-addovedi2025-national-institute-of-technology-arunachal-pradesh-1574888?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov8:Codathon":
+    "https://unstop.com/p/codathon-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576269?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+};
+
+const HIDE_REGISTER = new Set<string>([
+  "nov6:Inauguration",
+  "nov8:Day 2 Spokesperson Session",
+  "nov8:Music Club",
+]);
+
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["700"] });
 const rajdhani = Rajdhani({ subsets: ["latin"], weight: ["400", "500"] });
 
@@ -43,6 +103,13 @@ export default function EventsPage() {
   const [selectedItem, setSelectedItem] = useState<TimelineItem | null>(null);
   const selectedDetails = selectedKey ? eventDetails[selectedKey] : undefined;
   const selectedTitle = selectedKey ? selectedKey.split(":")[1] : "";
+
+  const selectedRegisterHref = selectedKey
+    ? (REGISTER_LINKS[selectedKey] ?? DEFAULT_FEST_LINK)
+    : DEFAULT_FEST_LINK;
+  const selectedHideRegister = selectedKey
+    ? HIDE_REGISTER.has(selectedKey)
+    : false;
 
   useEffect(() => {
     const html = document.documentElement;
@@ -223,6 +290,9 @@ export default function EventsPage() {
               </div>
               {activeDay.items.map((ev, i) => {
                 const side = i % 2 === 0 ? "right" : "left";
+                const key = `${activeKey}:${ev.title}`;
+                const registerHref = REGISTER_LINKS[key] ?? DEFAULT_FEST_LINK;
+                const hideRegister = HIDE_REGISTER.has(key);
                 return (
                   <div
                     key={`${activeKey}-${i}`}
@@ -297,15 +367,15 @@ export default function EventsPage() {
                           >
                             View More
                           </Button>
-                          <Button
-                            asChild
-                            size="sm"
-                            className="racing-button bg-[#B366FF] hover:bg-[#B366FF]/90 text-white text-xs sm:text-sm px-2 sm:px-3"
-                          >
-                            <Link href="https://unstop.com/college-fests/addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-405251">
-                              Register Now
-                            </Link>
-                          </Button>
+                          {!hideRegister && (
+                            <Button
+                              asChild
+                              size="sm"
+                              className="racing-button bg-[#B366FF] hover:bg-[#B366FF]/90 text-white text-xs sm:text-sm px-2 sm:px-3"
+                            >
+                              <Link href={registerHref}>Register Now</Link>
+                            </Button>
+                          )}
                         </div>
                       </CardFooter>
                     </Card>
@@ -460,15 +530,15 @@ export default function EventsPage() {
                 >
                   Close
                 </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  className="racing-button bg-[#B366FF] hover:bg-[#B366FF]/90 text-white"
-                >
-                  <Link href="https://unstop.com/college-fests/addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-405251">
-                    Register Now
-                  </Link>
-                </Button>
+                {!selectedHideRegister && (
+                  <Button
+                    asChild
+                    size="sm"
+                    className="racing-button bg-[#B366FF] hover:bg-[#B366FF]/90 text-white"
+                  >
+                    <Link href={selectedRegisterHref}>Register Now</Link>
+                  </Button>
+                )}
               </div>
             </div>
           ) : (
