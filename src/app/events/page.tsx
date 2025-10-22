@@ -82,6 +82,12 @@ const HIDE_REGISTER = new Set<string>([
   "nov8:Music Club",
 ]);
 
+const HIDE_VIEW_MORE = new Set<string>([
+  "nov6:Inauguration",
+  "nov8:Day 2 Spokesperson Session",
+  "nov8:Music Club",
+]);
+
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["700"] });
 const rajdhani = Rajdhani({ subsets: ["latin"], weight: ["400", "500"] });
 
@@ -294,14 +300,16 @@ export default function EventsPage() {
                 const key = `${activeKey}:${ev.title}`;
                 const registerHref = REGISTER_LINKS[key] ?? DEFAULT_FEST_LINK;
                 const hideRegister = HIDE_REGISTER.has(key);
+                const hideViewMore = HIDE_VIEW_MORE.has(key);
                 return (
                   <div
                     key={`${activeKey}-${i}`}
                     data-side={side}
-                    className={`timeline-item cursor-pointer relative grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 ${
+                    className={`timeline-item ${hideViewMore ? "" : "cursor-pointer"} relative grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 ${
                       side === "left" ? "md:[&>*:first-child]:order-2" : ""
                     }`}
                     onClick={() => {
+                      if (hideViewMore) return;
                       setSelectedKey(`${activeKey}:${ev.title}`);
                       setSelectedItem(ev);
                       setDetailsOpen(true);
@@ -356,18 +364,20 @@ export default function EventsPage() {
                         <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#FF66FF] shadow-[0_0_14px_2px_#FF66FF]" />
 
                         <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => {
-                              setSelectedKey(`${activeKey}:${ev.title}`);
-                              setSelectedItem(ev);
-                              setDetailsOpen(true);
-                            }}
-                            className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white text-xs sm:text-sm px-2 sm:px-3"
-                          >
-                            View More
-                          </Button>
+                          {!hideViewMore && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => {
+                                setSelectedKey(`${activeKey}:${ev.title}`);
+                                setSelectedItem(ev);
+                                setDetailsOpen(true);
+                              }}
+                              className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white text-xs sm:text-sm px-2 sm:px-3"
+                            >
+                              View More
+                            </Button>
+                          )}
                           {!hideRegister && (
                             <Button
                               asChild
