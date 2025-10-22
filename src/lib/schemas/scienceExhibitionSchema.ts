@@ -26,6 +26,7 @@ export const scienceExhibitionSchema = z.object({
     .string()
     .min(2, "Category must be at least 2 characters")
     .max(100),
+  topic: z.string().min(5, "Please select a project topic").max(500),
   participants: z
     .array(participantSchema)
     .min(1, "At least one participant is required")
