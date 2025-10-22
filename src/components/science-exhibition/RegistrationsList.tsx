@@ -33,17 +33,14 @@ import {
 
 import { RegistrationListSkeleton } from "./RegistrationSkeleton";
 
-const categories = [
-  "All Categories",
-  "Physics",
-  "Chemistry",
-  "Biology",
-  "Mathematics",
-  "Environmental Science",
-  "Computer Science",
-  "Robotics",
-  "Innovation & Technology",
-];
+const categories = ["All Categories", "category-a", "category-b", "category-c"];
+
+const categoryNames: Record<string, string> = {
+  "All Categories": "All Categories",
+  "category-a": "Category A - Classes 8 to 10",
+  "category-b": "Category B - Classes 11 to 12",
+  "category-c": "Category C - College Level",
+};
 
 export default function RegistrationsList() {
   const [selectedCategory, setSelectedCategory] =
@@ -136,7 +133,7 @@ export default function RegistrationsList() {
               <SelectContent className="bg-neutral-900 text-white">
                 {categories.map((cat) => (
                   <SelectItem key={cat} value={cat} className="cursor-pointer">
-                    {cat}
+                    {categoryNames[cat] || cat}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -182,7 +179,8 @@ export default function RegistrationsList() {
                             {exhibition.schoolName}
                           </h3>
                           <span className="inline-block px-3 py-1 border border-accent-teal/30 rounded-full text-accent-teal text-sm">
-                            {exhibition.category}
+                            {categoryNames[exhibition.category] ||
+                              exhibition.category}
                           </span>
                         </div>
 
@@ -197,6 +195,14 @@ export default function RegistrationsList() {
                         >
                           <Trash2 className="w-4 h-4" />
                         </Button>
+                      </div>
+
+                      {/* Project Topic */}
+                      <div className="p-3 rounded-lg bg-gray-800/50 border border-accent-teal/20">
+                        <p className="text-xs text-gray-400 mb-1">
+                          Project Topic
+                        </p>
+                        <p className="text-sm text-white">{exhibition.topic}</p>
                       </div>
 
                       {/* Info Grid */}

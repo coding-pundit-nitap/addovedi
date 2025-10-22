@@ -33,32 +33,32 @@ import {
 const categories = [
   {
     id: "category-a",
-    name: "Category A – Classes 8 to 10 (Beginner Level)",
+    name: "Category A - Classes 8 to 10 (Beginner Level)",
     theme: "Smart Living through Simple Automation",
     topics: [
-      "Smart Home using Radio Control – simple automation of lights, fans, or doors using remote or Bluetooth",
-      "Automatic Street Lighting System – light-dependent sensors for community energy saving",
-      "Mini Waste Segregator – basic model separating dry and wet waste using simple sensors or mechanisms",
+      "Smart Home using Radio Control - simple automation of lights, fans, or doors using remote or Bluetooth",
+      "Automatic Street Lighting System - light-dependent sensors for community energy saving",
+      "Mini Waste Segregator - basic model separating dry and wet waste using simple sensors or mechanisms",
     ],
   },
   {
     id: "category-b",
-    name: "Category B – Classes 11 to 12 (Intermediate Level)",
+    name: "Category B - Classes 11 to 12 (Intermediate Level)",
     theme: "Technology for a Sustainable Society",
     topics: [
-      "IoT-based Smart Waste Management System – monitoring and collection system for municipal waste bins",
-      "Water Supply Monitoring and Leakage Detection – sensors for efficient municipal water management",
-      "Smart Irrigation for Sustainable Farming – soil moisture-based automated irrigation setup",
+      "IoT-based Smart Waste Management System - monitoring and collection system for municipal waste bins",
+      "Water Supply Monitoring and Leakage Detection - sensors for efficient municipal water management",
+      "Smart Irrigation for Sustainable Farming - soil moisture-based automated irrigation setup",
     ],
   },
   {
     id: "category-c",
-    name: "Category C – College Level (Advanced Level)",
+    name: "Category C - College Level (Advanced Level)",
     theme: "Smart Cities and Future Technologies",
     topics: [
-      "IoT-based Urban Traffic and Parking Management System – real-time data for vehicle flow optimization",
-      "Integrated Waste-to-Energy Model – combining IoT monitoring with energy recovery solutions",
-      "AI-assisted Disaster Response Network – IoT sensors for early detection of floods, landslides, or earthquakes",
+      "IoT-based Urban Traffic and Parking Management System - real-time data for vehicle flow optimization",
+      "Integrated Waste-to-Energy Model - combining IoT monitoring with energy recovery solutions",
+      "AI-assisted Disaster Response Network - IoT sensors for early detection of floods, landslides, or earthquakes",
     ],
   },
 ];
