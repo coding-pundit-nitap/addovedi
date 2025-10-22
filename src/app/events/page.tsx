@@ -433,6 +433,7 @@ export default function EventsPage() {
           open={detailsOpen}
           onClose={() => setDetailsOpen(false)}
           title={selectedTitle || "Event Details"}
+          className="top-8"
         >
           {selectedItem && (
             <div className="mb-4 rounded-lg border border-[#0B1020] bg-[#030610] p-3 text-sm text-[#94a3b8]">
