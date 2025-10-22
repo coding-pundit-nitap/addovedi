@@ -3,6 +3,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CalendarDays, Clock, MapPin } from "lucide-react";
+import { Route } from "next";
 import { Orbitron, Rajdhani } from "next/font/google";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
@@ -373,7 +374,9 @@ export default function EventsPage() {
                               size="sm"
                               className="racing-button bg-[#B366FF] hover:bg-[#B366FF]/90 text-white text-xs sm:text-sm px-2 sm:px-3"
                             >
-                              <Link href={registerHref}>Register Now</Link>
+                              <Link href={registerHref as Route}>
+                                Register Now
+                              </Link>
                             </Button>
                           )}
                         </div>
@@ -536,7 +539,9 @@ export default function EventsPage() {
                     size="sm"
                     className="racing-button bg-[#B366FF] hover:bg-[#B366FF]/90 text-white"
                   >
-                    <Link href={selectedRegisterHref}>Register Now</Link>
+                    <Link href={selectedRegisterHref as Route}>
+                      Register Now
+                    </Link>
                   </Button>
                 )}
               </div>
