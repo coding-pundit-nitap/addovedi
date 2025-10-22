@@ -95,6 +95,7 @@ export const teamSections: TeamSection[] = [
     members: [
       { name: "Banoth Charan", role: "Member", image: "/team/cherry.jpg" },
       { name: "Arun Kumar", role: "Member", image: "/team/yash.jpg " },
+      { name: "Karan Kumar Sah", role: "Member", image: "/team/karan.jpg " },
     ],
   },
 
@@ -154,9 +155,9 @@ export const teamSections: TeamSection[] = [
     title: "Management & Hospitality Team",
     emoji: "🧭",
     members: [
-      { name: "Nambam Tabin", role: "Member", image: "/team/tabin.jpg" },
+      { name: "Nabam Tabin", role: "Member", image: "/team/tabin.jpg" },
       { name: "Siro Bagang", role: "Member", image: "/team/siro.jpg" },
-      { name: "Nayato Mengnia", role: "Member", image: "/team/gentlemen1.jpg" },
+      { name: "Nyato Mengnia", role: "Member", image: "/team/gentlemen1.jpg" },
     ],
   },
 ];
