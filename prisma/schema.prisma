@@ -73,6 +73,7 @@ model ScienceExhibition {
   teacherCoordinator String
   teacherPhone       String
   category           String
+  topic              String
   participants       Participant[]
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt

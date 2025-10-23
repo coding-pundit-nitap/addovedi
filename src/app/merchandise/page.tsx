@@ -330,7 +330,7 @@ export default function MerchandisePage() {
                   <button
                     onClick={() =>
                       (window.location.href =
-                        "https://forms.gle/rKTr4df9omXnvbtF7")
+                        "https://docs.google.com/forms/d/e/1FAIpQLSedrs4rbxgmHMa5Hkvtnopih6qH2zvZA5w7Iu_15_3O6O9iiw/viewform?usp=dialog")
                     }
                     className="rounded-md px-4 py-2 transition-colors duration-300 will-change-transform group-hover:translate-x-0.5 hover:brightness-110 cursor-pointer"
                     style={{

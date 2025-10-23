@@ -31,14 +31,36 @@ import {
 } from "@/lib/schemas/scienceExhibitionSchema";
 
 const categories = [
-  "Physics",
-  "Chemistry",
-  "Biology",
-  "Mathematics",
-  "Environmental Science",
-  "Computer Science",
-  "Robotics",
-  "Innovation & Technology",
+  {
+    id: "category-a",
+    name: "Category A - Classes 8 to 10 (Beginner Level)",
+    theme: "Smart Living through Simple Automation",
+    topics: [
+      "Smart Home using Radio Control - simple automation of lights, fans, or doors using remote or Bluetooth",
+      "Automatic Street Lighting System - light-dependent sensors for community energy saving",
+      "Mini Waste Segregator - basic model separating dry and wet waste using simple sensors or mechanisms",
+    ],
+  },
+  {
+    id: "category-b",
+    name: "Category B - Classes 11 to 12 (Intermediate Level)",
+    theme: "Technology for a Sustainable Society",
+    topics: [
+      "IoT-based Smart Waste Management System - monitoring and collection system for municipal waste bins",
+      "Water Supply Monitoring and Leakage Detection - sensors for efficient municipal water management",
+      "Smart Irrigation for Sustainable Farming - soil moisture-based automated irrigation setup",
+    ],
+  },
+  {
+    id: "category-c",
+    name: "Category C - College Level (Advanced Level)",
+    theme: "Smart Cities and Future Technologies",
+    topics: [
+      "IoT-based Urban Traffic and Parking Management System - real-time data for vehicle flow optimization",
+      "Integrated Waste-to-Energy Model - combining IoT monitoring with energy recovery solutions",
+      "AI-assisted Disaster Response Network - IoT sensors for early detection of floods, landslides, or earthquakes",
+    ],
+  },
 ];
 
 export default function ScienceExhibitionForm() {
@@ -47,6 +69,7 @@ export default function ScienceExhibitionForm() {
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   const form = useForm<ScienceExhibitionFormValues>({
@@ -56,6 +79,7 @@ export default function ScienceExhibitionForm() {
       teacherCoordinator: "",
       teacherPhone: "",
       category: "",
+      topic: "",
       participants: [{ name: "", class: "", contact: "" }],
     },
   });
@@ -172,29 +196,83 @@ export default function ScienceExhibitionForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-sm font-heading">
-                        Project Category
+                        Competition Category
                       </FormLabel>
                       <Select
-                        onValueChange={field.onChange}
+                        onValueChange={(value) => {
+                          field.onChange(value);
+                          setSelectedCategory(value);
+                          form.setValue("topic", "");
+                        }}
                         defaultValue={field.value}
                       >
                         <FormControl>
                           <SelectTrigger>
-                            <SelectValue placeholder="Select a category" />
+                            <SelectValue placeholder="Select your category" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
                           {categories.map((cat) => (
-                            <SelectItem key={cat} value={cat}>
-                              {cat}
+                            <SelectItem key={cat.id} value={cat.id}>
+                              {cat.name}
                             </SelectItem>
                           ))}
                         </SelectContent>
                       </Select>
                       <FormMessage className="text-red-400" />
+                      {selectedCategory && (
+                        <p className="text-sm text-accent-teal mt-2">
+                          Theme:{" "}
+                          {
+                            categories.find((c) => c.id === selectedCategory)
+                              ?.theme
+                          }
+                        </p>
+                      )}
                     </FormItem>
                   )}
                 />
+
+                {selectedCategory && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <FormField
+                      control={form.control}
+                      name="topic"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-heading">
+                            Project Topic
+                          </FormLabel>
+                          <Select
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Choose your project topic" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {categories
+                                .find((c) => c.id === selectedCategory)
+                                ?.topics.map((topic, index) => (
+                                  <SelectItem key={index} value={topic}>
+                                    {topic}
+                                  </SelectItem>
+                                ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage className="text-red-400" />
+                        </FormItem>
+                      )}
+                    />
+                  </motion.div>
+                )}
               </div>
             </Card>
           </motion.div>

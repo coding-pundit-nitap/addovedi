@@ -26,6 +26,7 @@ export async function registerScienceExhibition(
       teacherCoordinator,
       teacherPhone,
       category,
+      topic,
       participants,
     } = validationResult.data;
 
@@ -36,6 +37,7 @@ export async function registerScienceExhibition(
         teacherCoordinator,
         teacherPhone,
         category,
+        topic,
         participants: {
           create: participants.map((participant) => ({
             name: participant.name,

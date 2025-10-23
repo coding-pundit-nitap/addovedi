@@ -34,6 +34,7 @@ type Exhibition = {
   teacherCoordinator: string;
   teacherPhone: string;
   category: string;
+  topic: string;
   participants: Participant[];
   createdAt: string;
   updatedAt: string;
@@ -197,6 +198,14 @@ export default function ParticipantsList({
                 <MapPin className="w-4 h-4 mr-2" />
                 {exhibition.category}
               </Badge>
+            </div>
+
+            {/* Project Topic */}
+            <div className="mb-6 p-4 rounded-lg bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 border border-accent-teal/20">
+              <p className="text-sm text-gray-400 mb-1 font-medium">
+                Project Topic
+              </p>
+              <p className="text-white leading-relaxed">{exhibition.topic}</p>
             </div>
 
             {/* Teacher info */}
