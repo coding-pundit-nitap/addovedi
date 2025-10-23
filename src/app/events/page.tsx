@@ -86,7 +86,6 @@ const HIDE_VIEW_MORE = new Set<string>([
   "nov6:Inauguration",
   "nov8:Day 2 Spokesperson Session",
   "nov8:Music Club",
-  "nov7:Science Exhibition",
 ]);
 
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["700"] });
@@ -436,7 +435,7 @@ export default function EventsPage() {
           title={selectedTitle || "Event Details"}
           className="top-8"
         >
-          {selectedItem && (
+          {selectedItem && selectedKey !== "nov7:Science Exhibition" && (
             <div className="mb-4 rounded-lg border border-[#0B1020] bg-[#030610] p-3 text-sm text-[#94a3b8]">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="inline-flex items-center gap-2">
@@ -457,7 +456,101 @@ export default function EventsPage() {
               <p className="mt-2 text-[#cbd5e1]">{selectedItem.description}</p>
             </div>
           )}
-          {selectedDetails ? (
+          {selectedKey === "nov7:Science Exhibition" ? (
+            <div className="space-y-6 text-[#cbd5e1]">
+              <div className="rounded-lg border border-[#0B1020] bg-[#030610] p-4">
+                <h4 className="text-[#66FFFF] text-lg mb-2">
+                  Category A – Classes 8 to 10 (Beginner Level)
+                </h4>
+                <p className="text-sm mb-2">
+                  <span className="text-[#66FFFF]">Theme:</span> Smart Living
+                  through Simple Automation
+                </p>
+                <p className="text-sm font-semibold mb-1">
+                  Topics (Choose Any One):
+                </p>
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>
+                    Smart Home using Radio Control – simple automation of
+                    lights, fans, or doors using remote or Bluetooth.
+                  </li>
+                  <li>
+                    Automatic Street Lighting System – light-dependent sensors
+                    for community energy saving.
+                  </li>
+                  <li>
+                    Mini Waste Segregator – basic model separating dry and wet
+                    waste using simple sensors or mechanisms.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="rounded-lg border border-[#0B1020] bg-[#030610] p-4">
+                <h4 className="text-[#66FFFF] text-lg mb-2">
+                  Category B – Classes 11 to 12 (Intermediate Level)
+                </h4>
+                <p className="text-sm mb-2">
+                  <span className="text-[#66FFFF]">Theme:</span> Technology for
+                  a Sustainable Society
+                </p>
+                <p className="text-sm font-semibold mb-1">
+                  Topics (Choose Any One):
+                </p>
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>
+                    IoT-based Smart Waste Management System – monitoring and
+                    collection system for municipal waste bins.
+                  </li>
+                  <li>
+                    Water Supply Monitoring and Leakage Detection – sensors for
+                    efficient municipal water management.
+                  </li>
+                  <li>
+                    Smart Irrigation for Sustainable Farming – soil
+                    moisture-based automated irrigation setup.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="rounded-lg border border-[#0B1020] bg-[#030610] p-4">
+                <h4 className="text-[#66FFFF] text-lg mb-2">
+                  Category C – College Level (Advanced Level)
+                </h4>
+                <p className="text-sm mb-2">
+                  <span className="text-[#66FFFF]">Theme:</span> Smart Cities
+                  and Future Technologies
+                </p>
+                <p className="text-sm font-semibold mb-1">
+                  Topics (Choose Any One):
+                </p>
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>
+                    IoT-based Urban Traffic and Parking Management System –
+                    real-time data for vehicle flow optimization.
+                  </li>
+                  <li>
+                    Integrated Waste-to-Energy Model – combining IoT monitoring
+                    with energy recovery solutions.
+                  </li>
+                  <li>
+                    AI-assisted Disaster Response Network – IoT sensors for
+                    early detection of floods, landslides, or earthquakes.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-2 flex items-center justify-end gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setDetailsOpen(false)}
+                  className="border-[#050A18] bg-[#030610] text-[#94a3b8] hover:bg-[#050A18] hover:text-white"
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          ) : selectedDetails ? (
             <div className="space-y-6">
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {selectedDetails.teamSize && (
