@@ -70,7 +70,6 @@ export default function ScienceExhibitionForm() {
     message: string;
   }>({ type: null, message: "" });
   const [selectedCategory, setSelectedCategory] = useState<string>("");
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   const form = useForm<ScienceExhibitionFormValues>({
     resolver: zodResolver(scienceExhibitionSchema),
@@ -331,7 +330,7 @@ export default function ScienceExhibitionForm() {
             transition={{ delay: 0.3, duration: 0.5 }}
           >
             <Card className="bg-neutral-900 text-white p-6">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <h2 className="text-xl font-semibold flex items-center gap-2">
                   <Users className="w-5 h-5 text-accent-teal" />
                   Participants
@@ -342,7 +341,8 @@ export default function ScienceExhibitionForm() {
                   disabled={fields.length >= 10}
                 >
                   <Plus className="w-4 h-4 mr-2" />
-                  {!isMobile && "Add Participant"}
+                  <span className="hidden md:inline">Add Participant</span>
+                  <span className="sr-only">Add Participant</span>
                 </Button>
               </div>
 
