@@ -86,6 +86,7 @@ const HIDE_VIEW_MORE = new Set<string>([
   "nov6:Inauguration",
   "nov8:Day 2 Spokesperson Session",
   "nov8:Music Club",
+  "nov7:Science Exhibition",
 ]);
 
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["700"] });
