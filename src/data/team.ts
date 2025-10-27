@@ -120,6 +120,11 @@ export const teamSections: TeamSection[] = [
     members: [
       { name: "Saloni Muskan", role: "Member", image: "/team/saloni.jpg" },
       { name: "James Raj Tamang", role: "Member", image: "/team/james.jpg" },
+      {
+        name: "Harshit Srivastava",
+        role: "Member",
+        image: "/team/harshitsrivastava.jpg",
+      },
     ],
   },
 
