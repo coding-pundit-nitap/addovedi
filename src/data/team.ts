@@ -32,7 +32,7 @@ export const teamSections: TeamSection[] = [
   {
     key: "chairman",
     title: " Addovedi Chairman",
-    emoji: "⭐",
+    emoji: "👨‍💼",
     members: [
       {
         name: "Dr. Abhik Banerjee",
