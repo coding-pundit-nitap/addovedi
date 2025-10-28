@@ -11,6 +11,7 @@ export type TeamMember = {
 
 export type TeamSection = {
   key:
+    | "chairman"
     | "faculty_coordinator"
     | "head_coordinator"
     | "management"
@@ -29,15 +30,22 @@ export type TeamSection = {
 
 export const teamSections: TeamSection[] = [
   {
+    key: "chairman",
+    title: " Addovedi Chairman",
+    emoji: "⭐",
+    members: [
+      {
+        name: "Dr. Abhik Banerjee",
+        role: "Chairman",
+        image: "/faculty/Dr. Abhik Banerjee.jpg",
+      },
+    ],
+  },
+  {
     key: "faculty_coordinator",
     title: "Faculty Coordinator",
     emoji: "🧑‍🏫",
     members: [
-      {
-        name: "Dr. Abhik Banerjee",
-        role: "Faculty Coordinator",
-        image: "/faculty/Dr. Abhik Banerjee.jpg",
-      },
       {
         name: "Dr. Brajagopal Datta",
         role: "Faculty Coordinator",
