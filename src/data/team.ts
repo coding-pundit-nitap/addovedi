@@ -22,6 +22,7 @@ export type TeamSection = {
     | "volunteer_incharge"
     | "marketing"
     | "editing"
+    | "editing11"
     | "hospitality";
   title: string;
   emoji: string;
@@ -143,6 +144,19 @@ export const teamSections: TeamSection[] = [
     members: [
       { name: "Nong Own Emphum", role: "Member", image: "/team/nong.jpg" },
       { name: "Rahman", role: "Member", image: "/team/rahman.png" },
+    ],
+  },
+
+  {
+    key: "editing11",
+    title: "Design Head",
+    emoji: "🧑‍🎨",
+    members: [
+      {
+        name: "Dungwa mossang",
+        role: "Member",
+        image: "/team/Dungwamossang.jpg",
+      },
     ],
   },
   {
