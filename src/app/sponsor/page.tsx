@@ -2,7 +2,10 @@
 import { motion } from "framer-motion";
 import { Orbitron, Rajdhani } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+
+import { cn } from "@/lib/utils";
 
 const rajdhani2 = Rajdhani({
   subsets: ["latin"],
@@ -14,11 +17,6 @@ const orbitron = Orbitron({
   weight: ["700"],
   variable: "--font-orbitron",
 });
-
-import Link from "next/link";
-
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 // Sponsor Data
 type Sponsor = {
@@ -36,7 +34,53 @@ const sponsors = {
       tier: "Official Music Streaming Partner",
       color: "text-[#0ae3e7]",
       logo: "/sponers-logo/JioSaavn.png",
-      className: "h-20 w-full",
+      className: "h-24 w-full",
+    },
+  ],
+
+  GamingPatners: [
+    {
+      name: "Nodwin gaming ",
+      tier: "Gaming Partner",
+      color: "text-[#0ae3e7]",
+      logo: "/sponers-logo/nodwingaming.png",
+      className: "h-24 w-full",
+    },
+
+    {
+      name: "Krafton",
+      tier: "Gaming Partner",
+      color: "text-[#0ae3e7]",
+      logo: "/sponers-logo/krafton.png",
+      className: "h-24 w-full",
+    },
+
+    {
+      name: "College campus tour",
+      tier: "Gaming Partner",
+      color: "text-[#0ae3e7]",
+      logo: "/sponers-logo/campustour.png",
+      className: "h-24 w-full",
+    },
+  ],
+
+  TravelPatner: [
+    {
+      name: "Ease my trip",
+      tier: "Travel Partner",
+      color: "text-[#0ae3e7]",
+      logo: "/sponers-logo/easemytrip.png",
+      className: "h-24 w-full",
+    },
+  ],
+
+  OfficialPlatformPatner: [
+    {
+      name: "Geeks for Geeks",
+      tier: "Official Platform Partner",
+      color: "text-[#0ae3e7]",
+      logo: "/sponers-logo/gfg.png",
+      className: "h-60 w-full",
     },
   ],
   hackathon: [
@@ -45,7 +89,7 @@ const sponsors = {
       tier: "Hackathon Partner",
       color: "text-[#9430e1]",
       logo: "/sponers-logo/Unstop.png",
-      className: "h-20 w-full",
+      className: "h-24 w-full",
     },
   ],
   beverage: [
@@ -54,7 +98,7 @@ const sponsors = {
       tier: "Beverage Partner",
       color: "text-[#1c28ae]",
       logo: "/sponers-logo/cocacola.png",
-      className: "h-20 w-full",
+      className: "h-32 w-full",
     },
   ],
   waterFilter: [
@@ -63,7 +107,7 @@ const sponsors = {
       tier: "Water Filter Event Sponsor",
       color: "text-[#03edf9]",
       logo: "/sponers-logo/urbanwater .jpg",
-      className: "h-20 w-full",
+      className: "h-32 w-full",
     },
   ],
   hospitality: [
@@ -72,7 +116,7 @@ const sponsors = {
       tier: "Hospitality Partner",
       color: "text-[#cf1cb1]",
       logo: "/sponers-logo/todohotel.png",
-      className: "h-20 w-full",
+      className: "h-32 w-full",
     },
   ],
   media: [
@@ -81,7 +125,7 @@ const sponsors = {
       tier: "Media Partner",
       color: "text-[#4facfe]",
       logo: "/sponers-logo/echo.jpeg",
-      className: "h-20 w-full",
+      className: "h-32 w-full",
     },
   ],
 };
@@ -123,6 +167,24 @@ export default function SponsorsPage() {
       <SponsorSection
         title="Official Music Streaming Partner"
         list={sponsors.musicStreaming}
+        accentColor="border-[#16d6e7]"
+      />
+
+      <SponsorSection
+        title="Gaming Partner"
+        list={sponsors.GamingPatners}
+        accentColor="border-[#16d6e7]"
+      />
+
+      <SponsorSection
+        title="Travel Partner"
+        list={sponsors.TravelPatner}
+        accentColor="border-[#16d6e7]"
+      />
+
+      <SponsorSection
+        title="Official Platform Partner"
+        list={sponsors.OfficialPlatformPatner}
         accentColor="border-[#16d6e7]"
       />
 
@@ -300,25 +362,15 @@ function SponsorSection({
             }}
             viewport={{ amount: 0.2 }}
           >
-            <Card
-              className={`border ${accentColor} bg-[#0c0d11] text-center hover:shadow-lg hover:shadow-[#491f6d] md:w-md transition h-full`}
-            >
-              <CardHeader className=" w-full">
-                <Image
-                  src={s.logo}
-                  alt={`${s.name} logo`}
-                  width={100}
-                  height={100}
-                  className={cn(
-                    "object-contain mx-auto rounded-md",
-                    s?.className
-                  )}
-                />
-              </CardHeader>
-              <CardContent className="pt-0">
-                <p className={`${s.color} text-xs sm:text-sm`}>{s.tier}</p>
-              </CardContent>
-            </Card>
+            <div className="text-center">
+              <Image
+                src={s.logo}
+                alt={`${s.name} logo`}
+                width={100}
+                height={100}
+                className={cn("object-contain mx-auto", s?.className)}
+              />
+            </div>
           </motion.div>
         ))}
       </div>

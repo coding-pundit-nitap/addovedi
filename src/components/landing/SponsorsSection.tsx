@@ -15,7 +15,7 @@ const sponsorTiers = [
     height: "h-32",
     textSize: "text-3xl sm:text-4xl",
     logo: "/sponers-logo/JioSaavn.png",
-    className: "h-20 w-full",
+    className: "h-24 w-full",
   },
   {
     position: 2,
@@ -26,7 +26,7 @@ const sponsorTiers = [
     height: "h-20",
     textSize: "text-2xl sm:text-3xl",
     logo: "/sponers-logo/Unstop.png",
-    className: "h-20 w-full",
+    className: "h-24 w-full",
   },
   {
     position: 3,
@@ -37,7 +37,7 @@ const sponsorTiers = [
     height: "h-20",
     textSize: "text-2xl sm:text-3xl",
     logo: "/sponers-logo/cocacola.png",
-    className: "h-20 w-full",
+    className: "h-24 w-full",
   },
 ];
 
