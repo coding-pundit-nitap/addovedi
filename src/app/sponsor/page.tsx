@@ -128,6 +128,31 @@ const sponsors = {
       className: "h-32 w-full",
     },
   ],
+  merchandise: [
+    {
+      name: "Dopamine",
+      tier: "Merchandise Partner",
+      color: "text-[#0ae3e7]",
+      logo: "/sponers-logo/dopamine.png",
+      className: "h-45 w-full",
+    },
+  ],
+  ourPartners: [
+    {
+      name: "NE Departmental",
+      tier: "Partner",
+      color: "text-[#4facfe]",
+      logo: "/sponers-logo/ne.png",
+      className: "h-48 w-full",
+    },
+    {
+      name: "Renu Beverages",
+      tier: "Partner",
+      color: "text-[#4facfe]",
+      logo: "/sponers-logo/renu.jpeg",
+      className: "h-48 w-full",
+    },
+  ],
 };
 
 export default function SponsorsPage() {
@@ -157,7 +182,7 @@ export default function SponsorsPage() {
         <div className="mx-auto mt-4 h-[2px] w-16 sm:w-24 bg-gradient-to-r from-[#4facfe] via-[#c937d6] to-[#5104ea]" />
 
         <div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8 lg:gap-12 mt-8">
-          <Stat1 number="5+" label="Innovative Partners" />
+          <Stat1 number="14+" label="Innovative Partners" />
           <Stat2 number="3OOO+" label="Tech Enthusiasts" />
           <Stat3 number="₹4L+" label="Prize Pool" />
         </div>
@@ -213,6 +238,16 @@ export default function SponsorsPage() {
         list={sponsors.media}
         accentColor="border-[#4facfe]"
       />
+      <SponsorSection
+        title="Merchandise Partner"
+        list={sponsors.merchandise}
+        accentColor="border-[#16d6e7]"
+      />
+      <SponsorSection
+        title="Our Partners"
+        list={sponsors.ourPartners}
+        accentColor="border-[#4facfe]"
+      />
 
       {/* Call To Action */}
       <motion.div
@@ -246,6 +281,20 @@ export default function SponsorsPage() {
             >
               addovedi@nitap.ac.in
             </Link>
+            <div className="mt-2 flex flex-row flex-wrap items-center gap-3">
+              <Link
+                href="tel:7389524550"
+                className="text-sm sm:text-base text-[#09e6ee] font-medium"
+              >
+                7389524550
+              </Link>
+              <Link
+                href="tel:8987296503"
+                className="text-sm sm:text-base text-[#09e6ee] font-medium"
+              >
+                89872 96503
+              </Link>
+            </div>
             <p className="text-xs sm:text-sm text-[#9a9a9c] font-medium">
               Our partnership Team will respond within 24 hours
             </p>
