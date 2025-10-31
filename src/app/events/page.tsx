@@ -74,6 +74,8 @@ const REGISTER_LINKS: Record<string, string> = {
     "https://unstop.com/p/line-follower-challenge-addovedi2025-national-institute-of-technology-arunachal-pradesh-1574888?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
   "nov8:Codathon":
     "https://unstop.com/p/codathon-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576269?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov8:MLBB":
+    "https://docs.google.com/forms/d/e/1FAIpQLSd4rLmgPJ2tC71wn6QiDr3uWQZtcTMReIIJ15mtyJ35gAECgw/viewform?usp=header",
 };
 
 const HIDE_REGISTER = new Set<string>([
