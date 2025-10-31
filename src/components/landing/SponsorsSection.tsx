@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils";
 const sponsorTiers = [
   {
     position: 1,
-    title: "GOLD SPONSOR",
     name: "Jio saavn",
     icon: "🏆",
     color: "blue",
@@ -19,7 +18,6 @@ const sponsorTiers = [
   },
   {
     position: 2,
-    title: "SILVER SPONSOR",
     name: "Unstop",
     icon: "🥈",
     color: "purple",
@@ -30,7 +28,6 @@ const sponsorTiers = [
   },
   {
     position: 3,
-    title: "BRONZE SPONSOR",
     name: "Coca Cola",
     icon: "🥉",
     color: "indigo",
@@ -127,11 +124,6 @@ export default function SponsorsSection() {
               >
                 {sponsor.icon}
               </div>
-              <h3
-                className={`text-${sponsor.color}-400 ${sponsor.position === 1 ? "text-2xl" : "text-xl"} font-bold mb-${sponsor.position === 1 ? "4" : "2"}`}
-              >
-                {sponsor.title}
-              </h3>
               <Image
                 src={sponsor.logo}
                 alt={`${sponsor.name} logo`}
