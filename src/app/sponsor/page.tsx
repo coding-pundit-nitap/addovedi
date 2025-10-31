@@ -51,7 +51,7 @@ const sponsors = {
       name: "Krafton",
       tier: "Gaming Partner",
       color: "text-[#0ae3e7]",
-      logo: "/sponers-logo/krafton.png",
+      logo: "/sponers-logo/KRAFTON.png",
       className: "h-24 w-full",
     },
 
@@ -69,7 +69,7 @@ const sponsors = {
       name: "Ease my trip",
       tier: "Travel Partner",
       color: "text-[#0ae3e7]",
-      logo: "/sponers-logo/easemytrip.png",
+      logo: "/sponers-logo/easemyTrip.png",
       className: "h-24 w-full",
     },
   ],

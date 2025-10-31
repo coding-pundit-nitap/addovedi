@@ -26,9 +26,9 @@ const DEFAULT_FEST_LINK =
   "https://unstop.com/college-fests/addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-405251";
 
 const REGISTER_LINKS: Record<string, string> = {
-  "nov6:Hackathon Kick-Start":
+  "nov7:Hackathon Kick-Start":
     "https://unstop.com/hackathons/hackdawn-national-institute-of-technology-arunachal-pradesh-1573112?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
-  "nov6:Ideathon Kick-Start":
+  "nov7:Ideathon Kick-Start":
     "https://unstop.com/p/ideathon-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576246?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
   "nov6:Verilog":
     "https://unstop.com/o/hv9OgxD?utm_medium=Share&utm_source=WhatsApp",
@@ -55,9 +55,9 @@ const REGISTER_LINKS: Record<string, string> = {
     "https://unstop.com/p/valorant-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576282?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
   "nov7:RC Racing":
     "https://unstop.com/p/rc-rush-radio-controlled-car-racing-challenge-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1574895?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
-  "nov7:Ideathon Conclusion":
+  "nov8:Ideathon Conclusion":
     "https://unstop.com/p/ideathon-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576246?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
-  "nov7:Hackathon Conclusion":
+  "nov8:Hackathon Conclusion":
     "https://unstop.com/hackathons/hackdawn-national-institute-of-technology-arunachal-pradesh-1573112?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
   "nov7:Science Exhibition": "/science-exhibition",
   "nov8:Bridge Making ":
@@ -74,6 +74,8 @@ const REGISTER_LINKS: Record<string, string> = {
     "https://unstop.com/p/line-follower-challenge-addovedi2025-national-institute-of-technology-arunachal-pradesh-1574888?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
   "nov8:Codathon":
     "https://unstop.com/p/codathon-addovedi2025-national-institute-of-technology-nit-arunachal-pradesh-1576269?lb=9FweNlVe&utm_medium=Share&utm_source=WhatsApp",
+  "nov8:MLBB":
+    "https://docs.google.com/forms/d/e/1FAIpQLSd4rLmgPJ2tC71wn6QiDr3uWQZtcTMReIIJ15mtyJ35gAECgw/viewform?usp=header",
 };
 
 const HIDE_REGISTER = new Set<string>([
