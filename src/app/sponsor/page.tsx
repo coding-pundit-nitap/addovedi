@@ -281,6 +281,20 @@ export default function SponsorsPage() {
             >
               addovedi@nitap.ac.in
             </Link>
+            <div className="mt-2 flex flex-row flex-wrap items-center gap-3">
+              <Link
+                href="tel:7389524550"
+                className="text-sm sm:text-base text-[#09e6ee] font-medium"
+              >
+                7389524550
+              </Link>
+              <Link
+                href="tel:8987296503"
+                className="text-sm sm:text-base text-[#09e6ee] font-medium"
+              >
+                89872 96503
+              </Link>
+            </div>
             <p className="text-xs sm:text-sm text-[#9a9a9c] font-medium">
               Our partnership Team will respond within 24 hours
             </p>
