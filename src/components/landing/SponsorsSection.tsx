@@ -8,9 +8,7 @@ import { cn } from "@/lib/utils";
 const sponsorTiers = [
   {
     position: 1,
-    title: "GOLD SPONSOR",
     name: "Jio saavn",
-    icon: "🏆",
     color: "blue",
     height: "h-32",
     textSize: "text-3xl sm:text-4xl",
@@ -19,9 +17,7 @@ const sponsorTiers = [
   },
   {
     position: 2,
-    title: "SILVER SPONSOR",
     name: "Unstop",
-    icon: "🥈",
     color: "purple",
     height: "h-20",
     textSize: "text-2xl sm:text-3xl",
@@ -30,9 +26,7 @@ const sponsorTiers = [
   },
   {
     position: 3,
-    title: "BRONZE SPONSOR",
     name: "Coca Cola",
-    icon: "🥉",
     color: "indigo",
     height: "h-20",
     textSize: "text-2xl sm:text-3xl",
@@ -109,29 +103,6 @@ export default function SponsorsSection() {
                     : "from-indigo-700/30 to-indigo-500/10 border-indigo-400/30 hover:border-indigo-400 hover:shadow-indigo-400/30"
               } backdrop-blur-sm p-6 md:p-8 rounded-xl border-2 transition-all duration-300 hover:shadow-2xl w-full max-w-sm mx-auto md:mx-0 text-center`}
             >
-              <div
-                className={`absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-r ${
-                  sponsor.color === "blue"
-                    ? "from-blue-400 to-blue-600"
-                    : sponsor.color === "purple"
-                      ? "from-purple-400 to-purple-600"
-                      : "from-indigo-400 to-indigo-600"
-                } rounded-full flex items-center justify-center text-white font-bold`}
-              >
-                {sponsor.position}
-              </div>
-              <div
-                className={
-                  sponsor.position === 1 ? "text-6xl mb-6" : "text-4xl mb-4"
-                }
-              >
-                {sponsor.icon}
-              </div>
-              <h3
-                className={`text-${sponsor.color}-400 ${sponsor.position === 1 ? "text-2xl" : "text-xl"} font-bold mb-${sponsor.position === 1 ? "4" : "2"}`}
-              >
-                {sponsor.title}
-              </h3>
               <Image
                 src={sponsor.logo}
                 alt={`${sponsor.name} logo`}
