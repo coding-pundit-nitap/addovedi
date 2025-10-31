@@ -117,7 +117,7 @@ export const eventDetails: Record<string, EventDetails> = {
     contact: "addovedi@nitap.ac.in",
   },
 
-  "nov6:Hackathon Kick-Start": {
+  "nov7:Hackathon Kick-Start": {
     teamSize: "3 to 5 members (inter-college teams encouraged)",
     prizeMoney: "Prize Pool Worth up to ₹50,000",
     registrationFee: "Free (via Unstop registration)",
@@ -131,16 +131,16 @@ export const eventDetails: Record<string, EventDetails> = {
     guidelines: [
       "Venue: Central Library, NIT Arunachal Pradesh.",
       "Participants will have 24/7 access, Wi-Fi, workstations, meals, and rest areas.",
-      "Teams must submit their projects before the deadline (5:10 PM, Nov 7).",
+      "Teams must submit their projects before the deadline (5:10 PM, Nov 8).",
       "All projects must be original and submitted to the designated platform (e.g., GitHub, Devpost).",
       "Mentors will be available for guidance during the event.",
     ],
     resultAnnouncement:
-      "November 7, during the Presentation Round (8:00-10:00 PM)",
+      "November 8, during the Presentation Round (8:00-10:00 PM)",
     contact:
       "Visit Unstop event page or contact the organizing team at NIT Arunachal Pradesh.",
-    date: "November 6, 2025",
-    time: "5:00 PM (Start of 24-hour hacking period)",
+    date: "November 7, 2025",
+    time: "8:00 AM (Start of 24-hour hacking period)",
     location: "Central Library, NIT Arunachal Pradesh",
   },
   "nov6:Ideathon": {
@@ -152,10 +152,10 @@ export const eventDetails: Record<string, EventDetails> = {
     resultAnnouncement: "see on Unstop by Clicking on Register Now",
     contact: "see on Unstop by Clicking on Register Now",
     date: "November 6",
-    time: "6:00-8:00 PM",
+    time: "5:00-7:00 PM",
     location: "see on Unstop by Clicking on Register Now",
   },
-  "nov6:Ideathon Kick-Start": {
+  "nov7:Ideathon Kick-Start": {
     teamSize: "2-4 participants",
     prizeMoney: "Price Pool Worth upto 25k+",
     registrationFee: "see on Unstop by Clicking on Register Now",
@@ -175,8 +175,8 @@ export const eventDetails: Record<string, EventDetails> = {
     ],
     resultAnnouncement: "see on Unstop by Clicking on Register Now",
     contact: "see on Unstop by Clicking on Register Now",
-    date: "November 6",
-    time: "6:00-8:00 PM",
+    date: "November 7",
+    time: "8:00 AM",
     location: "see on Unstop by Clicking on Register Now",
   },
   "nov6:Verilog": {
@@ -198,7 +198,7 @@ export const eventDetails: Record<string, EventDetails> = {
     resultAnnouncement: "see on Unstop by Clicking on Register Now",
     contact: "see on Unstop by Clicking on Register Now",
     date: "November 6",
-    time: "6:00-9:00 PM",
+    time: "5:00-7:00 PM",
     location: "see on Unstop by Clicking on Register Now",
   },
   "nov6:Rocket Aviation": {
@@ -222,7 +222,7 @@ export const eventDetails: Record<string, EventDetails> = {
     resultAnnouncement: "see on Unstop by Clicking on Register Now",
     contact: "see on Unstop by Clicking on Register Now",
     date: "November 6",
-    time: "6:00-9:00 PM",
+    time: "5:00-7:00 PM",
     location: "see on Unstop by Clicking on Register Now",
   },
   "nov6:Water Filter": {
@@ -246,7 +246,7 @@ export const eventDetails: Record<string, EventDetails> = {
     resultAnnouncement: "see on Unstop by Clicking on Register Now",
     contact: "see on Unstop by Clicking on Register Now",
     date: "November 6",
-    time: "6:00-9:00 PM",
+    time: "5:00-7:00 PM",
     location: "see on Unstop by Clicking on Register Now",
   },
   "nov6:Minimalist Circuit Challenge": {
@@ -274,7 +274,7 @@ export const eventDetails: Record<string, EventDetails> = {
     resultAnnouncement: "see on Unstop by Clicking on Register Now",
     contact: "see on Unstop by Clicking on Register Now",
     date: "November 6",
-    time: "6:00-9:00 PM",
+    time: "5:00-7:00 PM",
     location: "see on Unstop by Clicking on Register Now",
   },
   "nov6:BGMI Day 1": {
@@ -296,7 +296,7 @@ export const eventDetails: Record<string, EventDetails> = {
     resultAnnouncement: "see on Unstop by Clicking on Register Now",
     contact: "see on Unstop by Clicking on Register Now",
     date: "November 6",
-    time: "6:00-9:00 PM",
+    time: "5:00-7:00 PM",
     location: "see on Unstop by Clicking on Register Now",
   },
 
@@ -489,7 +489,7 @@ export const eventDetails: Record<string, EventDetails> = {
     location: "see on Unstop by Clicking on Register Now",
   },
 
-  "nov7:Ideathon Conclusion": {
+  "nov8:Ideathon Conclusion": {
     teamSize: "2-4 participants",
     prizeMoney: "see on Unstop by Clicking on Register Now",
     registrationFee: "see on Unstop by Clicking on Register Now",
@@ -509,11 +509,11 @@ export const eventDetails: Record<string, EventDetails> = {
     ],
     resultAnnouncement: "see on Unstop by Clicking on Register Now",
     contact: "see on Unstop by Clicking on Register Now",
-    date: "November 7",
+    date: "November 8",
     time: "6:00-8:00 PM",
     location: "see on Unstop by Clicking on Register Now",
   },
-  "nov7:Hackathon Conclusion": {
+  "nov8:Hackathon Conclusion": {
     teamSize: "3 to 5 members (same teams as hackathon)",
     prizeMoney: "Prize Pool Worth up to ₹30,000",
     registrationFee: "Free (via Unstop registration)",
@@ -527,10 +527,10 @@ export const eventDetails: Record<string, EventDetails> = {
       "Use slides, demos, or visual aids for the final presentation.",
     ],
     resultAnnouncement:
-      "Winners will be announced post-presentation on November 7, 2025.",
+      "Winners will be announced post-presentation on November 8, 2025.",
     contact:
       "Visit Unstop event page or contact the organizing team at NIT Arunachal Pradesh.",
-    date: "November 7, 2025",
+    date: "November 8, 2025",
     time: "8:00 PM - 10:00 PM",
     location: "Central Library, NIT Arunachal Pradesh",
   },
