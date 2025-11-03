@@ -208,6 +208,22 @@ export const timelineDays: TimelineDay[] = [
           "Online coding competition — logic and problem-solving rounds.",
         location: "Central Library",
       },
+
+      {
+        time: "11:00AM-1:00 PM",
+        tag: "Innovation",
+        title: "Ideathon Conclusion",
+        description: "Final presentations and judging.",
+        location: "Central Library",
+      },
+      {
+        time: "11:00AM-1:00 PM",
+        tag: "Coding",
+        title: "Hackathon Conclusion",
+        description: "Final project submissions, demos, and closing remarks.",
+        location: "Central Library",
+      },
+
       {
         time: "5:00-7:00 PM",
         tag: "Talks",
@@ -216,21 +232,7 @@ export const timelineDays: TimelineDay[] = [
         location: "Central Library",
       },
       {
-        time: "6:00-8:00 PM",
-        tag: "Innovation",
-        title: "Ideathon Conclusion",
-        description: "Final presentations and judging.",
-        location: "Central Library",
-      },
-      {
-        time: "8:00-10:00 PM",
-        tag: "Coding",
-        title: "Hackathon Conclusion",
-        description: "Final project submissions, demos, and closing remarks.",
-        location: "Central Library",
-      },
-      {
-        time: "8:00-10:00 PM",
+        time: "7:00-8:00 PM",
         tag: "Cultural",
         title: "Music Club",
         description: "Musical performances and closing entertainment.",
