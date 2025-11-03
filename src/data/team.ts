@@ -155,7 +155,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Dungwa mossang",
         role: "Member",
-        image: "/team/Dungwamossang.jpg",
+        image: "/team/dunga.jpg",
       },
     ],
   },
