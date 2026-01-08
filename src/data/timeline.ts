@@ -26,6 +26,22 @@ export const timelineDays: TimelineDay[] = [
         description: "Opening ceremony of HackDawn 2025.",
         location: "Central Library",
       },
+
+      {
+        time: "5:10 PM",
+        tag: "Coding",
+        title: "Hackathon Kick-Start",
+        description: "Hackathon officially begins; team setup and brief.",
+        location: "Central Library",
+      },
+
+      {
+        time: "5:10 PM",
+        tag: "Innovation",
+        title: "Ideathon Kick-Start",
+        description: "Initial problem briefing and brainstorming session.",
+        location: "Central Library",
+      },
       {
         time: "5:00-7:00 PM",
         tag: "Electronics",
@@ -68,20 +84,6 @@ export const timelineDays: TimelineDay[] = [
     dayLabel: "7 Nov",
     dateLong: "November 7, 2025",
     items: [
-      {
-        time: "8:00 AM",
-        tag: "Coding",
-        title: "Hackathon Kick-Start",
-        description: "Hackathon officially begins; team setup and brief.",
-        location: "Central Library",
-      },
-      {
-        time: "8:00 AM",
-        tag: "Innovation",
-        title: "Ideathon Kick-Start",
-        description: "Initial problem briefing and brainstorming session.",
-        location: "Central Library",
-      },
       {
         time: "9:00-11:00 AM",
         tag: "Mechanical",
@@ -138,6 +140,22 @@ export const timelineDays: TimelineDay[] = [
         tag: "RC",
         title: "RC Racing",
         description: "Radio-controlled car racing rounds.",
+        location: "Central Library",
+      },
+
+      {
+        time: "3:00PM-6:00 PM",
+        tag: "Coding",
+        title: "Hackathon Conclusion",
+        description: "Final project submissions, demos, and closing remarks.",
+        location: "Central Library",
+      },
+
+      {
+        time: "3:00AM-6:00 PM",
+        tag: "Innovation",
+        title: "Ideathon Conclusion",
+        description: "Final presentations and judging.",
         location: "Central Library",
       },
     ],
@@ -206,21 +224,6 @@ export const timelineDays: TimelineDay[] = [
         title: "Codathon",
         description:
           "Online coding competition — logic and problem-solving rounds.",
-        location: "Central Library",
-      },
-
-      {
-        time: "11:00AM-1:00 PM",
-        tag: "Innovation",
-        title: "Ideathon Conclusion",
-        description: "Final presentations and judging.",
-        location: "Central Library",
-      },
-      {
-        time: "11:00AM-1:00 PM",
-        tag: "Coding",
-        title: "Hackathon Conclusion",
-        description: "Final project submissions, demos, and closing remarks.",
         location: "Central Library",
       },
 
