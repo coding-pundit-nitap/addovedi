@@ -1,14 +1,11 @@
 # ==============================================================================
-# ---- Base Stage ----
+# ---- Base (BUILD ONLY) ----
 # ==============================================================================
-# This common stage prepares a Node.js environment with pnpm.
 FROM node:24-alpine AS base
 WORKDIR /app
 
-# Add security updates and essential packages, then clean up.
-RUN apk add --no-cache libc6-compat openssl curl dumb-init && \
-    apk upgrade && \
-    rm -rf /var/cache/apk/*
+# Build-time packages ONLY (curl allowed here, NOT in runtime)
+RUN apk add --no-cache libc6-compat openssl curl dumb-init
 
 # Enable and activate pnpm.
 RUN corepack enable && corepack prepare pnpm@latest --activate
@@ -24,15 +21,7 @@ RUN pnpm install --frozen-lockfile --ignore-scripts
 
 
 # ==============================================================================
-# ---- Development Stage ----
-# ==============================================================================
-# This is a minimal image for development. Code is mounted via volumes.
-FROM base AS dev
-# No extra commands needed, inherits from base.
-
-
-# ==============================================================================
-# ---- Builder Stage ----
+# ---- Builder ----
 # ==============================================================================
 # This stage builds the Next.js application for production.
 FROM base AS builder
@@ -59,40 +48,31 @@ RUN pnpm prune --prod --ignore-scripts
 # ==============================================================================
 # ---- Runner Stage ----
 # ==============================================================================
-# This is the final, optimized production image with security hardening.
-FROM base AS runner
+FROM node:24-alpine AS runner
 WORKDIR /app
+
+# Runtime packages ONLY (NO curl, NO wget)
+RUN apk add --no-cache libc6-compat openssl dumb-init
+
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Create a non-root system user and group for security.
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 --ingroup nodejs --home /home/nextjs --shell /bin/false nextjs
+# Non-root user
+RUN addgroup -S app && adduser -S app -G app -h /home/app -s /sbin/nologin
 
-# Create corepack cache directory with proper permissions for the non-root user.
-RUN mkdir -p /home/nextjs/.cache/node/corepack && \
-    chown -R nextjs:nodejs /home/nextjs/.cache
+# Copy built output
+COPY --from=builder --chown=app:app /app/public ./public
+COPY --from=builder --chown=app:app /app/.next ./.next
+COPY --from=builder --chown=app:app /app/node_modules ./node_modules
+COPY --from=builder --chown=app:app /app/package.json ./package.json
+COPY --from=builder --chown=app:app /app/prisma ./prisma
+COPY --chown=app:app ./scripts/entrypoint.sh ./scripts/entrypoint.sh
 
-# Copy built assets from the 'builder' stage with correct ownership.
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
-COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
-COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
-COPY --chown=nextjs:nodejs ./scripts/entrypoint.sh ./scripts/entrypoint.sh
+RUN chmod 555 ./scripts/entrypoint.sh && \
+    find node_modules/.prisma/client -type f -name "query_engine-*" -exec chmod +x {} \;
 
-# 1. Set a secure baseline for all files.
-RUN chmod -R u=rwX,go=rX /app
-
-# 2. Add execute permissions ONLY where necessary.
-RUN chmod 555 /app/scripts/entrypoint.sh && \
-    chmod +x /app/node_modules/.bin/* && \
-    find /app/node_modules/.prisma/client -name "query_engine-*" -exec chmod +x {} \;
-
-# Switch to the non-root user.
-USER nextjs
+USER app
 EXPOSE 3000
 
-# Use dumb-init to properly handle process signals and run the app.
 ENTRYPOINT ["dumb-init", "--", "./scripts/entrypoint.sh"]
 CMD ["node_modules/.bin/next", "start"]
